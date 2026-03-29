@@ -1,4 +1,4 @@
-# Structural Patterns in News Headlines
+2# Structural Patterns in News Headlines
 
 An NLP project analyzing the grammatical structure of news headlines to determine which syntactic patterns occur most frequently.
 
