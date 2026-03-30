@@ -4,7 +4,7 @@ An NLP project analyzing the grammatical structure of news headlines to determin
 
 ## Project Overview
 
-This project analyzes how news organizations structure headlines for maximum impact and information density. Using RSS feeds from Google News, we collect headlines, parse them with spaCy, and identify structural templates and linguistic patterns.
+This project analyzes how news organizations structure headlines for maximum impact and information density. Using RSS feeds from Google News, we collect headlines across multiple sources and topics, parse them with spaCy, and identify structural templates and linguistic patterns.
 
 ## Key Findings
 
@@ -14,26 +14,26 @@ This project analyzes how news organizations structure headlines for maximum imp
 - Ruthlessly eliminate function words while maintaining clarity
 
 ### Voice & Agency
-- **95.7% active voice** - creates immediacy and directness
-- Only **4.3% passive voice** (used strategically when actor is de-emphasized)
+- **95.7% active voice**: creates immediacy and directness
+- Only **4.3% passive voice**, which used strategically when actor is de-emphasized. 
 
 ### Information Order
-- **81.4% Actor-first** (WHO) - "Trump delays...", "FBI hunts..."
-- **14.3% Context-first** (WHEN/WHERE) - "Early strikes...", "In Arizona..."
-- **2.9% Action-first** (WHAT) - "Growing evidence..."
+- **81.4% Actor-first** (WHO): "Trump delays...", "FBI hunts..."
+- **14.3% Context-first** (WHEN/WHERE): "Early strikes...", "In Arizona..."
+- **2.9% Action-first** (WHAT): "Growing evidence..."
 
-**Insight**: Journalism follows strict **WHO → WHAT → WHERE** hierarchy
+**Key Observation**: Journalism follows strict **WHO → WHAT → WHERE** hierarchy
 
 ### Named Entity Distribution
 - **94.3%** of headlines contain named entities (avg 2.3 per headline)
-- **GPE (38.4%)** - Countries, cities (Iran, U.S., Alabama)
-- **ORG (24.4%)** - Organizations (FBI, GOP, Supreme Court)
-- **PERSON (12.8%)** - People (Trump, Burton, Epstein)
+- **GPE (38.4%)**: Countries, cities (Iran, U.S., Alabama)
+- **ORG (24.4%)**: Organizations (FBI, GOP, Supreme Court)
+- **PERSON (12.8%)**: People (Trump, Burton, Epstein)
 
 ### Structural Patterns
 - **61.4%** use Subject-Verb opening (NP VP)
 - **41.4%** end with prepositional phrases (P NP) for context
-- Average **13.9 words** with **6.4 phrase units** - dense information packing
+- Average **13.9 words** with **6.4 phrase units** for dense information packing
 
 ## Installation
 
@@ -45,12 +45,15 @@ This project analyzes how news organizations structure headlines for maximum imp
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd Project
+git clone <https://github.com/avih7531/headline-structure-analysis>
+cd headline-structure-analysis
 
-# Python version will auto-switch to 3.12.8 via .python-version
+# Python version will auto-switch to 3.12.8 via .python-version, activate virtual environment
 python -m venv venv
 source venv/bin/activate
+
+# If using Git Bash on Windows, replace the second command to...
+source venv/Scripts/activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -151,11 +154,11 @@ Headlines are automatically cleaned to:
 
 ## Why This Project is Doable
 
-- ✅ **Data is Extremely Easy to Obtain** - RSS feeds provide unlimited headlines
-- ✅ **Small, Clean Dataset** - 70 headlines yield meaningful patterns
-- ✅ **No Manual Annotation** - Fully automated pipeline
-- ✅ **Quick Iteration** - Collect → Parse → Analyze in minutes
-- ✅ **Incremental Growth** - Dataset grows over time automatically
+-  **Data is Easy to Obtain** - RSS feeds provide unlimited headlines
+-  **Simplistic Dataset** - 70 headlines yield meaningful patterns
+-  **Automatic Annotation** - Fully automated pipeline
+-  **Quick Iteration** - Collect → Parse → Analyze in minutes
+-  **Incremental Growth** - Dataset automatically grows 
 
 ## Key Insights
 
@@ -165,7 +168,7 @@ Headlines are automatically cleaned to:
 4. **Proper Noun Heavy**: 25% of tokens are proper nouns - specificity and credibility
 5. **Standardized Opening**: 61% use NP VP structure - journalism's default template
 
-## Future Work
+## Future Work/Next Steps
 
 - Collect larger dataset over multiple days/weeks
 - Compare structural patterns across news categories
@@ -183,6 +186,8 @@ Headlines are automatically cleaned to:
 ## Author
 
 NLP Course Project - Spring 2026
+Group 5: Victor Derani, Avi Herman, Kylie Lin
+
 
 ## License
 
