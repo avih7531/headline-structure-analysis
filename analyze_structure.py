@@ -749,6 +749,150 @@ def analyze_information_order(df):
             print(f"    • {ex}")
 
 
+def _content_word_ratio(tokens):
+    """Compute content word ratio for a token list."""
+    content_pos = {'NOUN', 'PROPN', 'VERB', 'ADJ', 'NUM'}
+    function_pos = {'DET', 'PRON', 'ADP', 'AUX', 'CCONJ', 'SCONJ', 'PART'}
+
+    content_count = 0
+    function_count = 0
+
+    for token in tokens:
+        if token.get('is_punct'):
+            continue
+        pos = token.get('pos')
+        if pos in content_pos:
+            content_count += 1
+        elif pos in function_pos:
+            function_count += 1
+
+    total = content_count + function_count
+    return (content_count / total) if total > 0 else 0
+
+
+def _information_opening_counts(df):
+    """Return opening strategy counts for a dataframe subset."""
+    counts = {'actor_first': 0, 'action_first': 0, 'context_first': 0, 'other': 0}
+
+    for _, row in df.iterrows():
+        tokens = row.get('tokens', [])
+        non_punct_tokens = [t for t in tokens if not t.get('is_punct', False)]
+
+        if not non_punct_tokens:
+            counts['other'] += 1
+            continue
+
+        first_pos = non_punct_tokens[0].get('pos', '')
+        if first_pos in ['NOUN', 'PROPN', 'PRON']:
+            counts['actor_first'] += 1
+        elif first_pos in ['VERB', 'AUX']:
+            counts['action_first'] += 1
+        elif first_pos in ['ADV', 'ADJ', 'NUM', 'DET']:
+            counts['context_first'] += 1
+        else:
+            counts['other'] += 1
+
+    return counts
+
+
+def _top_entity_type(df):
+    """Return most common named entity label for subset."""
+    entity_counts = Counter()
+    for _, row in df.iterrows():
+        for ent in row.get('entities', []):
+            label = ent.get('label')
+            if label:
+                entity_counts[label] += 1
+
+    if not entity_counts:
+        return 'None', 0
+    return entity_counts.most_common(1)[0]
+
+
+def analyze_domestic_vs_world(df):
+    """Compare structural patterns between domestic and world headlines."""
+    print("\n" + "=" * 70)
+    print("DOMESTIC VS WORLD COMPARISON")
+    print("=" * 70)
+
+    if 'category' not in df.columns:
+        print("\nNo 'category' field found in parsed data.")
+        print("Run collect_headlines.py and parse_headlines.py again to include categories.")
+        return
+
+    df_copy = df.copy()
+    df_copy['category'] = df_copy['category'].astype(str).str.strip().str.lower()
+
+    domestic_df = df_copy[df_copy['category'] == 'domestic']
+    world_df = df_copy[df_copy['category'] == 'world']
+
+    print(f"\nDomestic headlines: {len(domestic_df)}")
+    print(f"World headlines:    {len(world_df)}")
+
+    if len(domestic_df) == 0 or len(world_df) == 0:
+        print("\nNeed both domestic and world headlines to run this comparison.")
+        return
+
+    def category_metrics(subset):
+        content_ratios = [_content_word_ratio(row.get('tokens', [])) for _, row in subset.iterrows()]
+        passive_count = sum(1 for _, row in subset.iterrows() if detect_passive_voice(row.get('tokens', [])))
+        opening = _information_opening_counts(subset)
+        top_entity, top_entity_count = _top_entity_type(subset)
+
+        collapsed = subset['pos_pattern'].apply(lambda x: simplify_pos_pattern(x, collapse_repetitions=True))
+        macro = collapsed.apply(create_macro_structure)
+        top_macros = Counter(macro).most_common(3)
+
+        return {
+            'avg_tokens': subset['num_tokens'].mean(),
+            'avg_content_ratio': sum(content_ratios) / len(content_ratios),
+            'passive_pct': (passive_count / len(subset)) * 100,
+            'actor_first_pct': (opening['actor_first'] / len(subset)) * 100,
+            'action_first_pct': (opening['action_first'] / len(subset)) * 100,
+            'context_first_pct': (opening['context_first'] / len(subset)) * 100,
+            'avg_entities': sum(len(row.get('entities', [])) for _, row in subset.iterrows()) / len(subset),
+            'top_entity': top_entity,
+            'top_entity_count': top_entity_count,
+            'top_macros': top_macros,
+        }
+
+    domestic = category_metrics(domestic_df)
+    world = category_metrics(world_df)
+
+    print("\nCore metrics:")
+    print(f"  Avg length (tokens):    Domestic {domestic['avg_tokens']:.1f} | World {world['avg_tokens']:.1f}")
+    print(f"  Content-word ratio:     Domestic {domestic['avg_content_ratio']*100:.1f}% | World {world['avg_content_ratio']*100:.1f}%")
+    print(f"  Passive voice:          Domestic {domestic['passive_pct']:.1f}% | World {world['passive_pct']:.1f}%")
+    print(f"  Actor-first openings:   Domestic {domestic['actor_first_pct']:.1f}% | World {world['actor_first_pct']:.1f}%")
+    print(f"  Action-first openings:  Domestic {domestic['action_first_pct']:.1f}% | World {world['action_first_pct']:.1f}%")
+    print(f"  Context-first openings: Domestic {domestic['context_first_pct']:.1f}% | World {world['context_first_pct']:.1f}%")
+    print(f"  Avg entities/headline:  Domestic {domestic['avg_entities']:.2f} | World {world['avg_entities']:.2f}")
+
+    print("\nTop named entity type:")
+    print(f"  Domestic: {domestic['top_entity']} ({domestic['top_entity_count']} total)")
+    print(f"  World:    {world['top_entity']} ({world['top_entity_count']} total)")
+
+    print("\nTop 3 macro structures by category:")
+    print("  Domestic:")
+    for template, count in domestic['top_macros']:
+        print(f"    • {template} ({count})")
+    print("  World:")
+    for template, count in world['top_macros']:
+        print(f"    • {template} ({count})")
+
+    print("\nLargest directional differences:")
+    differences = [
+        ("Length", abs(domestic['avg_tokens'] - world['avg_tokens']), "tokens"),
+        ("Content ratio", abs(domestic['avg_content_ratio'] - world['avg_content_ratio']) * 100, "pp"),
+        ("Passive voice", abs(domestic['passive_pct'] - world['passive_pct']), "pp"),
+        ("Actor-first", abs(domestic['actor_first_pct'] - world['actor_first_pct']), "pp"),
+        ("Context-first", abs(domestic['context_first_pct'] - world['context_first_pct']), "pp"),
+    ]
+
+    for metric, diff, unit in sorted(differences, key=lambda x: x[1], reverse=True)[:3]:
+        print(f"  • {metric}: {diff:.1f} {unit}")
+
+
 def generate_insights(df):
     """Generate key insights about headline structures."""
     print("\n" + "=" * 70)
@@ -811,6 +955,7 @@ def main():
     analyze_structure_types(df)
     analyze_dependency_templates(df)
     analyze_named_entities(df)
+    analyze_domestic_vs_world(df)
     analyze_information_order(df)
     analyze_compression_ratio(df)
     analyze_voice(df)

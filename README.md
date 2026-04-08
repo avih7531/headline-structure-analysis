@@ -1,4 +1,4 @@
-2# Structural Patterns in News Headlines
+Structural Patterns in News Headlines
 
 An NLP project analyzing the grammatical structure of news headlines to determine which syntactic patterns occur most frequently.
 
@@ -96,6 +96,7 @@ python analyze_structure.py
 Generates comprehensive analysis including:
 - **Dependency structure templates** (most stable patterns)
 - **Named entity distributions**
+- **Domestic vs world structure comparison**
 - **Information order analysis** (actor/action/context)
 - **Compression ratios** (content vs function words)
 - **Passive vs active voice detection**
@@ -173,7 +174,6 @@ Headlines are automatically cleaned to:
 - Collect larger dataset over multiple days/weeks
 - Compare structural patterns across news categories
 - Analyze temporal trends in headline structures
-- Compare domestic vs world news structures
 - Study correlation between structure and engagement
 
 ## Technologies
