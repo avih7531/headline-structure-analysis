@@ -1,0 +1,66 @@
+item_id,headline,category,source,collected_at,gold_label,annotator,batch,notes,split
+11,Workers at OpenAI show support for Anthropic as the company says it could lose $5 billion in its feud with the Pentagon,domestic,Business Insider,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+15,DOJ's Ed Martin faces ethics charges from disciplinary office over threatening letter to Georgetown University,domestic,CBS News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+17,GOP lawmaker says he's leaving the Republican Party and will serve as an independent,domestic,AP News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+20,Kentucky soldier stationed in Saudi Arabia is 7th U.S. military death in Iran war,domestic,PBS,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+27,"""Disgusting sh*t"": Rep. Andy Ogles' anti Muslim post sparks furious internal backlash",domestic,Axios,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+29,Champion high school mariachi musician and family released from immigration detention after growing outcry,domestic,NBC News,2026-03-10 13:24:57.430,passive_clause,codex,B01,,test
+34,"Early Iran strikes cost $5.6 billion in munitions, Pentagon estimates",domestic,The Washington Post,2026-03-10 13:24:57.431,simple_clause,codex,B01,,test
+35,"U.S. Military Action Against Iran: Over Half Of Voters Oppose It, 74% Oppose Sending Ground Troops Into Iran, Quinnipiac University National Poll Finds; Vast Majority Expects The Conflict To Last Months Or More",domestic,Quinnipiac University Poll,2026-03-10 13:24:57.431,coordination,codex,B02,,test
+43,"Who Is Balendra Shah, the Rapper Set to Be Nepal's Next Prime Minister?",world,The New York Times,2026-03-10 13:24:57.736,question_form,codex,B02,,test
+47,North Korea denounces 'muscle flexing' US South Korean military exercises,world,Al Jazeera,2026-03-10 13:24:57.736,simple_clause,codex,B02,,test
+50,"Macron says France, allies preparing 'defensive' mission to reopen Strait of Hormuz",world,France 24,2026-03-10 13:24:57.736,simple_clause,codex,B02,,test
+54,Iraq war's aftermath was a disaster for the US the Iran war is headed in the same direction,world,The Conversation,2026-03-10 13:24:57.737,coordination,codex,B01,,test
+55,U.S. orders more diplomats to leave Middle East,world,The Washington Post,2026-03-10 13:24:57.737,simple_clause,codex,B03,,test
+56,"US, Iran spar over status of Iranian warship sunk by submarine",world,Military Times,2026-03-10 13:24:57.737,simple_clause,codex,B03,,test
+73,US quadruple amputee cornhole champion arrested on suspicion of murder,domestic,The Guardian,2026-03-24 13:43:49.533,passive_clause,codex,B02,,test
+76,Gregory Bovino's Final Days: Harsh Words and Few Regrets,domestic,The New York Times,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B02,,test
+79,Deal emerges to end Homeland Security budget standoff as TSA disruptions deepen,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+81,The old and weak president is losing because he's old and weak alternet.org,domestic,Unknown,2026-03-24 13:43:49.534,simple_clause,codex,B02,,test
+84,"Valero shuts Texas refinery after explosion, sources say",domestic,Reuters,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+91,DCCC launches geotargeted digital ad campaign hitting GOP for gas prices,domestic,CNBC,2026-03-24 13:43:49.534,simple_clause,codex,B02,,test
+97,"Gigantic 'Heat Dome' Baking The Whole US May Be Historic, Scientists Say",domestic,ScienceAlert,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+98,Californians may need to mail ballots early as Supreme Court signals support for new election day deadline,domestic,Los Angeles Times,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+101,Middle East crisis live: Pakistan reportedly favouring Vance for role in possible US Iran peace talks,world,The Guardian,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B05,,test
+115,"Israel, Iran trade strikes as U.S. says it is pausing attacks on energy targets",world,The Washington Post,2026-03-24 13:43:49.879,simple_clause,codex,B05,,test
+120,Ukraine Spent Big to Shield Energy Industry From Drones. Is the Mideast Next?,world,The New York Times,2026-03-24 13:43:49.879,question_form,codex,B02,,test
+132,Retired Patriot Battalion Commander On The Challenges Of Defeating Iran's Barrages,world,The War Zone,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B06,,test
+133,German president slams Trump's Iran war as illegal politico.eu,world,Unknown,2026-03-24 13:43:49.879,simple_clause,codex,B06,,test
+134,Are we witnessing the death of expertise?,world,WBUR,2026-03-24 13:43:49.879,question_form,codex,B06,,test
+141,Study: Birthright travelers look different after Oct. 7 but the effect remains the same,world,The Times of Israel,2026-03-24 13:43:49.879,coordination,codex,B06,,test
+146,Israel launches new strikes on Tehran as Trump pauses Iran energy attacks,world,The Guardian,2026-03-24 13:43:49.880,simple_clause,codex,B03,,test
+147,"Iran attacks in Strait of Hormuz are 'economic terrorism against every nation,' UAE oil CEO says",world,CNBC,2026-03-24 13:43:49.880,simple_clause,codex,B03,,test
+149,Pope Leo says aerial military strikes should be banned,world,Reuters,2026-03-24 13:43:49.880,passive_clause,codex,B06,,test
+152,Thousands of 'No Kings' protests planned in opposition to Trump amid Iran war,domestic,Fox News,2026-03-29 03:34:32.330,noun_phrase_fragment,codex,B03,,test
+158,US House passes stopgap DHS funding bill after Republicans reject Senate deal theguardian.com,domestic,Unknown,2026-03-29 03:34:32.330,simple_clause,codex,B07,,test
+159,Vice President JD Vance tops CPAC's straw poll to be US president in 2028,domestic,Al Jazeera,2026-03-29 03:34:32.330,simple_clause,codex,B07,,test
+161,"At CPAC, many Republicans stand by Trump on Iran. But they're divided on how the war could end.",domestic,CBS News,2026-03-29 03:34:32.330,coordination,codex,B03,,test
+164,All clear given at State Capitol after bomb threat scare,domestic,Hawaii News Now,2026-03-29 03:34:32.331,passive_clause,codex,B03,,test
+168,How successful has Trump been in his now one month old war in Iran?,domestic,Euronews.com,2026-03-29 03:34:32.331,question_form,codex,B07,,test
+174,Trump wants a deadlocked Congress to move on AI. Frustrated states say they already have,domestic,NPR,2026-03-29 03:34:32.331,simple_clause,codex,B07,,test
+191,Thousands gather for anti far right march in London,world,BBC,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
+193,Indonesia starts implementing social media restrictions for children under 16,world,AP News,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
+196,Orbán loses his cool as crowd boos him over Ukraine,world,TVP World,2026-03-29 03:34:32.716,simple_clause,codex,B04,,test
+207,Justice Sonia Sotomayor issues unusual apology over 'hurtful' remarks about colleague Brett Kavanaugh,domestic,NBC News,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
+214,Hormuz traffic remains at a trickle as US blockade of Iranian ports appears to hold,domestic,The Times of Israel,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
+217,New York Gov. Kathy Hochul pushes for NYC pied à terre tax to close spending deficit,domestic,ABC7 New York,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
+223,"Republicans, White House considering warrant related amendment in high stakes FISA talks",domestic,Politico,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B04,,test
+224,"DeSantis delays Florida's redistricting session and tacks on AI, vaccines",domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+237,CNN Anchor Laughs at Trump Claim That Fox 'Misquoted' Him in Live Interview,domestic,The Daily Beast,2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
+242,"Nearly 60% of U.S. farmers say their finances are getting worse as fertilizer, fuel costs rise: Survey",domestic,CNBC,2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
+245,Roy Cooper far outraises Michael Whatley in North Carolina Senate race,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+250,Houston in showdown with state over immigration ordinance,domestic,The Texas Tribune,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B10,,test
+260,Caltrans to close section of I 80 in SF. 'It's going to be crazy.',domestic,SFGATE,2026-04-15 21:24:20.717,other,codex,B11,,test
+261,New federal Medicaid rules require 1 month of work. Some states demand more.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B11,,test
+267,Gavin Newsom faces growing pressure to intervene in a scrambled California governor's race,domestic,CNN,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+268,Trump threatens to shred UK trade deal over Starmer's Iran war opposition politico.eu,domestic,Unknown,2026-04-15 21:24:20.717,simple_clause,codex,B11,,test
+269,Iran War News Live Updates: Blockade 'Fully Implemented' as Mediators Push for U.S. Iran Ceasefire Extension,world,WSJ,2026-04-15 21:24:20.900,other,codex,B11,,test
+270,"Israeli security cabinet discusses possible Lebanon ceasefire, senior official says",world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B11,,test
+286,"Slovenia's Parliament Speaker Proposes NATO Exit Referendum, Signals Possible Moscow Visit",world,Kyiv Post,2026-04-15 21:24:20.900,coordination,codex,B04,,test
+290,Putin Demands Answers as Russia's Economy Undershoots Expectations,world,The Moscow Times,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+293,Critical Atlantic current significantly more likely to collapse than thought,world,The Guardian,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,test
+294,"China Russia ties are 'precious' in the current international context, Xi Jinping says",world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+295,"Ukrainian robots capture enemy position without troops in historic first, Zelenskyy says",world,Euractiv,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+296,Hezbollah terrorists caught off guard as IDF troops encircle enemy in Bint Jbeil ynetnews,world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,test
+297,Flotilla carrying activists and aid for Palestinians in Gaza sets sail from Spain,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+303,Italy suspends defense agreement with Israel,world,Defense News,2026-04-15 21:24:20.901,simple_clause,codex,B05,,test

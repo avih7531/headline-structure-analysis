@@ -21,3 +21,5 @@ Thumbs.db
 *.log
 *.tmp
 analysis_output.txt
+
+# Data files are intentionally tracked for this project.

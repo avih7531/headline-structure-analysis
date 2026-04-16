@@ -7,8 +7,22 @@ import json
 import pandas as pd
 import glob
 import os
+import sys
 from collections import Counter, defaultdict
 import re
+
+# Ensure project root is importable when running this file directly.
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+try:
+    from scripts.model.headline_structure_classifier import LABELS, classify_dataframe
+    from scripts.model.headline_style_profiler import profile_dataframe
+except ImportError:
+    LABELS = []
+    classify_dataframe = None
+    profile_dataframe = None
 
 
 def load_latest_parsed_data():
@@ -893,6 +907,112 @@ def analyze_domestic_vs_world(df):
         print(f"  • {metric}: {diff:.1f} {unit}")
 
 
+def analyze_model_label_distribution(df):
+    """Run classifier on parsed headlines and summarize label patterns."""
+    print("\n" + "=" * 70)
+    print("MODEL LABEL DISTRIBUTION")
+    print("=" * 70)
+
+    if classify_dataframe is None:
+        print("\nModel classifier import failed.")
+        print("Run from project root so scripts.model can be imported.")
+        return
+
+    classified = classify_dataframe(df.copy())
+    total = len(classified)
+
+    print(f"\nClassified headlines: {total}")
+    counts = Counter(classified['predicted_structure'])
+    print("\nOverall structural labels:")
+    for label in (LABELS or sorted(counts.keys())):
+        count = counts.get(label, 0)
+        pct = (count / total * 100) if total else 0
+        print(f"  {label:22}: {count:3} ({pct:4.1f}%)")
+
+    # Simple, publishable blanket statements from model outputs.
+    top_label, top_count = counts.most_common(1)[0]
+    print("\nModel-backed summary statements:")
+    print(f"  • {top_count/total*100:.1f}% of headlines are classified as {top_label}.")
+    print(f"  • {counts.get('question_form', 0)/total*100:.1f}% are question-form headlines.")
+    print(f"  • {counts.get('passive_clause', 0)/total*100:.1f}% are passive-clause headlines.")
+
+    if 'category' not in classified.columns:
+        return
+
+    classified['category'] = classified['category'].astype(str).str.strip().str.lower()
+    dom = classified[classified['category'] == 'domestic']
+    wor = classified[classified['category'] == 'world']
+    if dom.empty or wor.empty:
+        return
+
+    print("\nDomestic vs World by model labels:")
+    diffs = []
+    for label in (LABELS or sorted(counts.keys())):
+        dom_pct = 100 * (dom['predicted_structure'] == label).sum() / len(dom)
+        wor_pct = 100 * (wor['predicted_structure'] == label).sum() / len(wor)
+        diffs.append((abs(dom_pct - wor_pct), label, dom_pct, wor_pct))
+        print(f"  {label:22}: Domestic {dom_pct:5.1f}% | World {wor_pct:5.1f}%")
+
+    top_diffs = sorted(diffs, reverse=True)[:3]
+    print("\nLargest model label gaps (domestic vs world):")
+    for diff, label, dom_pct, wor_pct in top_diffs:
+        print(f"  • {label}: {diff:.1f} pp ({dom_pct:.1f}% vs {wor_pct:.1f}%)")
+
+
+def analyze_style_profile_story(df):
+    """Produce richer story-level outputs from multi-signal style profiles."""
+    print("\n" + "=" * 70)
+    print("STYLE PROFILE STORY LAYER")
+    print("=" * 70)
+
+    if profile_dataframe is None:
+        print("\nStyle profiler import failed.")
+        return
+
+    profiled = profile_dataframe(df.copy())
+    total = len(profiled)
+    if total == 0:
+        print("\nNo rows available.")
+        return
+
+    def pct(mask):
+        return 100 * mask.sum() / total
+
+    print("\nCore style dimensions:")
+    for col in ["lead_frame", "agency_style", "density_band", "rhetorical_mode"]:
+        print(f"  {col}:")
+        counts = profiled[col].value_counts()
+        for label, count in counts.items():
+            print(f"    - {label:24} {count:3} ({count/total*100:4.1f}%)")
+
+    print("\nNarrative-ready blanket statements:")
+    print(f"  • {pct(profiled['lead_frame'] == 'actor_first'):.1f}% of headlines lead with an actor.")
+    print(f"  • {pct(profiled['density_band'] == 'high_density'):.1f}% are high-density compressed headlines.")
+    print(
+        f"  • {pct(profiled['agency_style'] == 'passive_agent_omitted'):.1f}% use passive framing "
+        "without naming an explicit agent."
+    )
+    print(f"  • {pct(profiled['rhetorical_mode'] == 'straight_report'):.1f}% are straight-report rhetorical mode.")
+
+    top_signatures = Counter(profiled["style_signature"]).most_common(5)
+    print("\nMost common style signatures:")
+    for sig, count in top_signatures:
+        print(f"  • {sig} ({count}, {count/total*100:.1f}%)")
+
+    if "category" in profiled.columns:
+        profiled["category"] = profiled["category"].astype(str).str.strip().str.lower()
+        dom = profiled[profiled["category"] == "domestic"]
+        wor = profiled[profiled["category"] == "world"]
+        if not dom.empty and not wor.empty:
+            print("\nDomestic vs World (style dimensions):")
+            for col in ["lead_frame", "density_band", "rhetorical_mode"]:
+                dom_top = dom[col].value_counts(normalize=True).idxmax()
+                dom_pct = dom[col].value_counts(normalize=True).max() * 100
+                wor_top = wor[col].value_counts(normalize=True).idxmax()
+                wor_pct = wor[col].value_counts(normalize=True).max() * 100
+                print(f"  • {col}: Domestic top={dom_top} ({dom_pct:.1f}%), World top={wor_top} ({wor_pct:.1f}%)")
+
+
 def generate_insights(df):
     """Generate key insights about headline structures."""
     print("\n" + "=" * 70)
@@ -956,6 +1076,8 @@ def main():
     analyze_dependency_templates(df)
     analyze_named_entities(df)
     analyze_domestic_vs_world(df)
+    analyze_model_label_distribution(df)
+    analyze_style_profile_story(df)
     analyze_information_order(df)
     analyze_compression_ratio(df)
     analyze_voice(df)

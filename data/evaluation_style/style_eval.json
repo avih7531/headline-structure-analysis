@@ -1,0 +1,317 @@
+{
+  "all": {
+    "n": 305,
+    "lead_frame": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "action_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        },
+        "actor_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 238
+        },
+        "context_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 52
+        },
+        "other_lead": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      }
+    },
+    "agency_style": {
+      "accuracy": 0.9344262295081968,
+      "macro_f1": 0.48267879948914433,
+      "per_label": {
+        "active_or_nonpassive": {
+          "precision": 0.9553264604810997,
+          "recall": 0.9754385964912281,
+          "f1": 0.9652777777777778,
+          "support": 285
+        },
+        "passive_agent_omitted": {
+          "precision": 0.5384615384615384,
+          "recall": 0.4375,
+          "f1": 0.4827586206896552,
+          "support": 16
+        },
+        "passive_with_agent": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4
+        }
+      }
+    },
+    "density_band": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "high_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 215
+        },
+        "low_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        "medium_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 82
+        }
+      }
+    },
+    "rhetorical_mode": {
+      "accuracy": 0.8786885245901639,
+      "macro_f1": 0.7497285641806191,
+      "per_label": {
+        "analysis_explainer": {
+          "precision": 0.7857142857142857,
+          "recall": 0.275,
+          "f1": 0.40740740740740744,
+          "support": 40
+        },
+        "live_or_alert": {
+          "precision": 0.6363636363636364,
+          "recall": 0.7777777777777778,
+          "f1": 0.7000000000000001,
+          "support": 9
+        },
+        "question_hook": {
+          "precision": 0.9230769230769231,
+          "recall": 1.0,
+          "f1": 0.9600000000000001,
+          "support": 12
+        },
+        "straight_report": {
+          "precision": 0.8913857677902621,
+          "recall": 0.9754098360655737,
+          "f1": 0.9315068493150684,
+          "support": 244
+        }
+      }
+    }
+  },
+  "dev": {
+    "n": 59,
+    "lead_frame": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "action_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "actor_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 41
+        },
+        "context_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 16
+        }
+      }
+    },
+    "agency_style": {
+      "accuracy": 0.9322033898305084,
+      "macro_f1": 0.6488095238095237,
+      "per_label": {
+        "active_or_nonpassive": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9818181818181818,
+          "f1": 0.9642857142857142,
+          "support": 55
+        },
+        "passive_agent_omitted": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "support": 4
+        }
+      }
+    },
+    "density_band": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "high_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 41
+        },
+        "low_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "medium_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        }
+      }
+    },
+    "rhetorical_mode": {
+      "accuracy": 0.864406779661017,
+      "macro_f1": 0.7840674110835402,
+      "per_label": {
+        "analysis_explainer": {
+          "precision": 1.0,
+          "recall": 0.3,
+          "f1": 0.4615384615384615,
+          "support": 10
+        },
+        "live_or_alert": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "support": 4
+        },
+        "question_hook": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "straight_report": {
+          "precision": 0.86,
+          "recall": 1.0,
+          "f1": 0.924731182795699,
+          "support": 43
+        }
+      }
+    }
+  },
+  "test": {
+    "n": 65,
+    "lead_frame": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "action_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "actor_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 54
+        },
+        "context_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "other_lead": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      }
+    },
+    "agency_style": {
+      "accuracy": 0.9384615384615385,
+      "macro_f1": 0.6505376344086021,
+      "per_label": {
+        "active_or_nonpassive": {
+          "precision": 0.9523809523809523,
+          "recall": 0.9836065573770492,
+          "f1": 0.9677419354838709,
+          "support": 61
+        },
+        "passive_agent_omitted": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "support": 4
+        }
+      }
+    },
+    "density_band": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_label": {
+        "high_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 47
+        },
+        "low_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "medium_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 15
+        }
+      }
+    },
+    "rhetorical_mode": {
+      "accuracy": 0.9230769230769231,
+      "macro_f1": 0.8135321100917431,
+      "per_label": {
+        "analysis_explainer": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5,
+          "support": 6
+        },
+        "live_or_alert": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 2
+        },
+        "question_hook": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        },
+        "straight_report": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9811320754716981,
+          "f1": 0.9541284403669724,
+          "support": 53
+        }
+      }
+    }
+  }
+}
