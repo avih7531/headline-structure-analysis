@@ -8,10 +8,12 @@ It only uses data/headlines_parsed.json that already exists.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import subprocess
 import sys
 
+import matplotlib.pyplot as plt
 import pandas as pd
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +21,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def _run(cmd: list[str]) -> None:
     """Execute one subprocess command and fail fast on errors."""
-    print(f"[run] {' '.join(cmd)}")
+    print(f"[run] {' '.join(cmd)}", flush=True)
     subprocess.run(cmd, check=True)
 
 
@@ -41,9 +43,118 @@ def _annotation_rows(path: str) -> int:
     return len(df)
 
 
+def _generate_readme_graphs(
+    structure_pred_path: str,
+    structure_eval_path: str,
+    style_eval_path: str,
+    images_dir: str = "images",
+) -> None:
+    """Generate compact README-ready performance/analysis charts in images/."""
+    os.makedirs(images_dir, exist_ok=True)
+
+    # 1) Structure label distribution (from evaluated gold predictions).
+    if os.path.exists(structure_pred_path):
+        pred_df = pd.read_csv(structure_pred_path).fillna("")
+        counts = (
+            pred_df["predicted_structure"]
+            .value_counts()
+            .reindex(
+                [
+                    "simple_clause",
+                    "noun_phrase_fragment",
+                    "coordination",
+                    "passive_clause",
+                    "question_form",
+                    "other",
+                ],
+                fill_value=0,
+            )
+        )
+        plt.figure(figsize=(9, 5))
+        bars = plt.bar(counts.index, counts.values, color="#5E81AC")
+        plt.title("Structure Label Distribution")
+        plt.ylabel("Count")
+        plt.xticks(rotation=20, ha="right")
+        for bar in bars:
+            h = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width() / 2, h + 1, f"{int(h)}", ha="center", va="bottom", fontsize=9)
+        plt.tight_layout()
+        out = os.path.join(images_dir, "structure_label_distribution.png")
+        plt.savefig(out, dpi=180)
+        plt.close()
+        print(f"[save] graph: {out}")
+
+    # 2) Model performance summary (accuracy + macro F1 bars).
+    if os.path.exists(structure_eval_path) and os.path.exists(style_eval_path) and os.path.exists(structure_pred_path):
+        with open(structure_eval_path, "r", encoding="utf-8") as f:
+            structure_eval = json.load(f)
+        with open(style_eval_path, "r", encoding="utf-8") as f:
+            style_eval = json.load(f)
+
+        pred_df = pd.read_csv(structure_pred_path).fillna("")
+        labels = [
+            "question_form",
+            "passive_clause",
+            "coordination",
+            "noun_phrase_fragment",
+            "simple_clause",
+            "other",
+        ]
+        y_true = pred_df["gold_label"].astype(str).tolist()
+        y_pred = pred_df["predicted_structure"].astype(str).tolist()
+        structure_all_acc = sum(t == p for t, p in zip(y_true, y_pred)) / len(y_true) if y_true else 0.0
+        f1s = []
+        for label in labels:
+            tp = sum(1 for t, p in zip(y_true, y_pred) if t == label and p == label)
+            fp = sum(1 for t, p in zip(y_true, y_pred) if t != label and p == label)
+            fn = sum(1 for t, p in zip(y_true, y_pred) if t == label and p != label)
+            precision = tp / (tp + fp) if (tp + fp) else 0.0
+            recall = tp / (tp + fn) if (tp + fn) else 0.0
+            f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0
+            f1s.append(f1)
+        structure_all_macro = sum(f1s) / len(f1s) if f1s else 0.0
+
+        rows = [
+            ("structure_all", structure_all_acc, structure_all_macro),
+            (
+                "structure_test",
+                structure_eval["test"]["rule_based"]["accuracy"],
+                structure_eval["test"]["rule_based"]["macro_f1"],
+            ),
+        ]
+        for dim in ["lead_frame", "agency_style", "density_band", "rhetorical_mode"]:
+            rows.append(
+                (
+                    f"{dim}_test",
+                    style_eval["test"][dim]["accuracy"],
+                    style_eval["test"][dim]["macro_f1"],
+                )
+            )
+
+        names = [r[0] for r in rows]
+        acc_vals = [r[1] for r in rows]
+        f1_vals = [r[2] for r in rows]
+        x = list(range(len(rows)))
+        width = 0.4
+
+        plt.figure(figsize=(11, 5))
+        plt.bar([i - width / 2 for i in x], acc_vals, width=width, color="#97B67C", label="Accuracy")
+        plt.bar([i + width / 2 for i in x], f1_vals, width=width, color="#E7C173", label="Macro F1")
+        plt.ylim(0, 1.05)
+        plt.title("Model Performance Summary")
+        plt.ylabel("Score")
+        plt.xticks(x, names, rotation=20, ha="right")
+        plt.legend()
+        plt.tight_layout()
+        out = os.path.join(images_dir, "model_performance_summary.png")
+        plt.savefig(out, dpi=180)
+        plt.close()
+        print(f"[save] graph: {out}")
+
+
 def main() -> None:
     """CLI entrypoint that orchestrates classification, splitting, and evaluation."""
-    print("[start] run_structure_pipeline")
+    print("[start] run_structure_pipeline", flush=True)
     parser = argparse.ArgumentParser(description="Run full structure classifier pipeline.")
     parser.add_argument("--sample-size", type=int, default=200)
     parser.add_argument("--seed", type=int, default=42)
@@ -103,7 +214,8 @@ def main() -> None:
     else:
         print(
             f"[data] using existing annotation file ({gold_path}, {existing_rows} rows). "
-            "Pass --regenerate-annotation to overwrite it."
+            "Pass --regenerate-annotation to overwrite it.",
+            flush=True,
         )
 
     has_gold = _has_manual_gold_labels(gold_path)
@@ -151,7 +263,8 @@ def main() -> None:
         eval_cmd.append("--fallback-to-suggested")
         print(
             "[warn] no manual gold labels detected. "
-            "Running bootstrap evaluation using suggested labels."
+            "Running bootstrap evaluation using suggested labels.",
+            flush=True,
         )
 
     _run(split_cmd)
@@ -170,11 +283,18 @@ def main() -> None:
             ]
         )
 
-    print("[done] pipeline complete")
+    _generate_readme_graphs(
+        structure_pred_path="data/evaluation/gold_predictions.csv",
+        structure_eval_path="data/evaluation/classifier_eval.json",
+        style_eval_path="data/evaluation_style/style_eval.json",
+        images_dir="images",
+    )
+
+    print("[done] pipeline complete", flush=True)
     if has_gold:
-        print("[mode] evaluation used manual gold labels")
+        print("[mode] evaluation used manual gold labels", flush=True)
     else:
-        print("[mode] evaluation used suggested labels as temporary stand-in")
+        print("[mode] evaluation used suggested labels as temporary stand-in", flush=True)
 
 
 if __name__ == "__main__":

@@ -25,6 +25,8 @@ From `305` parsed headlines:
 
 Interpretation: this corpus is mostly dense, actor-led **who-did-what** reporting.
 
+![Structure label distribution](images/structure_label_distribution.png)
+
 ## Model outputs
 
 Each headline gets a style profile:
@@ -65,6 +67,8 @@ Held-out test (`n=65`):
 - `agency_style`: accuracy `0.938`, macro F1 `0.651`
 - `density_band`: accuracy `1.000`, macro F1 `1.000`
 - `rhetorical_mode`: accuracy `0.923`, macro F1 `0.814`
+
+![Model performance summary](images/model_performance_summary.png)
 
 Note: perfect `lead_frame` and `density_band` scores are expected in this setup, because their gold columns are operationalized with the same deterministic labeling rules used by the profiler. Treat those as consistency checks, while `structure`, `agency_style`, and especially `rhetorical_mode` are the more informative generalization signals.
 
