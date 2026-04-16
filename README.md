@@ -8,7 +8,7 @@ We ask: **Do news headlines follow repeatable structural templates, and can we m
 ## Pipeline
 
 1. Collect domestic/world headlines from Google News RSS.
-2. Parse with spaCy (POS, dependencies, entities, roots).
+2. Parse with spaCy (strongest available model, currently `en_core_web_md`) after lightweight normalization, with a fallback parse pass when title casing hurts syntax.
 3. Analyze structural patterns.
 4. Predict a style profile per headline.
 5. Evaluate against manual gold annotations.
@@ -51,28 +51,38 @@ Split of manually annotated headlines:
 - Held-out test: `83` (`21.2%`)
 
 ### Structure model scores
-- All-labeled: accuracy `0.795`, macro F1 `0.634`
-- Dev macro F1 `0.561`
-- Held-out test macro F1 `0.691`
+- All-labeled: accuracy `0.776`, macro F1 `0.578`
+- Dev macro F1 `0.516`
+- Held-out test: accuracy `0.759`, macro F1 `0.594`
+
+Split-stability check (5 random seeds: `13,42,87,123,202`):
+- Test accuracy mean `0.752 ± 0.018`
+- Test macro F1 mean `0.549 ± 0.061`
+- Dev macro F1 mean `0.571 ± 0.052`
+
+This is our explicit seeding/luck check: the band shows how much the score moves from random split choice alone.
+
+![Seed stability summary](images/seed_stability_summary.png)
 
 ### Style-dimension scores
-All-labeled (`n=391`):
-- `lead_frame`: accuracy `1.000`, macro F1 `1.000`
-- `agency_style`: accuracy `0.949`, macro F1 `0.678`
-- `density_band`: accuracy `1.000`, macro F1 `1.000`
-- `rhetorical_mode`: accuracy `0.905`, macro F1 `0.790`
+All-labeled (full evaluation slice):
+- `lead_frame`: accuracy `0.941`, macro F1 `0.900`
+- `agency_style`: accuracy `0.946`, macro F1 `0.665`
+- `density_band`: accuracy `0.980`, macro F1 `0.966`
+- `rhetorical_mode`: accuracy `0.903`, macro F1 `0.777`
 
 Held-out test (`n=83`):
-- `lead_frame`: accuracy `1.000`, macro F1 `1.000`
-- `agency_style`: accuracy `0.976`, macro F1 `0.922`
-- `density_band`: accuracy `1.000`, macro F1 `1.000`
+- `lead_frame`: accuracy `0.952`, macro F1 `0.843`
+- `agency_style`: accuracy `0.952`, macro F1 `0.844`
+- `density_band`: accuracy `0.952`, macro F1 `0.958`
 - `rhetorical_mode`: accuracy `0.904`, macro F1 `0.816`
 
 ![Model performance summary](images/model_performance_summary.png)
 
 ![Performance heatmap](images/performance_heatmap.png)
 
-Note: perfect `lead_frame` and `density_band` scores are expected in this setup, because their gold columns are operationalized with the same deterministic labeling rules used by the profiler. Treat those as consistency checks, while `structure`, `agency_style`, and especially `rhetorical_mode` are the more informative generalization signals.
+Stability artifacts are written to `data/evaluation_seed_sweep/` (`seed_metrics.csv` + `seed_sweep_summary.json`).
+Targeted stress-test predictions for known tricky headlines are saved to `data/evaluation/sanity_cases.json`.
 
 Metric definitions:
 - Accuracy = correct predictions / total predictions
@@ -212,7 +222,7 @@ Predictions:
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_md
 ```
 
 ## Run
@@ -222,7 +232,7 @@ python -m spacy download en_core_web_sm
 python scripts/pipeline/collect_headlines.py
 
 # 2) Parse
-python scripts/pipeline/parse_headlines.py
+python scripts/pipeline/parse_headlines.py --reparse-all
 
 # 3) Analyze
 python scripts/pipeline/analyze_structure.py

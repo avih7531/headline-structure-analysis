@@ -1,0 +1,32 @@
+[
+  {
+    "headline": "Donald Trump Replaces Joseph Biden as President of US; mixed reactions among citizens",
+    "parse_variant": "original",
+    "parse_quality": 9,
+    "predicted_structure": "coordination",
+    "lead_frame": "actor_entity_first",
+    "agency_style": "active_or_nonpassive",
+    "density_band": "high_density",
+    "rhetorical_mode": "straight_report"
+  },
+  {
+    "headline": "Nine killed in second Turkish school shooting in two days",
+    "parse_variant": "original",
+    "parse_quality": 2,
+    "predicted_structure": "passive_clause",
+    "lead_frame": "context_first",
+    "agency_style": "passive_agent_omitted",
+    "density_band": "high_density",
+    "rhetorical_mode": "straight_report"
+  },
+  {
+    "headline": "At CPAC, many Republicans stand by Trump on Iran. But they're divided on how the war could end.",
+    "parse_variant": "original",
+    "parse_quality": 8,
+    "predicted_structure": "simple_clause",
+    "lead_frame": "context_first",
+    "agency_style": "active_or_nonpassive",
+    "density_band": "low_density",
+    "rhetorical_mode": "analysis_explainer"
+  }
+]
