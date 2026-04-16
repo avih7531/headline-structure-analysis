@@ -13,6 +13,7 @@ import pandas as pd
 
 
 def _allocate_counts(n: int, ratios: Tuple[float, float, float]) -> Tuple[int, int, int]:
+    """Convert split ratios into concrete train/dev/test counts."""
     train_r, dev_r, _ = ratios
     train_n = int(n * train_r)
     dev_n = int(n * dev_r)
@@ -35,6 +36,7 @@ def _allocate_counts(n: int, ratios: Tuple[float, float, float]) -> Tuple[int, i
 
 
 def _split_indices(indices: List[int], ratios: Tuple[float, float, float], rng: random.Random) -> Dict[int, str]:
+    """Assign one label-homogeneous index list into train/dev/test splits."""
     idxs = indices[:]
     rng.shuffle(idxs)
     train_n, dev_n, test_n = _allocate_counts(len(idxs), ratios)
@@ -50,6 +52,7 @@ def _split_indices(indices: List[int], ratios: Tuple[float, float, float], rng: 
 
 
 def main() -> None:
+    """CLI entrypoint to create stratified train/dev/test assignments."""
     parser = argparse.ArgumentParser(description="Split gold labels into train/dev/test.")
     parser.add_argument("--input", default="data/gold_headlines_annotation.csv")
     parser.add_argument("--output", default="data/gold_headlines_annotation_split.csv")

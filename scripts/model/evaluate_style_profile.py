@@ -29,10 +29,12 @@ STYLE_DIMS = [
 
 
 def _safe_div(n: float, d: float) -> float:
+    """Safely divide with 0.0 fallback for empty denominators."""
     return n / d if d else 0.0
 
 
 def _metrics(y_true: List[str], y_pred: List[str], labels: List[str]) -> Dict:
+    """Compute accuracy and macro-F1 with per-label breakdown."""
     accuracy = _safe_div(sum(1 for t, p in zip(y_true, y_pred) if t == p), len(y_true))
 
     per_label = {}
@@ -57,6 +59,7 @@ def _metrics(y_true: List[str], y_pred: List[str], labels: List[str]) -> Dict:
 
 
 def _eval_dim(df: pd.DataFrame, gold_col: str, pred_col: str) -> Dict:
+    """Evaluate one style dimension against its gold column."""
     sub = df[df[gold_col].astype(str).str.strip() != ""].copy()
     labels = sorted(sub[gold_col].astype(str).unique().tolist())
     y_true = sub[gold_col].astype(str).tolist()
@@ -65,6 +68,7 @@ def _eval_dim(df: pd.DataFrame, gold_col: str, pred_col: str) -> Dict:
 
 
 def _eval_group(df: pd.DataFrame) -> Dict:
+    """Evaluate all configured style dimensions for a dataframe slice."""
     result = {"n": len(df)}
     for dim_name, gold_col, pred_col in STYLE_DIMS:
         result[dim_name] = _eval_dim(df, gold_col, pred_col)
@@ -72,6 +76,7 @@ def _eval_group(df: pd.DataFrame) -> Dict:
 
 
 def main() -> None:
+    """CLI entrypoint for style-profile evaluation artifacts."""
     parser = argparse.ArgumentParser(description="Evaluate style profile dimensions.")
     parser.add_argument("--parsed-input", default="data/headlines_parsed.json")
     parser.add_argument("--gold-style-input", default="data/gold_headlines_style_manual.csv")

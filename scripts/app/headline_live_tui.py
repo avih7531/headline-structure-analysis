@@ -33,6 +33,8 @@ CONTENT_POS = {"NOUN", "PROPN", "VERB", "ADJ", "NUM"}
 
 @dataclass
 class CorpusBaselines:
+    """Corpus-level reference metrics used for live headline comparison."""
+
     avg_tokens: float
     avg_density: float
     avg_entities: float
@@ -40,6 +42,7 @@ class CorpusBaselines:
 
 
 def _load_corpus_baselines(path: str = "data/headlines_parsed.json") -> CorpusBaselines:
+    """Load baseline stats from parsed corpus for delta-based UI feedback."""
     if not os.path.exists(path):
         return CorpusBaselines(avg_tokens=0.0, avg_density=0.0, avg_entities=0.0, actor_first_pct=0.0)
 
@@ -68,6 +71,7 @@ def _load_corpus_baselines(path: str = "data/headlines_parsed.json") -> CorpusBa
 
 
 def _headline_stats(record: Dict) -> Dict[str, float]:
+    """Compute real-time lexical/NER stats for a single parsed headline record."""
     tokens = [t for t in record.get("tokens", []) if not t.get("is_punct", False)]
     content = sum(1 for t in tokens if t.get("pos") in CONTENT_POS)
     density = (content / len(tokens)) if tokens else 0.0
@@ -83,6 +87,8 @@ def _headline_stats(record: Dict) -> Dict[str, float]:
 
 
 class HeadlineLiveApp(App):
+    """Interactive Textual app for live headline profiling and diagnostics."""
+
     CSS = """
     Screen {
       layout: vertical;
@@ -132,11 +138,13 @@ class HeadlineLiveApp(App):
     SUB_TITLE = "Real-time structure + style prediction"
 
     def __init__(self) -> None:
+        """Initialize application state and precomputed corpus baselines."""
         super().__init__()
         self.nlp = None
         self.baselines = _load_corpus_baselines()
 
     def compose(self) -> ComposeResult:
+        """Compose static layout widgets for the live workbench."""
         yield Header()
         yield Input(placeholder="Type a headline... updates on every keystroke", id="headline_input")
         with Horizontal(id="main"):
@@ -149,10 +157,12 @@ class HeadlineLiveApp(App):
         yield Footer()
 
     def on_mount(self) -> None:
+        """Load NLP resources once, then render the empty-state panels."""
         self.nlp = load_spacy_model()
         self._render_empty_state()
 
     def _render_empty_state(self) -> None:
+        """Render placeholder panel content before user input is available."""
         self.query_one("#prediction_panel", Static).update(
             "[b #ffffff on #88C0D0] Predictions [/b #ffffff on #88C0D0]\nType a headline to start."
         )
@@ -168,6 +178,7 @@ class HeadlineLiveApp(App):
         )
 
     def on_input_changed(self, event: Input.Changed) -> None:
+        """Re-parse and refresh all panels whenever input text changes."""
         text = event.value
         if not text.strip():
             self._render_empty_state()
@@ -184,6 +195,7 @@ class HeadlineLiveApp(App):
         self._render_warnings(profile, stats)
 
     def _render_predictions(self, profile: Dict) -> None:
+        """Render structured style predictions into the left prediction panel."""
         panel = self.query_one("#prediction_panel", Static)
         panel.update(
             "[b #ffffff on #88C0D0] Predictions [/b #ffffff on #88C0D0]\n"
@@ -196,6 +208,7 @@ class HeadlineLiveApp(App):
         )
 
     def _render_stats(self, stats: Dict, parsed: Dict) -> None:
+        """Render lexical and entity statistics for the current headline."""
         top_entities = ", ".join(e["label"] for e in parsed.get("entities", [])[:4]) or "none"
         panel = self.query_one("#stats_panel", Static)
         panel.update(
@@ -208,6 +221,7 @@ class HeadlineLiveApp(App):
         )
 
     def _render_comparison(self, profile: Dict, stats: Dict) -> None:
+        """Render baseline deltas and high-level editorial interpretation."""
         token_delta = stats["num_tokens"] - self.baselines.avg_tokens
         density_delta = (stats["density"] - self.baselines.avg_density) * 100
         ent_delta = stats["entities"] - self.baselines.avg_entities
@@ -228,6 +242,7 @@ class HeadlineLiveApp(App):
         )
 
     def _render_warnings(self, profile: Dict, stats: Dict) -> None:
+        """Render rule-driven caution/success badges from live headline signals."""
         warnings: list[str] = []
 
         token_delta = stats["num_tokens"] - self.baselines.avg_tokens

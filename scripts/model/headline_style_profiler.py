@@ -42,10 +42,12 @@ EXPLAINER_CUES = (
 
 
 def _non_punct(tokens: List[Dict]) -> List[Dict]:
+    """Return non-punctuation tokens for feature extraction."""
     return [tok for tok in tokens if not tok.get("is_punct", False)]
 
 
 def predict_lead_frame(tokens: List[Dict]) -> str:
+    """Classify whether headline opens with actor, action, or context."""
     clean = _non_punct(tokens)
     if not clean:
         return "other_lead"
@@ -60,6 +62,7 @@ def predict_lead_frame(tokens: List[Dict]) -> str:
 
 
 def predict_agency_style(tokens: List[Dict], structure_label: str) -> str:
+    """Estimate agency framing, with explicit handling for passive forms."""
     if structure_label != "passive_clause":
         return "active_or_nonpassive"
     dep_set = {tok.get("dep", "") for tok in tokens}
@@ -68,6 +71,7 @@ def predict_agency_style(tokens: List[Dict], structure_label: str) -> str:
 
 
 def compute_density(tokens: List[Dict]) -> tuple[float, str]:
+    """Compute lexical information density score and discretized band."""
     content_count = 0
     function_count = 0
     for tok in _non_punct(tokens):
@@ -88,6 +92,7 @@ def compute_density(tokens: List[Dict]) -> tuple[float, str]:
 
 
 def predict_rhetorical_mode(headline: str, structure_label: str) -> str:
+    """Infer high-level rhetorical mode from form and discourse cues."""
     lower = headline.lower()
     if structure_label == "question_form":
         return "question_hook"
@@ -101,6 +106,7 @@ def predict_rhetorical_mode(headline: str, structure_label: str) -> str:
 
 
 def profile_record(record: Dict) -> Dict:
+    """Build a complete style profile for a single parsed headline."""
     structure_label, matched_rules = classify_record(record)
     tokens = record.get("tokens", [])
     headline = record.get("headline", "")
@@ -123,6 +129,7 @@ def profile_record(record: Dict) -> Dict:
 
 
 def profile_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Vectorized wrapper applying style profiling across a dataframe."""
     records = df.to_dict(orient="records")
     profiled_rows = [profile_record(rec) for rec in records]
     out = df.copy()
@@ -132,6 +139,7 @@ def profile_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _print_summary(df: pd.DataFrame) -> None:
+    """Print compact distribution summaries for generated profile fields."""
     print("Saved style profiles with the following distributions:")
     for col in ["predicted_structure", "lead_frame", "agency_style", "density_band", "rhetorical_mode"]:
         counts = Counter(df[col])
@@ -142,6 +150,7 @@ def _print_summary(df: pd.DataFrame) -> None:
 
 
 def main() -> None:
+    """CLI entrypoint for generating headline style profile CSV output."""
     parser = argparse.ArgumentParser(description="Generate headline style profiles.")
     parser.add_argument("--input", default="data/headlines_parsed.json")
     parser.add_argument("--output", default="data/headline_style_profiles.csv")

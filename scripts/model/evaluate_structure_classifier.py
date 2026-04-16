@@ -17,10 +17,12 @@ from headline_structure_classifier import LABELS, classify_dataframe
 
 
 def _safe_div(numerator: float, denominator: float) -> float:
+    """Safely divide with zero-protection for metric calculations."""
     return numerator / denominator if denominator else 0.0
 
 
 def _compute_metrics(y_true: List[str], y_pred: List[str], labels: List[str]) -> Dict:
+    """Compute aggregate + per-label classification metrics."""
     per_label = {}
     total_tp = total_fp = total_fn = 0
 
@@ -67,6 +69,7 @@ def _compute_metrics(y_true: List[str], y_pred: List[str], labels: List[str]) ->
 
 
 def _build_confusion(y_true: List[str], y_pred: List[str], labels: List[str]) -> pd.DataFrame:
+    """Build a label-by-label confusion matrix dataframe."""
     matrix = {(true, pred): 0 for true in labels for pred in labels}
     for true, pred in zip(y_true, y_pred):
         if true in labels and pred in labels:
@@ -82,11 +85,13 @@ def _build_confusion(y_true: List[str], y_pred: List[str], labels: List[str]) ->
 
 
 def _majority_baseline(train_labels: List[str], n: int) -> List[str]:
+    """Generate majority-class baseline predictions for n examples."""
     majority = Counter(train_labels).most_common(1)[0][0]
     return [majority] * n
 
 
 def _random_baseline(train_labels: List[str], n: int, seed: int) -> List[str]:
+    """Generate class-frequency-weighted random baseline predictions."""
     rng = random.Random(seed)
     dist = Counter(train_labels)
     labels = list(dist.keys())
@@ -95,6 +100,7 @@ def _random_baseline(train_labels: List[str], n: int, seed: int) -> List[str]:
 
 
 def _domain_comparison(pred_df: pd.DataFrame) -> pd.DataFrame:
+    """Compare predicted structure rates between domestic and world subsets."""
     if "category" not in pred_df.columns:
         return pd.DataFrame()
 
@@ -128,6 +134,7 @@ def _domain_comparison(pred_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _merge_gold_with_parsed(gold_df: pd.DataFrame, parsed_df: pd.DataFrame) -> pd.DataFrame:
+    """Join gold labels with parsed features, filtering unmatched rows."""
     needed_cols = ["headline", "gold_label", "split"]
     missing = [c for c in needed_cols if c not in gold_df.columns]
     if missing:
@@ -145,6 +152,7 @@ def _merge_gold_with_parsed(gold_df: pd.DataFrame, parsed_df: pd.DataFrame) -> p
 
 
 def _evaluate_subset(subset_df: pd.DataFrame, train_labels: List[str], seed: int) -> Dict:
+    """Evaluate rule-based model and baselines on one split subset."""
     y_true = subset_df["gold_label"].tolist()
     y_rule = subset_df["predicted_structure"].tolist()
     y_majority = _majority_baseline(train_labels, len(subset_df))
@@ -159,6 +167,7 @@ def _evaluate_subset(subset_df: pd.DataFrame, train_labels: List[str], seed: int
 
 
 def main() -> None:
+    """CLI entrypoint for full structure-model evaluation outputs."""
     parser = argparse.ArgumentParser(description="Evaluate rule-based structure classifier.")
     parser.add_argument("--parsed-input", default="data/headlines_parsed.json")
     parser.add_argument("--gold-input", default="data/gold_headlines_annotation_split.csv")

@@ -1,13 +1,16 @@
 """
-News Headline Collection Script
-Fetches headlines from RSS feeds and saves them for analysis.
+Collect and persist headline data from configured RSS feeds.
+
+The collector merges newly fetched headlines into ``data/headlines.json``,
+deduplicating by ``headline`` + ``source`` to keep corpus growth predictable
+across repeated runs.
 """
 
 import feedparser
 import pandas as pd
 from datetime import datetime
-import json
 import os
+from typing import Dict, List, Tuple
 
 
 # RSS Feed URLs
@@ -15,7 +18,7 @@ DOMESTIC_RSS_URL = "https://news.google.com/rss/topics/CAAqIggKIhxDQkFTRHdvSkwyM
 WORLD_RSS_URL = "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen"
 
 
-def clean_headline(title):
+def clean_headline(title: str) -> Tuple[str, str]:
     """
     Clean headline by removing source attribution and fixing unicode.
     
@@ -71,7 +74,7 @@ def clean_headline(title):
     return headline, source
 
 
-def fetch_headlines_from_feed(feed_url, category):
+def fetch_headlines_from_feed(feed_url: str, category: str) -> List[Dict]:
     """
     Fetch headlines from a single RSS feed.
     
@@ -105,7 +108,7 @@ def fetch_headlines_from_feed(feed_url, category):
     return headlines
 
 
-def collect_all_headlines():
+def collect_all_headlines() -> pd.DataFrame:
     """
     Collect headlines from all configured RSS feeds.
     
@@ -129,7 +132,7 @@ def collect_all_headlines():
     return df
 
 
-def save_headlines(df, output_dir='data'):
+def save_headlines(df: pd.DataFrame, output_dir: str = 'data') -> Tuple[str, int]:
     """
     Append headlines to the main headlines.json file.
     
@@ -170,8 +173,8 @@ def save_headlines(df, output_dir='data'):
     return json_path, len(df)
 
 
-def main():
-    """Main execution function."""
+def main() -> None:
+    """CLI entrypoint for RSS headline collection."""
     print("=" * 60)
     print("News Headline Collection Script")
     print("=" * 60)
@@ -183,20 +186,20 @@ def main():
     # Display sample
     print("\nSample headlines:")
     print("-" * 60)
-    for idx, row in headlines_df.head(10).iterrows():
+    for _, row in headlines_df.head(10).iterrows():
         print(f"{row['category'].upper():10} | {row['headline']}")
     print("-" * 60)
     
     # Save to file
     print()
-    json_path, new_count = save_headlines(headlines_df)
+    _, new_count = save_headlines(headlines_df)
     
     print()
     print("Collection complete!")
     print(f"New headlines collected: {new_count}")
     print(f"  Domestic: {len(headlines_df[headlines_df['category'] == 'domestic'])}")
     print(f"  World: {len(headlines_df[headlines_df['category'] == 'world'])}")
-    print(f"\nRun parse_headlines.py to parse new headlines.")
+    print("\nRun parse_headlines.py to parse new headlines.")
 
 
 if __name__ == '__main__':

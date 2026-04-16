@@ -83,10 +83,12 @@ PASSIVE_ADJECTIVAL_EXCEPTIONS = {"petrified"}
 
 
 def _non_punct_tokens(tokens: List[Dict]) -> List[Dict]:
+    """Return tokens excluding punctuation-only entries."""
     return [tok for tok in tokens if not tok.get("is_punct", False)]
 
 
 def _has_question_form(headline: str, tokens: List[Dict]) -> bool:
+    """Detect interrogative headline form via punctuation/start cues."""
     clean_tokens = _non_punct_tokens(tokens)
     if not clean_tokens:
         return False
@@ -99,6 +101,7 @@ def _has_question_form(headline: str, tokens: List[Dict]) -> bool:
 
 
 def _has_passive(headline: str, tokens: List[Dict]) -> bool:
+    """Detect passive constructions using dependency and lexical heuristics."""
     root_token = next((tok for tok in tokens if tok.get("dep") == "ROOT"), None)
     root_text = str(root_token.get("text", "")).lower() if root_token else ""
 
@@ -144,6 +147,7 @@ def _has_passive(headline: str, tokens: List[Dict]) -> bool:
 
 
 def _has_coordination(tokens: List[Dict], headline: str) -> bool:
+    """Detect coordinated multi-clause/list headline structures."""
     if ";" in headline:
         return True
     if headline.count(",") >= 2 and ", and " in headline.lower():
@@ -165,6 +169,7 @@ def _has_coordination(tokens: List[Dict], headline: str) -> bool:
 
 
 def _has_verb_clue(tokens: List[Dict], headline: str) -> bool:
+    """Infer finite-clause likelihood from curated lexical verb clues."""
     text_words = re.findall(r"[A-Za-z']+", headline.lower())
     if any(word in VERB_CLUES for word in text_words):
         return True
@@ -172,6 +177,7 @@ def _has_verb_clue(tokens: List[Dict], headline: str) -> bool:
 
 
 def _is_noun_phrase_fragment(tokens: List[Dict], root_pos: str, headline: str) -> bool:
+    """Detect nominal headline fragments without a finite clause."""
     clean_tokens = _non_punct_tokens(tokens)
     if not clean_tokens:
         return False
@@ -212,6 +218,7 @@ def _is_noun_phrase_fragment(tokens: List[Dict], root_pos: str, headline: str) -
 
 
 def _is_simple_clause(tokens: List[Dict], root_pos: str, headline: str) -> bool:
+    """Detect canonical finite subject-verb clause headlines."""
     dep_set = {tok.get("dep") for tok in tokens}
     has_subject = "nsubj" in dep_set or "csubj" in dep_set
     has_finite = any(tok.get("tag") in {"VBD", "VBP", "VBZ"} for tok in tokens)
@@ -228,6 +235,7 @@ def _is_simple_clause(tokens: List[Dict], root_pos: str, headline: str) -> bool:
 
 
 def classify_record(record: Dict) -> Tuple[str, List[str]]:
+    """Classify a single parsed headline record and return matched rules."""
     headline = record.get("headline", "")
     tokens = record.get("tokens", [])
     root_pos = record.get("root_pos", "") or ""
@@ -258,6 +266,7 @@ def classify_record(record: Dict) -> Tuple[str, List[str]]:
 
 
 def classify_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Apply structure classification to all rows in a dataframe."""
     records = df.to_dict(orient="records")
     labels = []
     rules = []
@@ -273,6 +282,7 @@ def classify_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def load_parsed_dataframe(path: str) -> pd.DataFrame:
+    """Load parsed headline JSON into a pandas dataframe."""
     if not os.path.exists(path):
         raise FileNotFoundError(f"Parsed file not found: {path}")
     with open(path, "r", encoding="utf-8") as handle:
@@ -281,6 +291,7 @@ def load_parsed_dataframe(path: str) -> pd.DataFrame:
 
 
 def main() -> None:
+    """CLI entrypoint for batch structure classification."""
     parser = argparse.ArgumentParser(description="Classify headline structures.")
     parser.add_argument(
         "--input",

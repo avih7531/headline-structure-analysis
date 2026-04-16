@@ -34,6 +34,7 @@ def _print_legend() -> None:
 
 
 def main() -> None:
+    """CLI entrypoint for keyboard-driven manual gold annotation."""
     parser = argparse.ArgumentParser(description="Manual annotation CLI for gold labels.")
     parser.add_argument("--input", default="data/gold_headlines_annotation.csv")
     parser.add_argument("--annotator", default="")

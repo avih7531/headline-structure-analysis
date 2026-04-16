@@ -18,11 +18,13 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def _run(cmd: list[str]) -> None:
+    """Execute one subprocess command and fail fast on errors."""
     print(f"\n$ {' '.join(cmd)}")
     subprocess.run(cmd, check=True)
 
 
 def _has_manual_gold_labels(path: str) -> bool:
+    """Return True when a gold file exists and has non-empty gold labels."""
     if not os.path.exists(path):
         return False
     df = pd.read_csv(path).fillna("")
@@ -32,6 +34,7 @@ def _has_manual_gold_labels(path: str) -> bool:
 
 
 def _annotation_rows(path: str) -> int:
+    """Count rows in an annotation file, returning 0 when absent."""
     if not os.path.exists(path):
         return 0
     df = pd.read_csv(path)
@@ -39,6 +42,7 @@ def _annotation_rows(path: str) -> int:
 
 
 def main() -> None:
+    """CLI entrypoint that orchestrates classification, splitting, and evaluation."""
     parser = argparse.ArgumentParser(description="Run full structure classifier pipeline.")
     parser.add_argument("--sample-size", type=int, default=200)
     parser.add_argument("--seed", type=int, default=42)

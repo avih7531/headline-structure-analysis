@@ -17,6 +17,7 @@ from headline_structure_classifier import LABELS, classify_dataframe
 
 
 def main() -> None:
+    """CLI entrypoint for incremental evaluation on currently labeled rows."""
     parser = argparse.ArgumentParser(description="Evaluate on currently labeled subset.")
     parser.add_argument("--parsed-input", default="data/headlines_parsed.json")
     parser.add_argument("--gold-input", default="data/gold_headlines_annotation.csv")

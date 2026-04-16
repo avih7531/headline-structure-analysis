@@ -20,6 +20,7 @@ from headline_structure_classifier import classify_record
 
 
 def _load_parsed(path: str) -> pd.DataFrame:
+    """Load parsed headline records from JSON into dataframe form."""
     if not os.path.exists(path):
         raise FileNotFoundError(f"Parsed data not found: {path}")
     with open(path, "r", encoding="utf-8") as handle:
@@ -28,6 +29,7 @@ def _load_parsed(path: str) -> pd.DataFrame:
 
 
 def _stratified_sample(df: pd.DataFrame, sample_size: int, seed: int) -> pd.DataFrame:
+    """Sample rows with light category balancing when category exists."""
     if sample_size >= len(df):
         return df.sample(frac=1.0, random_state=seed).reset_index(drop=True)
 
@@ -74,6 +76,7 @@ def _stratified_sample(df: pd.DataFrame, sample_size: int, seed: int) -> pd.Data
 
 
 def main() -> None:
+    """CLI entrypoint to build a manual annotation sheet with suggestions."""
     parser = argparse.ArgumentParser(description="Create a gold annotation sample.")
     parser.add_argument("--input", default="data/headlines_parsed.json")
     parser.add_argument("--output", default="data/gold_headlines_annotation.csv")

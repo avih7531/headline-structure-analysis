@@ -5,10 +5,10 @@ Parses headlines using spaCy to extract linguistic features.
 
 import spacy
 import pandas as pd
-import json
 import os
 import sys
 from collections import Counter
+from typing import Any, Dict
 
 
 def load_spacy_model():
@@ -43,7 +43,7 @@ def load_spacy_model():
             raise
 
 
-def parse_headline(headline_text, nlp):
+def parse_headline(headline_text: str, nlp) -> Dict[str, Any]:
     """
     Parse a single headline using spaCy.
     
@@ -112,7 +112,7 @@ def parse_headline(headline_text, nlp):
 
 
 
-def analyze_patterns(parsed_df):
+def analyze_patterns(parsed_df: pd.DataFrame) -> None:
     """
     Analyze and display common POS patterns.
     
@@ -127,7 +127,7 @@ def analyze_patterns(parsed_df):
     pattern_counts = Counter(parsed_df['pos_pattern'])
     
     print(f"\nTotal unique patterns: {len(pattern_counts)}")
-    print(f"\nTop 20 Most Common POS Patterns:")
+    print("\nTop 20 Most Common POS Patterns:")
     print("-" * 60)
     
     for pattern, count in pattern_counts.most_common(20):
@@ -146,7 +146,7 @@ def analyze_patterns(parsed_df):
             print(f"  • {ex}")
 
 
-def save_parsed_data(parsed_df, output_dir='data'):
+def save_parsed_data(parsed_df: pd.DataFrame, output_dir: str = 'data') -> None:
     """
     Save all parsed headlines.
     
@@ -160,8 +160,8 @@ def save_parsed_data(parsed_df, output_dir='data'):
     print(f"Total parsed headlines in dataset: {len(parsed_df)}")
 
 
-def main():
-    """Main execution function."""
+def main() -> None:
+    """CLI entrypoint that incrementally parses new headlines with spaCy."""
     print("=" * 60)
     print("News Headline Parser")
     print("=" * 60)
