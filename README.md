@@ -15,12 +15,12 @@ We ask: **Do news headlines follow repeatable structural templates, and can we m
 
 ## What the data says
 
-From `305` parsed headlines:
-- Average length: `13.6` tokens
-- Content-word ratio: `74.9%`
+From `391` parsed headlines:
+- Average length: `13.7` tokens
+- Content-word ratio: `73.2%`
 - Headlines with verbs: `92.1%`
-- Active voice: `94.4%` (passive `5.6%`)
-- Headlines with named entities: `96.1%` (avg `2.4`)
+- Active voice: `94.6%` (passive `5.4%`)
+- Headlines with named entities: `95.7%` (avg `2.4`)
 - Actor/entity-first openings: `81.6%`
 
 Interpretation: this corpus is mostly dense, actor-led **who-did-what** reporting.
@@ -42,31 +42,31 @@ Example signature: `simple_clause | actor_entity_first | straight_report`
 ## Manual annotation and evaluation
 
 Manual files:
-- `data/gold_headlines_full_manual.csv` (manual `gold_label` for all 305)
-- `data/gold_headlines_style_manual.csv` (manual `gold_rhetorical_mode` for all 305)
+- `data/gold_headlines_full_manual.csv` (manual `gold_label` for all 391)
+- `data/gold_headlines_style_manual.csv` (manual `gold_rhetorical_mode` for all 391)
 
 Split of manually annotated headlines:
-- Train: `181` (`59.3%`)
-- Dev: `59` (`19.3%`)
-- Held-out test: `65` (`21.3%`)
+- Train: `233` (`59.6%`)
+- Dev: `75` (`19.2%`)
+- Held-out test: `83` (`21.2%`)
 
 ### Structure model scores
-- All-labeled: accuracy `0.761`, macro F1 `0.594`
-- Dev macro F1 `0.530`
-- Held-out test macro F1 `0.649`
+- All-labeled: accuracy `0.795`, macro F1 `0.634`
+- Dev macro F1 `0.561`
+- Held-out test macro F1 `0.691`
 
 ### Style-dimension scores
-All-labeled (`n=305`):
+All-labeled (`n=391`):
 - `lead_frame`: accuracy `1.000`, macro F1 `1.000`
-- `agency_style`: accuracy `0.934`, macro F1 `0.483`
+- `agency_style`: accuracy `0.949`, macro F1 `0.678`
 - `density_band`: accuracy `1.000`, macro F1 `1.000`
-- `rhetorical_mode`: accuracy `0.879`, macro F1 `0.750`
+- `rhetorical_mode`: accuracy `0.905`, macro F1 `0.790`
 
-Held-out test (`n=65`):
+Held-out test (`n=83`):
 - `lead_frame`: accuracy `1.000`, macro F1 `1.000`
-- `agency_style`: accuracy `0.938`, macro F1 `0.651`
+- `agency_style`: accuracy `0.976`, macro F1 `0.922`
 - `density_band`: accuracy `1.000`, macro F1 `1.000`
-- `rhetorical_mode`: accuracy `0.923`, macro F1 `0.814`
+- `rhetorical_mode`: accuracy `0.904`, macro F1 `0.816`
 
 ![Model performance summary](images/model_performance_summary.png)
 

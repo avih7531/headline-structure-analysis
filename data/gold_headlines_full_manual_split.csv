@@ -1,237 +1,237 @@
 item_id,headline,category,source,collected_at,gold_label,annotator,batch,notes,split
 1,Charles 'Sonny' Burton is slated for execution. He hopes the Alabama governor will grant him clemency,domestic,CNN,2026-03-10 13:24:57.430,passive_clause,codex,B01,,train
-2,Alexander brothers convicted of sex trafficking in Manhattan federal court,domestic,NPR,2026-03-10 13:24:57.430,noun_phrase_fragment,codex,B01,,dev
-3,US Steps Up Iran Strikes as Oil Industry Faces More Upheaval,domestic,Yahoo Finance,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
-4,FBI hunts for clues after 2 men charged with lighting bombs at NYC protest,domestic,AP News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-5,US investigators begin search of Epstein's former ranch in New Mexico,domestic,Al Jazeera,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+2,Alexander brothers convicted of sex trafficking in Manhattan federal court,domestic,NPR,2026-03-10 13:24:57.430,noun_phrase_fragment,codex,B01,,test
+3,US Steps Up Iran Strikes as Oil Industry Faces More Upheaval,domestic,Yahoo Finance,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+4,FBI hunts for clues after 2 men charged with lighting bombs at NYC protest,domestic,AP News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+5,US investigators begin search of Epstein's former ranch in New Mexico,domestic,Al Jazeera,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 6,"Shots Fired at U.S. Consulate in Toronto, Police Say",domestic,The New York Times,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-7,Iran war's oil shock fuels GOP political anxiety,domestic,The Washington Post,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
-8,Growing Evidence U.S. Tomahawk Struck School In Iran,domestic,Forbes,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
+7,Iran war's oil shock fuels GOP political anxiety,domestic,The Washington Post,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+8,Growing Evidence U.S. Tomahawk Struck School In Iran,domestic,Forbes,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
 9,Georgia special election to replace MTG tests the power of Trump's endorsement,domestic,NPR,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 10,Trump's 'free flow of energy' vow fails to restart shipping in strait of Hormuz,domestic,The Guardian,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-11,Workers at OpenAI show support for Anthropic as the company says it could lose $5 billion in its feud with the Pentagon,domestic,Business Insider,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+11,Workers at OpenAI show support for Anthropic as the company says it could lose $5 billion in its feud with the Pentagon,domestic,Business Insider,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 12,Capitol agenda: Trump's Doral demands ripple through GOP,domestic,Politico,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 13,"Judge limits crowd control devices at Portland ICE building, says federal officers must identify themselves Oregon Public Broadcasting",domestic,OPB,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 14,"Trio named to replace Alina Habba as U.S. attorney is also serving illegally, judge says",domestic,The Washington Post,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-15,DOJ's Ed Martin faces ethics charges from disciplinary office over threatening letter to Georgetown University,domestic,CBS News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+15,DOJ's Ed Martin faces ethics charges from disciplinary office over threatening letter to Georgetown University,domestic,CBS News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 16,"Democrats' Reckless DHS Shutdown Hits Americans Hard as 100,000+ Workers Go Without Pay",domestic,The White House (.gov),2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-17,GOP lawmaker says he's leaving the Republican Party and will serve as an independent,domestic,AP News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+17,GOP lawmaker says he's leaving the Republican Party and will serve as an independent,domestic,AP News,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
 18,"Hawaii to see 'potentially life threatening weather' with torrential rain, flooding",domestic,San Francisco Chronicle,2026-03-10 13:24:57.430,noun_phrase_fragment,codex,B01,,train
-19,U.S. and Iran Predicted a Very Different War Than the One Now Being Waged,domestic,WSJ,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-20,Kentucky soldier stationed in Saudi Arabia is 7th U.S. military death in Iran war,domestic,PBS,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
-21,Wife Of Teacher Killed In High School Prank Wants Charges Dropped,domestic,HuffPost,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-22,Rand Paul eyes next week for Mullin DHS confirmation hearing,domestic,Politico,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
+19,U.S. and Iran Predicted a Very Different War Than the One Now Being Waged,domestic,WSJ,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+20,Kentucky soldier stationed in Saudi Arabia is 7th U.S. military death in Iran war,domestic,PBS,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+21,Wife Of Teacher Killed In High School Prank Wants Charges Dropped,domestic,HuffPost,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+22,Rand Paul eyes next week for Mullin DHS confirmation hearing,domestic,Politico,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
 23,Oakland police identify both people killed in weekend mass shooting,domestic,San Francisco Chronicle,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-24,"'No words spoken': Chinatown stabbing suspect has criminal record, prominent father",domestic,The San Francisco Standard,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
-25,"Democrats threaten more Iran war powers votes, call for Hegseth, Rubio to testify",domestic,CNBC,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
+24,"'No words spoken': Chinatown stabbing suspect has criminal record, prominent father",domestic,The San Francisco Standard,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
+25,"Democrats threaten more Iran war powers votes, call for Hegseth, Rubio to testify",domestic,CNBC,2026-03-10 13:24:57.430,simple_clause,codex,B01,,dev
 26,"PSP Honors Fallen Corporal Timothy O'Connor Jr., Killed During Traffic Stop",domestic,Commonwealth of Pennsylvania (.gov),2026-03-10 13:24:57.430,simple_clause,codex,B02,,train
-27,"""Disgusting sh*t"": Rep. Andy Ogles' anti Muslim post sparks furious internal backlash",domestic,Axios,2026-03-10 13:24:57.430,simple_clause,codex,B01,,test
+27,"""Disgusting sh*t"": Rep. Andy Ogles' anti Muslim post sparks furious internal backlash",domestic,Axios,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 28,Trump administration widens its 2020 election probe as it obtains records from Arizona,domestic,PBS,2026-03-10 13:24:57.430,simple_clause,codex,B01,,train
 29,Champion high school mariachi musician and family released from immigration detention after growing outcry,domestic,NBC News,2026-03-10 13:24:57.430,passive_clause,codex,B01,,test
 30,"Ohio State president resigns after 'inappropriate relationship,"" university announces",domestic,WHIO TV,2026-03-10 13:24:57.430,simple_clause,codex,B02,,train
 31,Thune: Talking filibuster 'more complicated and risky' than people realize,domestic,Politico,2026-03-10 13:24:57.430,other,codex,B02,,train
 32,"Capturing Iran's highly enriched uranium would require a large US ground force, sources say",domestic,CNN,2026-03-10 13:24:57.430,simple_clause,codex,B02,,train
-33,Two Supreme Court Justices Debate Handling of Trump Emergency Cases,domestic,The New York Times,2026-03-10 13:24:57.430,simple_clause,codex,B02,,dev
+33,Two Supreme Court Justices Debate Handling of Trump Emergency Cases,domestic,The New York Times,2026-03-10 13:24:57.430,simple_clause,codex,B02,,test
 34,"Early Iran strikes cost $5.6 billion in munitions, Pentagon estimates",domestic,The Washington Post,2026-03-10 13:24:57.431,simple_clause,codex,B01,,test
 35,"U.S. Military Action Against Iran: Over Half Of Voters Oppose It, 74% Oppose Sending Ground Troops Into Iran, Quinnipiac University National Poll Finds; Vast Majority Expects The Conflict To Last Months Or More",domestic,Quinnipiac University Poll,2026-03-10 13:24:57.431,coordination,codex,B02,,test
 36,Mississippi and Georgia Elections: What to Watch in Today's Primaries,domestic,The New York Times,2026-03-10 13:24:57.431,question_form,codex,B01,,train
-37,Trump Antisemitism Inquiry Demanding List of Jews at Penn Heads to Court,domestic,The New York Times,2026-03-10 13:24:57.431,simple_clause,codex,B02,,dev
-38,"Trump gives mixed signals on Iran war. And, how Epstein built ties to scientists",world,NPR,2026-03-10 13:24:57.736,coordination,codex,B01,,dev
+37,Trump Antisemitism Inquiry Demanding List of Jews at Penn Heads to Court,domestic,The New York Times,2026-03-10 13:24:57.431,simple_clause,codex,B02,,test
+38,"Trump gives mixed signals on Iran war. And, how Epstein built ties to scientists",world,NPR,2026-03-10 13:24:57.736,coordination,codex,B01,,train
 39,IDF hits Hezbollah command centers and finance body as rockets fly at northern Israel,world,The Times of Israel,2026-03-10 13:24:57.736,coordination,codex,B02,,dev
-40,Trump says he's 'not happy' with Iran's choice of new supreme leader,world,Fox News,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
+40,Trump says he's 'not happy' with Iran's choice of new supreme leader,world,Fox News,2026-03-10 13:24:57.736,simple_clause,codex,B02,,dev
 41,Australia grants asylum to 5 Iranian soccer players after Trump pressure,world,The Washington Post,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
 42,Iran war: What is happening on day 11 of US Israel attacks?,world,Al Jazeera,2026-03-10 13:24:57.736,question_form,codex,B01,,train
-43,"Who Is Balendra Shah, the Rapper Set to Be Nepal's Next Prime Minister?",world,The New York Times,2026-03-10 13:24:57.736,question_form,codex,B02,,test
-44,Top Iranian security official threatens Trump with death politico.eu,world,Unknown,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
+43,"Who Is Balendra Shah, the Rapper Set to Be Nepal's Next Prime Minister?",world,The New York Times,2026-03-10 13:24:57.736,question_form,codex,B02,,train
+44,Top Iranian security official threatens Trump with death politico.eu,world,Unknown,2026-03-10 13:24:57.736,simple_clause,codex,B02,,test
 45,Exclusive: U.S. dismissed Ukraine deal for anti Iran drone tech last year,world,Axios,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
 46,"Reducing Europe's nuclear energy sector was 'strategic mistake', EU chief says",world,Reuters,2026-03-10 13:24:57.736,simple_clause,codex,B01,,train
-47,North Korea denounces 'muscle flexing' US South Korean military exercises,world,Al Jazeera,2026-03-10 13:24:57.736,simple_clause,codex,B02,,test
-48,American Farmers Dealt New Blow as Trump's Iran War Escalates,world,Newsweek,2026-03-10 13:24:57.736,noun_phrase_fragment,codex,B02,,train
+47,North Korea denounces 'muscle flexing' US South Korean military exercises,world,Al Jazeera,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
+48,American Farmers Dealt New Blow as Trump's Iran War Escalates,world,Newsweek,2026-03-10 13:24:57.736,noun_phrase_fragment,codex,B02,,dev
 49,Bag containing weed and cash accidentally donated to a New Zealand charity shop,world,AP News,2026-03-10 13:24:57.736,noun_phrase_fragment,codex,B02,,train
-50,"Macron says France, allies preparing 'defensive' mission to reopen Strait of Hormuz",world,France 24,2026-03-10 13:24:57.736,simple_clause,codex,B02,,test
+50,"Macron says France, allies preparing 'defensive' mission to reopen Strait of Hormuz",world,France 24,2026-03-10 13:24:57.736,simple_clause,codex,B02,,train
 51,"In a 'Suicide War,' Hezbollah Pulls Israel Onto Its Own Turf in Lebanon",world,Haaretz,2026-03-10 13:24:57.736,simple_clause,codex,B03,,train
 52,Lebanon asks U.S. for direct peace talks with Israel to end fighting,world,Axios,2026-03-10 13:24:57.737,simple_clause,codex,B01,,train
 53,"Hundreds killed in Haiti drone strikes, including 60 civilians: Report",world,Al Jazeera,2026-03-10 13:24:57.737,noun_phrase_fragment,codex,B03,,train
 54,Iraq war's aftermath was a disaster for the US the Iran war is headed in the same direction,world,The Conversation,2026-03-10 13:24:57.737,coordination,codex,B01,,test
 55,U.S. orders more diplomats to leave Middle East,world,The Washington Post,2026-03-10 13:24:57.737,simple_clause,codex,B03,,test
 56,"US, Iran spar over status of Iranian warship sunk by submarine",world,Military Times,2026-03-10 13:24:57.737,simple_clause,codex,B03,,test
-57,Actuarial Warfare: How Seven Insurance Letters Closed the World's Most Critical Chokepoint and Why Markets Are Mispricing Duration by 300% Shanaka Anslem Perera,world,Substack,2026-03-10 13:24:57.737,other,codex,B03,,train
-58,Trump and Putin discuss end to Iran and Ukraine wars on call,world,Axios,2026-03-10 13:24:57.737,simple_clause,codex,B01,,dev
-59,Frightening footage shows Iranian 'cluster warhead' explode on Israel street in deadly attack,world,New York Post,2026-03-10 13:24:57.737,simple_clause,codex,B01,,train
-60,Rubble without a cause: What's America's Iran endgame?,world,Virgin.com,2026-03-10 13:24:57.737,question_form,codex,B03,,dev
+57,Actuarial Warfare: How Seven Insurance Letters Closed the World's Most Critical Chokepoint and Why Markets Are Mispricing Duration by 300% Shanaka Anslem Perera,world,Substack,2026-03-10 13:24:57.737,other,codex,B03,,dev
+58,Trump and Putin discuss end to Iran and Ukraine wars on call,world,Axios,2026-03-10 13:24:57.737,simple_clause,codex,B01,,test
+59,Frightening footage shows Iranian 'cluster warhead' explode on Israel street in deadly attack,world,New York Post,2026-03-10 13:24:57.737,simple_clause,codex,B01,,dev
+60,Rubble without a cause: What's America's Iran endgame?,world,Virgin.com,2026-03-10 13:24:57.737,question_form,codex,B03,,train
 61,"Iranian Kurdish fighters say they're ready to strike Tehran, waiting for opening",world,Fox News,2026-03-10 13:24:57.737,simple_clause,codex,B03,,train
 62,"Iran Update Evening Special Report: March 9, 2026 Institute for the Study of War",world,Unknown,2026-03-10 13:24:57.737,noun_phrase_fragment,codex,B03,,dev
-63,GPS jamming: The invisible battle in the Middle East,world,BBC,2026-03-10 13:24:57.737,noun_phrase_fragment,codex,B02,,train
+63,GPS jamming: The invisible battle in the Middle East,world,BBC,2026-03-10 13:24:57.737,noun_phrase_fragment,codex,B02,,dev
 64,Bahrain declares force majeure as Iran sets its only refinery ablaze,world,Euronews.com,2026-03-10 13:24:57.737,simple_clause,codex,B03,,train
-65,Top Iranian Security Official Warns Trump: 'Be Careful Not To Get Eliminated Yourself',world,HuffPost,2026-03-10 13:24:57.737,simple_clause,codex,B02,,dev
+65,Top Iranian Security Official Warns Trump: 'Be Careful Not To Get Eliminated Yourself',world,HuffPost,2026-03-10 13:24:57.737,simple_clause,codex,B02,,test
 66,"Greek operated tanker with Saudi oil cargo sails through Hormuz, ship tracking data shows",world,Reuters,2026-03-10 13:24:57.737,simple_clause,codex,B02,,train
 67,Iran signals Hormuz safe passage to countries expelling U.S. and Israeli diplomats investingLive,world,Unknown,2026-03-10 13:24:57.737,simple_clause,codex,B03,,train
 68,Civilians Killed by Strikes in Gulf States Are Almost All Migrant Workers,world,The New York Times,2026-03-10 13:24:57.737,simple_clause,codex,B03,,train
 69,The 'Fourth Successor': Iran's plan for a long war with the US and Israel,world,Al Jazeera,2026-03-10 13:24:57.737,noun_phrase_fragment,codex,B03,,train
 70,Supreme Court Justices Jackson and Kavanaugh clash over handling of Trump cases,domestic,NBC News,2026-03-10 13:25:46.473,simple_clause,codex,B02,,train
-71,"ICE officers confirmed at Bush Airport for second day, TSA waits grow to 4 hours",domestic,Houston Chronicle,2026-03-24 13:43:49.533,coordination,codex,B03,,train
-72,Chavez Revelations Force Teachers to Rethink How They Teach His Legacy,domestic,The New York Times,2026-03-24 13:43:49.533,simple_clause,codex,B03,,dev
-73,US quadruple amputee cornhole champion arrested on suspicion of murder,domestic,The Guardian,2026-03-24 13:43:49.533,passive_clause,codex,B02,,test
+71,"ICE officers confirmed at Bush Airport for second day, TSA waits grow to 4 hours",domestic,Houston Chronicle,2026-03-24 13:43:49.533,coordination,codex,B03,,dev
+72,Chavez Revelations Force Teachers to Rethink How They Teach His Legacy,domestic,The New York Times,2026-03-24 13:43:49.533,simple_clause,codex,B03,,test
+73,US quadruple amputee cornhole champion arrested on suspicion of murder,domestic,The Guardian,2026-03-24 13:43:49.533,passive_clause,codex,B02,,train
 74,Should You Need to Prove Citizenship to Vote? Ask Kansas.,domestic,The New York Times,2026-03-24 13:43:49.534,question_form,codex,B03,,train
-75,Trump says peace talks progressing as Iran officials deny negotiations,domestic,The Washington Post,2026-03-24 13:43:49.534,simple_clause,codex,B03,,train
-76,Gregory Bovino's Final Days: Harsh Words and Few Regrets,domestic,The New York Times,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B02,,test
+75,Trump says peace talks progressing as Iran officials deny negotiations,domestic,The Washington Post,2026-03-24 13:43:49.534,simple_clause,codex,B03,,dev
+76,Gregory Bovino's Final Days: Harsh Words and Few Regrets,domestic,The New York Times,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B02,,train
 77,Loud Explosions Reportedly Rock Tehran As Iran Warns Gulf Neighbors Of Energy Retaliation If Trump Attacks Power Grid: Dow Futures Trade Flat,domestic,Yahoo Finance,2026-03-24 13:43:49.534,simple_clause,codex,B02,,train
 78,TSA wait times stretch up to 6 hours as ICE and other Homeland Security agents deployed to 14 airports,domestic,CBS News,2026-03-24 13:43:49.534,simple_clause,codex,B02,,train
-79,Deal emerges to end Homeland Security budget standoff as TSA disruptions deepen,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+79,Deal emerges to end Homeland Security budget standoff as TSA disruptions deepen,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B04,,dev
 80,Here's what to know as the scope of damage from Hawaii's floods becomes clearer,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
-81,The old and weak president is losing because he's old and weak alternet.org,domestic,Unknown,2026-03-24 13:43:49.534,simple_clause,codex,B02,,test
-82,Stitt picks energy executive Alan Armstrong as next Oklahoma senator,domestic,Politico,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
-83,Supreme Court to scrutinize former policy of turning away asylum seekers at southern border,domestic,CNN,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B02,,train
-84,"Valero shuts Texas refinery after explosion, sources say",domestic,Reuters,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
+81,The old and weak president is losing because he's old and weak alternet.org,domestic,Unknown,2026-03-24 13:43:49.534,simple_clause,codex,B02,,dev
+82,Stitt picks energy executive Alan Armstrong as next Oklahoma senator,domestic,Politico,2026-03-24 13:43:49.534,simple_clause,codex,B04,,dev
+83,Supreme Court to scrutinize former policy of turning away asylum seekers at southern border,domestic,CNN,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B02,,test
+84,"Valero shuts Texas refinery after explosion, sources say",domestic,Reuters,2026-03-24 13:43:49.534,simple_clause,codex,B04,,dev
 85,Rubio testifies against friend accused of secretly working for Maduro,domestic,The Washington Post,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
 86,Taliban releases U.S. citizen Dennis Coyle over a year after he was detained,domestic,CBS News,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
-87,Philadelphia 'No Kings' protest 2026: What to know ahead of March 28 rally,domestic,WHYY,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B04,,train
-88,Trump casts Florida mail ballot as he pushes Congress to severely limit that voting option,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B02,,train
+87,Philadelphia 'No Kings' protest 2026: What to know ahead of March 28 rally,domestic,WHYY,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B04,,test
+88,Trump casts Florida mail ballot as he pushes Congress to severely limit that voting option,domestic,AP News,2026-03-24 13:43:49.534,simple_clause,codex,B02,,dev
 89,"Pentagon revises rules for journalists after lawsuit loss, raising press group's ire",domestic,Axios,2026-03-24 13:43:49.534,simple_clause,codex,B02,,train
-90,Markwayne Mullin confirmed as the next secretary of Homeland Security,domestic,NPR,2026-03-24 13:43:49.534,passive_clause,codex,B02,,dev
-91,DCCC launches geotargeted digital ad campaign hitting GOP for gas prices,domestic,CNBC,2026-03-24 13:43:49.534,simple_clause,codex,B02,,test
+90,Markwayne Mullin confirmed as the next secretary of Homeland Security,domestic,NPR,2026-03-24 13:43:49.534,passive_clause,codex,B02,,train
+91,DCCC launches geotargeted digital ad campaign hitting GOP for gas prices,domestic,CNBC,2026-03-24 13:43:49.534,simple_clause,codex,B02,,dev
 92,"Is the US talking to Iran's Mohammad Bagher Ghalibaf, and who is he?",domestic,Al Jazeera,2026-03-24 13:43:49.534,question_form,codex,B02,,train
 93,Kennedy Center renovation hit with lawsuit filed by preservationists,domestic,The Washington Post,2026-03-24 13:43:49.534,passive_clause,codex,B04,,train
-94,Judge appoints new US attorney in NJ after courts rejected Justice Department workarounds,domestic,CNN,2026-03-24 13:43:49.534,simple_clause,codex,B04,,dev
+94,Judge appoints new US attorney in NJ after courts rejected Justice Department workarounds,domestic,CNN,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
 95,Radio Host Tells Trump 'People Are Gonna Treat' His Death 'Like Mardi Gras',domestic,HuffPost,2026-03-24 13:43:49.534,simple_clause,codex,B02,,train
 96,Immigration arrest at SFO sparks concerns over potential breach of California sanctuary law,domestic,Mission Local,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
 97,"Gigantic 'Heat Dome' Baking The Whole US May Be Historic, Scientists Say",domestic,ScienceAlert,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
 98,Californians may need to mail ballots early as Supreme Court signals support for new election day deadline,domestic,Los Angeles Times,2026-03-24 13:43:49.534,simple_clause,codex,B04,,test
 99,"GOP sheriff seizes 650,000 ballots in challenge to California redistricting vote",domestic,Democracy Docket,2026-03-24 13:43:49.534,simple_clause,codex,B04,,train
 100,DHS funding talks in limbo after Trump calls on GOP to link bill to SAVE America Act,domestic,CBS News,2026-03-24 13:43:49.534,noun_phrase_fragment,codex,B04,,train
-101,Middle East crisis live: Pakistan reportedly favouring Vance for role in possible US Iran peace talks,world,The Guardian,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B05,,test
+101,Middle East crisis live: Pakistan reportedly favouring Vance for role in possible US Iran peace talks,world,The Guardian,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B05,,train
 102,Iran Charges Some Ships Hormuz Transit Fees for Safe Passage,world,Bloomberg.com,2026-03-24 13:43:49.879,simple_clause,codex,B02,,train
 103,"Airstrikes batter Iran as it attacks Israel and Gulf states, while diplomatic efforts gather pace",world,AP News,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
 104,Denmark holds early elections spurred by Trump's threats to take Greenland,world,NPR,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
 105,President Milei Is Rebranding the Atrocities of Argentina's Dictatorship,world,The New York Times,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
 106,"Colombian military plane crash kills at least 66, wounds dozens",world,Al Jazeera,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
-107,Smotrich says Litani River should be Israel's new border with Lebanon,world,The Times of Israel,2026-03-24 13:43:49.879,simple_clause,codex,B05,,dev
-108,Belgian authorities arrest two Ashab al Yamin linked minors for suspected antisemitic Antwerp arson,world,The Jerusalem Post,2026-03-24 13:43:49.879,simple_clause,codex,B02,,dev
-109,How Pakistan Is Trying to Reshape Its Image Abroad,world,The New York Times,2026-03-24 13:43:49.879,question_form,codex,B05,,train
+107,Smotrich says Litani River should be Israel's new border with Lebanon,world,The Times of Israel,2026-03-24 13:43:49.879,simple_clause,codex,B05,,test
+108,Belgian authorities arrest two Ashab al Yamin linked minors for suspected antisemitic Antwerp arson,world,The Jerusalem Post,2026-03-24 13:43:49.879,simple_clause,codex,B02,,test
+109,How Pakistan Is Trying to Reshape Its Image Abroad,world,The New York Times,2026-03-24 13:43:49.879,question_form,codex,B05,,dev
 110,"Palestine weekly wrap: West Bank attacks surge, Israel restricts Gaza aid",world,Al Jazeera,2026-03-24 13:43:49.879,coordination,codex,B02,,train
-111,How does the current global oil crisis compare with the 1973 oil embargo?,world,Al Jazeera,2026-03-24 13:43:49.879,question_form,codex,B05,,train
+111,How does the current global oil crisis compare with the 1973 oil embargo?,world,Al Jazeera,2026-03-24 13:43:49.879,question_form,codex,B05,,test
 112,"Epic river migrations of fish rapidly collapsing, UN report finds",world,The Guardian,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
-113,"At least five killed in massive wave of Russian strikes across Ukraine, officials say",world,BBC,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
-114,Kim vows to 'irreversibly' cement North Korea's nuclear status,world,NPR,2026-03-24 13:43:49.879,simple_clause,codex,B02,,train
-115,"Israel, Iran trade strikes as U.S. says it is pausing attacks on energy targets",world,The Washington Post,2026-03-24 13:43:49.879,simple_clause,codex,B05,,test
+113,"At least five killed in massive wave of Russian strikes across Ukraine, officials say",world,BBC,2026-03-24 13:43:49.879,simple_clause,codex,B05,,dev
+114,Kim vows to 'irreversibly' cement North Korea's nuclear status,world,NPR,2026-03-24 13:43:49.879,simple_clause,codex,B02,,dev
+115,"Israel, Iran trade strikes as U.S. says it is pausing attacks on energy targets",world,The Washington Post,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
 116,Hormuz fertiliser block will upend world's food production,world,Financial Times,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
-117,Giorgia Meloni's big electoral setback in Italy,world,The Economist,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B05,,dev
-118,"Report Shows Earth's Climate is Out of Balance, as Indicators Hit New Extremes",world,Inside Climate News,2026-03-24 13:43:49.879,simple_clause,codex,B05,,dev
+117,Giorgia Meloni's big electoral setback in Italy,world,The Economist,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B05,,test
+118,"Report Shows Earth's Climate is Out of Balance, as Indicators Hit New Extremes",world,Inside Climate News,2026-03-24 13:43:49.879,simple_clause,codex,B05,,test
 119,"Capitol agenda: Reconciliation is revived , Thune says",world,Politico,2026-03-24 13:43:49.879,simple_clause,codex,B02,,train
 120,Ukraine Spent Big to Shield Energy Industry From Drones. Is the Mideast Next?,world,The New York Times,2026-03-24 13:43:49.879,question_form,codex,B02,,test
 121,Iran's Fars report gas infrastructure hit as conflict broadens to energy assets investingLive,world,Unknown,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
 122,China protests to Japan about Tokyo embassy break in,world,Reuters,2026-03-24 13:43:49.879,simple_clause,codex,B05,,train
-123,President Donald Trump Just Made a Huge Announcement About the Iran War: Here's Why it Could Be a Major Turning Point for the Stock Market,world,Yahoo Finance,2026-03-24 13:43:49.879,simple_clause,codex,B02,,train
+123,President Donald Trump Just Made a Huge Announcement About the Iran War: Here's Why it Could Be a Major Turning Point for the Stock Market,world,Yahoo Finance,2026-03-24 13:43:49.879,simple_clause,codex,B02,,dev
 124,Jewish volunteer ambulances set on fire in London in apparent antisemitic attack,world,NBC News,2026-03-24 13:43:49.879,passive_clause,codex,B05,,train
-125,Lebanon declares Iranian ambassador persona non grata amid Israeli attacks,world,Al Jazeera,2026-03-24 13:43:49.879,simple_clause,codex,B05,,dev
+125,Lebanon declares Iranian ambassador persona non grata amid Israeli attacks,world,Al Jazeera,2026-03-24 13:43:49.879,simple_clause,codex,B05,,test
 126,French far right misses big targets but says it is on track for presidency politico.eu,world,Unknown,2026-03-24 13:43:49.879,coordination,codex,B06,,train
 127,"Trump threats, U.S. troop build up raise specter of battle for Hormuz",world,The Washington Post,2026-03-24 13:43:49.879,simple_clause,codex,B06,,train
 128,EU reacts to 'concerning' report of Hungarian leak to Russia,world,DW.com,2026-03-24 13:43:49.879,simple_clause,codex,B06,,train
-129,"IDF: Israeli Killed Near Lebanon Border Struck by IDF Fire, Not Hezbollah",world,Haaretz,2026-03-24 13:43:49.879,passive_clause,codex,B02,,train
+129,"IDF: Israeli Killed Near Lebanon Border Struck by IDF Fire, Not Hezbollah",world,Haaretz,2026-03-24 13:43:49.879,passive_clause,codex,B02,,dev
 130,Day 23 of U.S. and Israeli Attacks on Iran: More Than 15% of the Total Fatalities Are Children,world,Hrana,2026-03-24 13:43:49.879,simple_clause,codex,B02,,train
 131,2 Weeks of Iran War Released More Carbon Emissions Than 84 Countries Do Yearly,world,Truthout,2026-03-24 13:43:49.879,simple_clause,codex,B06,,train
-132,Retired Patriot Battalion Commander On The Challenges Of Defeating Iran's Barrages,world,The War Zone,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B06,,test
-133,German president slams Trump's Iran war as illegal politico.eu,world,Unknown,2026-03-24 13:43:49.879,simple_clause,codex,B06,,test
-134,Are we witnessing the death of expertise?,world,WBUR,2026-03-24 13:43:49.879,question_form,codex,B06,,test
+132,Retired Patriot Battalion Commander On The Challenges Of Defeating Iran's Barrages,world,The War Zone,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B06,,train
+133,German president slams Trump's Iran war as illegal politico.eu,world,Unknown,2026-03-24 13:43:49.879,simple_clause,codex,B06,,dev
+134,Are we witnessing the death of expertise?,world,WBUR,2026-03-24 13:43:49.879,question_form,codex,B06,,dev
 135,Cargo Spacecraft Suffers Glitch En Route to ISS newser.com,world,Unknown,2026-03-24 13:43:49.879,simple_clause,codex,B06,,train
 136,"Saudis and UAE Take Steps Toward Joining Iran War, WSJ Reports",world,Bloomberg.com,2026-03-24 13:43:49.879,simple_clause,codex,B03,,train
-137,Europe's far right backs Orbán as Hungary's coming election puts his brand to the test,world,AP News,2026-03-24 13:43:49.879,simple_clause,codex,B03,,dev
+137,Europe's far right backs Orbán as Hungary's coming election puts his brand to the test,world,AP News,2026-03-24 13:43:49.879,simple_clause,codex,B03,,test
 138,"Ukrainian drones killing Russian troops faster than Moscow can replace them, drone commander says",world,The Kyiv Independent,2026-03-24 13:43:49.879,simple_clause,codex,B03,,train
 139,Thousands of Marines to Arrive in Centcom the Same Day as Trump's Iran Deadline,world,WSJ,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B03,,train
-140,"Pit viper, flying snake and geckos among new species uncovered in Cambodian caves",world,CNN,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B06,,train
+140,"Pit viper, flying snake and geckos among new species uncovered in Cambodian caves",world,CNN,2026-03-24 13:43:49.879,noun_phrase_fragment,codex,B06,,dev
 141,Study: Birthright travelers look different after Oct. 7 but the effect remains the same,world,The Times of Israel,2026-03-24 13:43:49.879,coordination,codex,B06,,test
-142,'Good decision.' Le Pen supports Hungary blocking EU's Ukraine loan politico.eu,world,Unknown,2026-03-24 13:43:49.880,simple_clause,codex,B06,,dev
-143,Putin is the real winner in Trump's Iran war as it puts Russian oil back on the map,world,Fortune,2026-03-24 13:43:49.880,simple_clause,codex,B06,,dev
+142,'Good decision.' Le Pen supports Hungary blocking EU's Ukraine loan politico.eu,world,Unknown,2026-03-24 13:43:49.880,simple_clause,codex,B06,,train
+143,Putin is the real winner in Trump's Iran war as it puts Russian oil back on the map,world,Fortune,2026-03-24 13:43:49.880,simple_clause,codex,B06,,train
 144,Ukraine hits major Russian oil port near Finland,world,France 24,2026-03-24 13:43:49.880,simple_clause,codex,B06,,train
 145,Strikes hit Tehran safe houses as checkpoints spread nationwide ایران اینترنشنال,world,Unknown,2026-03-24 13:43:49.880,simple_clause,codex,B03,,train
-146,Israel launches new strikes on Tehran as Trump pauses Iran energy attacks,world,The Guardian,2026-03-24 13:43:49.880,simple_clause,codex,B03,,test
-147,"Iran attacks in Strait of Hormuz are 'economic terrorism against every nation,' UAE oil CEO says",world,CNBC,2026-03-24 13:43:49.880,simple_clause,codex,B03,,test
-148,"Russia's 'meat assaults' in Ukraine cost it over 6,000 troops in four days, Kyiv says politico.eu",world,Unknown,2026-03-24 13:43:49.880,simple_clause,codex,B06,,dev
+146,Israel launches new strikes on Tehran as Trump pauses Iran energy attacks,world,The Guardian,2026-03-24 13:43:49.880,simple_clause,codex,B03,,train
+147,"Iran attacks in Strait of Hormuz are 'economic terrorism against every nation,' UAE oil CEO says",world,CNBC,2026-03-24 13:43:49.880,simple_clause,codex,B03,,dev
+148,"Russia's 'meat assaults' in Ukraine cost it over 6,000 troops in four days, Kyiv says politico.eu",world,Unknown,2026-03-24 13:43:49.880,simple_clause,codex,B06,,train
 149,Pope Leo says aerial military strikes should be banned,world,Reuters,2026-03-24 13:43:49.880,passive_clause,codex,B06,,test
 150,Trump's new red line could set the Iran war on a fateful course,world,Yahoo News Singapore,2026-03-24 13:43:49.880,simple_clause,codex,B06,,train
-151,Iran War: Five Things to Know,world,WSJ,2026-03-24 13:43:49.880,noun_phrase_fragment,codex,B03,,train
-152,Thousands of 'No Kings' protests planned in opposition to Trump amid Iran war,domestic,Fox News,2026-03-29 03:34:32.330,noun_phrase_fragment,codex,B03,,test
-153,Bills to pay FAA and TSA workers during shutdowns get introduced but keep stalling in Congress,domestic,AP News,2026-03-29 03:34:32.330,passive_clause,codex,B07,,train
+151,Iran War: Five Things to Know,world,WSJ,2026-03-24 13:43:49.880,noun_phrase_fragment,codex,B03,,test
+152,Thousands of 'No Kings' protests planned in opposition to Trump amid Iran war,domestic,Fox News,2026-03-29 03:34:32.330,noun_phrase_fragment,codex,B03,,train
+153,Bills to pay FAA and TSA workers during shutdowns get introduced but keep stalling in Congress,domestic,AP News,2026-03-29 03:34:32.330,passive_clause,codex,B07,,test
 154,"California attack survivors, who were not believed by police, get the last word against kidnapper",domestic,CBS News,2026-03-29 03:34:32.330,simple_clause,codex,B03,,train
-155,Pentagon prepares for weeks of ground operations in Iran,domestic,The Washington Post,2026-03-29 03:34:32.330,simple_clause,codex,B03,,dev
+155,Pentagon prepares for weeks of ground operations in Iran,domestic,The Washington Post,2026-03-29 03:34:32.330,simple_clause,codex,B03,,train
 156,Missing aid boats land in Cuba after being located by Mexican navy nbcnews.com,domestic,Unknown,2026-03-29 03:34:32.330,simple_clause,codex,B07,,train
 157,Record Number of T.S.A. Employees Called Out on Friday,domestic,The New York Times,2026-03-29 03:34:32.330,noun_phrase_fragment,codex,B07,,train
-158,US House passes stopgap DHS funding bill after Republicans reject Senate deal theguardian.com,domestic,Unknown,2026-03-29 03:34:32.330,simple_clause,codex,B07,,test
-159,Vice President JD Vance tops CPAC's straw poll to be US president in 2028,domestic,Al Jazeera,2026-03-29 03:34:32.330,simple_clause,codex,B07,,test
+158,US House passes stopgap DHS funding bill after Republicans reject Senate deal theguardian.com,domestic,Unknown,2026-03-29 03:34:32.330,simple_clause,codex,B07,,dev
+159,Vice President JD Vance tops CPAC's straw poll to be US president in 2028,domestic,Al Jazeera,2026-03-29 03:34:32.330,simple_clause,codex,B07,,train
 160,"Navy shipyard workers approve a contract deal with Bath Iron Works, ending weeklong strike",domestic,AP News,2026-03-29 03:34:32.330,simple_clause,codex,B07,,train
 161,"At CPAC, many Republicans stand by Trump on Iran. But they're divided on how the war could end.",domestic,CBS News,2026-03-29 03:34:32.330,coordination,codex,B03,,test
-162,"USS Tripoli Operating in CENTCOM, USS Gerald R. Ford in Croatia",domestic,USNI News,2026-03-29 03:34:32.330,coordination,codex,B07,,train
-163,Live Updates: Hundreds protest outside ICE building in Portland Oregon Public Broadcasting,domestic,OPB,2026-03-29 03:34:32.331,simple_clause,codex,B03,,dev
-164,All clear given at State Capitol after bomb threat scare,domestic,Hawaii News Now,2026-03-29 03:34:32.331,passive_clause,codex,B03,,test
+162,"USS Tripoli Operating in CENTCOM, USS Gerald R. Ford in Croatia",domestic,USNI News,2026-03-29 03:34:32.330,coordination,codex,B07,,dev
+163,Live Updates: Hundreds protest outside ICE building in Portland Oregon Public Broadcasting,domestic,OPB,2026-03-29 03:34:32.331,simple_clause,codex,B03,,test
+164,All clear given at State Capitol after bomb threat scare,domestic,Hawaii News Now,2026-03-29 03:34:32.331,passive_clause,codex,B03,,train
 165,ICE at Airports Trains Us to Accept Being Terrorized in Our Daily Lives,domestic,The Intercept,2026-03-29 03:34:32.331,simple_clause,codex,B07,,dev
 166,"'Premature': Anthropic still in trouble despite court win, lawyers and lobbyists say",domestic,Politico,2026-03-29 03:34:32.331,other,codex,B07,,train
 167,F.B.I. Said to Dig Up Old Investigative Files on Democratic Lawmaker,domestic,The New York Times,2026-03-29 03:34:32.331,noun_phrase_fragment,codex,B07,,train
-168,How successful has Trump been in his now one month old war in Iran?,domestic,Euronews.com,2026-03-29 03:34:32.331,question_form,codex,B07,,test
+168,How successful has Trump been in his now one month old war in Iran?,domestic,Euronews.com,2026-03-29 03:34:32.331,question_form,codex,B07,,train
 169,Reza Pahlavi pledges to 'make Iran great again' at 2026 CPAC conference,domestic,Al Jazeera,2026-03-29 03:34:32.331,simple_clause,codex,B07,,train
 170,CPAC activists embrace Paxton as MAGA's choice for Senate over Cornyn,domestic,AP News,2026-03-29 03:34:32.331,simple_clause,codex,B07,,train
-171,U.S. Tomahawks are being used in Iran war faster than stockpile is being refilled,domestic,CBS News,2026-03-29 03:34:32.331,passive_clause,codex,B03,,train
-172,FBI confirms hackers targeted Kash Patel's personal emails,domestic,Politico,2026-03-29 03:34:32.331,simple_clause,codex,B07,,train
-173,Trump just ended a 165 year tradition by signing your dollar bills here's why no president has ever done it before,domestic,Yahoo Finance,2026-03-29 03:34:32.331,simple_clause,codex,B07,,dev
-174,Trump wants a deadlocked Congress to move on AI. Frustrated states say they already have,domestic,NPR,2026-03-29 03:34:32.331,simple_clause,codex,B07,,test
+171,U.S. Tomahawks are being used in Iran war faster than stockpile is being refilled,domestic,CBS News,2026-03-29 03:34:32.331,passive_clause,codex,B03,,test
+172,FBI confirms hackers targeted Kash Patel's personal emails,domestic,Politico,2026-03-29 03:34:32.331,simple_clause,codex,B07,,dev
+173,Trump just ended a 165 year tradition by signing your dollar bills here's why no president has ever done it before,domestic,Yahoo Finance,2026-03-29 03:34:32.331,simple_clause,codex,B07,,test
+174,Trump wants a deadlocked Congress to move on AI. Frustrated states say they already have,domestic,NPR,2026-03-29 03:34:32.331,simple_clause,codex,B07,,train
 175,Iran War Live Updates: Tehran Hit by Heavy Airstrikes as U.S. Marines Arrive in Middle East,world,The New York Times,2026-03-29 03:34:32.716,passive_clause,codex,B03,,train
 176,Yemen's Houthis launch ballistic missile at Israel as Middle East conflict escalates,world,France 24,2026-03-29 03:34:32.716,simple_clause,codex,B03,,train
 177,How Pakistan Wooed Trump and Styled Itself as a Peace Broker in Iran Conflict,world,WSJ,2026-03-29 03:34:32.716,coordination,codex,B03,,train
-178,"European allies say Russia is helping Iran more than the U.S. has acknowledged, sources say",world,CBS News,2026-03-29 03:34:32.716,simple_clause,codex,B08,,dev
+178,"European allies say Russia is helping Iran more than the U.S. has acknowledged, sources say",world,CBS News,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
 179,Ukraine war briefing: Zelenskyy drums up defence agreements with Gulf states on countering missiles and drones theguardian.com,world,Unknown,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
-180,Iranian attack on Saudi base injures U.S. troops as more American forces arrive in the Middle East pbs.org,world,Unknown,2026-03-29 03:34:32.716,simple_clause,codex,B03,,train
+180,Iranian attack on Saudi base injures U.S. troops as more American forces arrive in the Middle East pbs.org,world,Unknown,2026-03-29 03:34:32.716,simple_clause,codex,B03,,dev
 181,Nepal's former prime minister KP Sharma Oli arrested over deaths during Gen Z protests,world,CNN,2026-03-29 03:34:32.716,passive_clause,codex,B08,,train
 182,"Israel kills 3 journalists in Lebanon, including reporter for Hezbollah run broadcaster",world,CNN,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
 183,Maersk halts operations at Oman's Salalah port due to security incident,world,Reuters,2026-03-29 03:34:32.716,simple_clause,codex,B03,,train
-184,IDF says almost done targeting 'critical' Iranian military sites as waves of strikes hit Tehran,world,The Times of Israel,2026-03-29 03:34:32.716,simple_clause,codex,B03,,train
+184,IDF says almost done targeting 'critical' Iranian military sites as waves of strikes hit Tehran,world,The Times of Israel,2026-03-29 03:34:32.716,simple_clause,codex,B03,,dev
 185,"The ripple effect of the Iran war on struggling U.S. farmers: ""It couldn't have come at a worst time""",world,CBS News,2026-03-29 03:34:32.716,other,codex,B03,,train
-186,Pope Leo's message to the rich in his first foreign trip of the year,world,CNN,2026-03-29 03:34:32.716,noun_phrase_fragment,codex,B08,,train
-187,"Iran Allows 20 More Ships To Pass Through Strait Of Hormuz, Pakistan Says: 'Meaningful Step Toward Peace'",world,Forbes,2026-03-29 03:34:32.716,simple_clause,codex,B03,,dev
-188,Several hurt as Iranian missile hits Jerusalem area town; Hezbollah continues to strike north,world,The Times of Israel,2026-03-29 03:34:32.716,coordination,codex,B03,,dev
-189,Paris: Suspected bomb attack outside Bank of America foiled dw.com,world,Unknown,2026-03-29 03:34:32.716,passive_clause,codex,B03,,dev
+186,Pope Leo's message to the rich in his first foreign trip of the year,world,CNN,2026-03-29 03:34:32.716,noun_phrase_fragment,codex,B08,,test
+187,"Iran Allows 20 More Ships To Pass Through Strait Of Hormuz, Pakistan Says: 'Meaningful Step Toward Peace'",world,Forbes,2026-03-29 03:34:32.716,simple_clause,codex,B03,,test
+188,Several hurt as Iranian missile hits Jerusalem area town; Hezbollah continues to strike north,world,The Times of Israel,2026-03-29 03:34:32.716,coordination,codex,B03,,train
+189,Paris: Suspected bomb attack outside Bank of America foiled dw.com,world,Unknown,2026-03-29 03:34:32.716,passive_clause,codex,B03,,train
 190,Ten lessons from the first month of the Iran war,world,Atlantic Council,2026-03-29 03:34:32.716,noun_phrase_fragment,codex,B04,,dev
-191,Thousands gather for anti far right march in London,world,BBC,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
-192,Watch the Earth split in real time: Stunning footage captures a 2.5 meter fault slip in seconds,world,ScienceDaily,2026-03-29 03:34:32.716,other,codex,B08,,dev
-193,Indonesia starts implementing social media restrictions for children under 16,world,AP News,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
-194,"Rubio says Iran war to last weeks, no US ground troops needed",world,France 24,2026-03-29 03:34:32.716,simple_clause,codex,B08,,dev
-195,Emirates Global Aluminium Says Smelter Site Damaged in Attack,world,Bloomberg.com,2026-03-29 03:34:32.716,simple_clause,codex,B08,,dev
-196,Orbán loses his cool as crowd boos him over Ukraine,world,TVP World,2026-03-29 03:34:32.716,simple_clause,codex,B04,,test
-197,Iran: Is another 1970s‑style oil crisis looming? dw.com,world,Unknown,2026-03-29 03:34:32.716,question_form,codex,B08,,dev
+191,Thousands gather for anti far right march in London,world,BBC,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
+192,Watch the Earth split in real time: Stunning footage captures a 2.5 meter fault slip in seconds,world,ScienceDaily,2026-03-29 03:34:32.716,other,codex,B08,,test
+193,Indonesia starts implementing social media restrictions for children under 16,world,AP News,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
+194,"Rubio says Iran war to last weeks, no US ground troops needed",world,France 24,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
+195,Emirates Global Aluminium Says Smelter Site Damaged in Attack,world,Bloomberg.com,2026-03-29 03:34:32.716,simple_clause,codex,B08,,test
+196,Orbán loses his cool as crowd boos him over Ukraine,world,TVP World,2026-03-29 03:34:32.716,simple_clause,codex,B04,,train
+197,Iran: Is another 1970s‑style oil crisis looming? dw.com,world,Unknown,2026-03-29 03:34:32.716,question_form,codex,B08,,train
 198,Iran says nuclear sites hit after Israel warns attacks 'will escalate',world,Euronews.com,2026-03-29 03:34:32.716,simple_clause,codex,B08,,train
 199,"Iran's response to U.S. peace proposal expected Friday, sources say",world,CBS News,2026-03-29 03:34:32.716,passive_clause,codex,B08,,train
-200,Ukraine Says It Attacked Russia's Yaroslavl Refinery,world,Bloomberg.com,2026-03-29 03:34:32.717,simple_clause,codex,B08,,train
+200,Ukraine Says It Attacked Russia's Yaroslavl Refinery,world,Bloomberg.com,2026-03-29 03:34:32.717,simple_clause,codex,B08,,dev
 201,Media association condemns 'violent assault' on CNN crew by Israeli soldiers theguardian.com,world,Unknown,2026-03-29 03:34:32.717,simple_clause,codex,B09,,train
 202,Dogs Were Humans' Best Friends Far Earlier Than Anyone Believed,world,Indian Defence Review,2026-03-29 03:34:32.717,simple_clause,codex,B09,,train
 203,Noelia Castillo Ramos Encouraged by Dad to Walk in Heartbreaking Video Before Death,world,TMZ,2026-03-29 03:34:32.717,passive_clause,codex,B04,,train
-204,"Iran's Hormuz toll booth points toward an L shaped price plateau, not the V shaped recovery traders want",world,Fortune,2026-03-29 03:34:32.717,simple_clause,codex,B09,,dev
-205,Iran Moves to Assert Control Over Strait While Trading Strikes With Israel,world,The New York Times,2026-03-29 03:34:32.717,simple_clause,codex,B09,,train
+204,"Iran's Hormuz toll booth points toward an L shaped price plateau, not the V shaped recovery traders want",world,Fortune,2026-03-29 03:34:32.717,simple_clause,codex,B09,,test
+205,Iran Moves to Assert Control Over Strait While Trading Strikes With Israel,world,The New York Times,2026-03-29 03:34:32.717,simple_clause,codex,B09,,dev
 206,A Female Royal Navy Sailor Found Guilty of Repeated Sexual Assaults on Warship Crew,world,Yahoo,2026-03-29 03:34:32.717,noun_phrase_fragment,codex,B09,,train
 207,Justice Sonia Sotomayor issues unusual apology over 'hurtful' remarks about colleague Brett Kavanaugh,domestic,NBC News,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
-208,"Husband of Michigan woman missing in the Bahamas leaves country, lawyer says",domestic,NBC News,2026-04-15 21:24:20.716,simple_clause,codex,B09,,train
+208,"Husband of Michigan woman missing in the Bahamas leaves country, lawyer says",domestic,NBC News,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
 209,Bernie Sanders pushes resolutions to block US weapons sales to Israel,domestic,The Guardian,2026-04-15 21:24:20.716,simple_clause,codex,B04,,train
 210,Republicans worry White House 'nonsense' is hurting midterm prospects,domestic,Politico,2026-04-15 21:24:20.716,simple_clause,codex,B09,,dev
 211,Newly released surveillance video shows Oklahoma high school principal tackling gunman,domestic,CBS News,2026-04-15 21:24:20.716,simple_clause,codex,B09,,dev
 212,"Scoop: Trump discussed ""Jesus"" meme with Bill Pulte before posting it, sources say",domestic,Axios,2026-04-15 21:24:20.716,simple_clause,codex,B09,,train
 213,Inside the sudden downfall of Eric Swalwell,domestic,CNN,2026-04-15 21:24:20.716,noun_phrase_fragment,codex,B04,,dev
-214,Hormuz traffic remains at a trickle as US blockade of Iranian ports appears to hold,domestic,The Times of Israel,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
+214,Hormuz traffic remains at a trickle as US blockade of Iranian ports appears to hold,domestic,The Times of Israel,2026-04-15 21:24:20.716,simple_clause,codex,B09,,train
 215,Popes have spoken out on politics before. But with Trump and Pope Leo it's different,domestic,NPR,2026-04-15 21:24:20.716,coordination,codex,B09,,train
-216,Trump says war in Iran 'can be over very soon' amid uncertain peace negotiations,domestic,Politico,2026-04-15 21:24:20.716,simple_clause,codex,B09,,dev
-217,New York Gov. Kathy Hochul pushes for NYC pied à terre tax to close spending deficit,domestic,ABC7 New York,2026-04-15 21:24:20.716,simple_clause,codex,B09,,test
-218,Grisly New Addition to Search for American Missing in Bahamas,domestic,The Daily Beast,2026-04-15 21:24:20.716,noun_phrase_fragment,codex,B09,,dev
+216,Trump says war in Iran 'can be over very soon' amid uncertain peace negotiations,domestic,Politico,2026-04-15 21:24:20.716,simple_clause,codex,B09,,train
+217,New York Gov. Kathy Hochul pushes for NYC pied à terre tax to close spending deficit,domestic,ABC7 New York,2026-04-15 21:24:20.716,simple_clause,codex,B09,,dev
+218,Grisly New Addition to Search for American Missing in Bahamas,domestic,The Daily Beast,2026-04-15 21:24:20.716,noun_phrase_fragment,codex,B09,,train
 219,Omaha Police Fatally Shoot Woman Who Cut 3 Year Old Boy With Knife at Walmart,domestic,The New York Times,2026-04-15 21:24:20.716,simple_clause,codex,B04,,train
 220,Guard: More could have been saved at Camp Mystic if more adults helped evacuate San Antonio Express,domestic,News,2026-04-15 21:24:20.716,passive_clause,codex,B09,,train
 221,Economic Fury Targets Illicit Oil Smuggling Network Run by Iranian Regime Elite U.S. Department of the Treasury (.gov),domestic,Unknown,2026-04-15 21:24:20.717,simple_clause,codex,B09,,train
 222,House Democrats file articles of impeachment against Hegseth,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B09,,train
-223,"Republicans, White House considering warrant related amendment in high stakes FISA talks",domestic,Politico,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B04,,test
-224,"DeSantis delays Florida's redistricting session and tacks on AI, vaccines",domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
-225,Raleigh Water Activates Stage 1 Water Restrictions as Drought Conditions Continue,domestic,RaleighNC.gov,2026-04-15 21:24:20.717,simple_clause,codex,B09,,train
+223,"Republicans, White House considering warrant related amendment in high stakes FISA talks",domestic,Politico,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B04,,train
+224,"DeSantis delays Florida's redistricting session and tacks on AI, vaccines",domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
+225,Raleigh Water Activates Stage 1 Water Restrictions as Drought Conditions Continue,domestic,RaleighNC.gov,2026-04-15 21:24:20.717,simple_clause,codex,B09,,dev
 226,House defies Trump on immigration with move to shield Haitians,domestic,The Washington Post,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
-227,'SantaCon' organizer accused of pocketing more than $1 million earmarked to charities,domestic,NBC News,2026-04-15 21:24:20.717,passive_clause,codex,B10,,train
-228,It's Tax Day. Treasury says 53 million filers used new Trump tax breaks before the deadline,domestic,AP News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,dev
-229,Super Typhoon Sinlaku pounds remote U.S. islands in the Pacific Ocean,domestic,NPR,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
+227,'SantaCon' organizer accused of pocketing more than $1 million earmarked to charities,domestic,NBC News,2026-04-15 21:24:20.717,passive_clause,codex,B10,,test
+228,It's Tax Day. Treasury says 53 million filers used new Trump tax breaks before the deadline,domestic,AP News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
+229,Super Typhoon Sinlaku pounds remote U.S. islands in the Pacific Ocean,domestic,NPR,2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
 230,AIDS activists disrupt Vought's testimony on Trump's budget,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
-231,Citizen Naturalized Under Joe Biden Brutally Murders DHS Employee Lauren Bullis,domestic,Homeland Security (.gov),2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
+231,Citizen Naturalized Under Joe Biden Brutally Murders DHS Employee Lauren Bullis,domestic,Homeland Security (.gov),2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
 232,Trump says China has agreed not to send weapons to Iran,domestic,The Washington Post,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
-233,'Less people and better results:' IRS CEO says filing season goals met after 27% staffing cut,domestic,Federal News Network,2026-04-15 21:24:20.717,simple_clause,codex,B10,,dev
+233,'Less people and better results:' IRS CEO says filing season goals met after 27% staffing cut,domestic,Federal News Network,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
 234,Erika Kirk cancels Turning Point USA appearance with JD Vance after 'very serious threats',domestic,AL.com,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
 235,"All of Michigan under Flood Watch as roads washed out, dams fail, people evacuated",domestic,MLive.com,2026-04-15 21:24:20.717,coordination,codex,B10,,train
 236,"Severe weather causes damage to Ann Arbor buildings, power outages, flooded roads",domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
@@ -239,68 +239,154 @@ item_id,headline,category,source,collected_at,gold_label,annotator,batch,notes,s
 238,"As Trump threatened to fire Powell, federal prosecutors showed up unannounced at the Federal Reserve building",domestic,PBS,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
 239,Trump administration moves to erase Jan. 6 riot convictions for seditious conspiracy,domestic,NPR,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
 240,Key Trump lawyer who tried to overturn 2020 election permanently disbarred,domestic,Democracy Docket,2026-04-15 21:24:20.717,passive_clause,codex,B10,,dev
-241,"Billionaires, dark money fuel questions ahead of 2026 midterms",domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,dev
+241,"Billionaires, dark money fuel questions ahead of 2026 midterms",domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
 242,"Nearly 60% of U.S. farmers say their finances are getting worse as fertilizer, fuel costs rise: Survey",domestic,CNBC,2026-04-15 21:24:20.717,simple_clause,codex,B10,,test
 243,"Trump Breaks With Meloni, Italy's Leader, Amid Dispute Over Pope and Iran",domestic,The New York Times,2026-04-15 21:24:20.717,simple_clause,codex,B10,,dev
-244,Videos Show Officers Beating Man During Arrest in Brooklyn,domestic,The New York Times,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
-245,Roy Cooper far outraises Michael Whatley in North Carolina Senate race,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+244,Videos Show Officers Beating Man During Arrest in Brooklyn,domestic,The New York Times,2026-04-15 21:24:20.717,simple_clause,codex,B04,,dev
+245,Roy Cooper far outraises Michael Whatley in North Carolina Senate race,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
 246,"In group chats and meetings, Republicans are privately petrified the Iran war could cost them the midterms",domestic,NBC News,2026-04-15 21:24:20.717,simple_clause,codex,B10,,dev
 247,White House budget chief Russell Vought won't estimate Iran war cost in testimony,domestic,CNBC,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
 248,"Syracuse University Chancellor Kent Syverud diagnosed with brain cancer, steps down",domestic,Syracuse.com,2026-04-15 21:24:20.717,simple_clause,codex,B10,,train
-249,Capitol agenda: Cory Mills under fire but not going anywhere,domestic,Politico,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B10,,dev
-250,Houston in showdown with state over immigration ordinance,domestic,The Texas Tribune,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B10,,test
+249,Capitol agenda: Cory Mills under fire but not going anywhere,domestic,Politico,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B10,,test
+250,Houston in showdown with state over immigration ordinance,domestic,The Texas Tribune,2026-04-15 21:24:20.717,noun_phrase_fragment,codex,B10,,train
 251,The Senate Is 'Prepared' To Confirm A Supreme Court Justice And Ted Cruz Might Be The Pick,domestic,Above the Law,2026-04-15 21:24:20.717,coordination,codex,B11,,train
-252,Tax Day arrives with Republicans struggling to sell their cuts,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
+252,Tax Day arrives with Republicans struggling to sell their cuts,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B11,,dev
 253,"DNI Gabbard targets whistleblower, ex inspector general in criminal referral",domestic,MS NOW,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
 254,Hedge funds think they can make a killing on Trump tariff refunds politico.eu,domestic,Unknown,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
-255,Cities scramble to comply with or fight major state housing law,domestic,CalMatters,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
-256,WATCH LIVE: Severe storms hit parts of Kansas City area on Wednesday evening,domestic,KCTV,2026-04-15 21:24:20.717,simple_clause,codex,B11,,dev
-257,GOP leaders struggle to keep $75B immigration plan narrow,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
-258,Senate rejects resolution to block Trump from striking Iran,domestic,The Washington Post,2026-04-15 21:24:20.717,simple_clause,codex,B11,,dev
+255,Cities scramble to comply with or fight major state housing law,domestic,CalMatters,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+256,WATCH LIVE: Severe storms hit parts of Kansas City area on Wednesday evening,domestic,KCTV,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
+257,GOP leaders struggle to keep $75B immigration plan narrow,domestic,Politico,2026-04-15 21:24:20.717,simple_clause,codex,B11,,dev
+258,Senate rejects resolution to block Trump from striking Iran,domestic,The Washington Post,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
 259,James Talarico raises record breaking $27 million in first quarter for Senate bid,domestic,The Texas Tribune,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
 260,Caltrans to close section of I 80 in SF. 'It's going to be crazy.',domestic,SFGATE,2026-04-15 21:24:20.717,other,codex,B11,,test
-261,New federal Medicaid rules require 1 month of work. Some states demand more.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B11,,test
+261,New federal Medicaid rules require 1 month of work. Some states demand more.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
 262,"Spanberger amends, signs sweeping gun legislation reshaping Virginia's firearm laws",domestic,Virginia Mercury,2026-04-15 21:24:20.717,coordination,codex,B11,,train
-263,House passes aviation safety bill in response to deadly midair collision near D.C.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B04,,dev
-264,A bipartisan duo helped force Reps. Swalwell and Gonzales to resign. They say other House members could be next.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B11,,dev
-265,"At least 75 vehicles involved in I 70 pileup near Eisenhower Tunnel, 19 people taken to hospital",domestic,Colorado Public Radio,2026-04-15 21:24:20.717,coordination,codex,B11,,dev
+263,House passes aviation safety bill in response to deadly midair collision near D.C.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
+264,A bipartisan duo helped force Reps. Swalwell and Gonzales to resign. They say other House members could be next.,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B11,,train
+265,"At least 75 vehicles involved in I 70 pileup near Eisenhower Tunnel, 19 people taken to hospital",domestic,Colorado Public Radio,2026-04-15 21:24:20.717,coordination,codex,B11,,train
 266,Iran claims oil tanker transits Strait of Hormuz amid U.S. blockade on Iranian ports,domestic,CBS News,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
-267,Gavin Newsom faces growing pressure to intervene in a scrambled California governor's race,domestic,CNN,2026-04-15 21:24:20.717,simple_clause,codex,B04,,test
+267,Gavin Newsom faces growing pressure to intervene in a scrambled California governor's race,domestic,CNN,2026-04-15 21:24:20.717,simple_clause,codex,B04,,train
 268,Trump threatens to shred UK trade deal over Starmer's Iran war opposition politico.eu,domestic,Unknown,2026-04-15 21:24:20.717,simple_clause,codex,B11,,test
-269,Iran War News Live Updates: Blockade 'Fully Implemented' as Mediators Push for U.S. Iran Ceasefire Extension,world,WSJ,2026-04-15 21:24:20.900,other,codex,B11,,test
-270,"Israeli security cabinet discusses possible Lebanon ceasefire, senior official says",world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B11,,test
+269,Iran War News Live Updates: Blockade 'Fully Implemented' as Mediators Push for U.S. Iran Ceasefire Extension,world,WSJ,2026-04-15 21:24:20.900,other,codex,B11,,train
+270,"Israeli security cabinet discusses possible Lebanon ceasefire, senior official says",world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B11,,train
 271,Sudan enters a fourth year of war as officials lament an 'abandoned crisis',world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B11,,train
 272,Nine killed in second Turkish school shooting in two days,world,BBC,2026-04-15 21:24:20.900,passive_clause,codex,B11,,dev
-273,Hungary's prime minister elect vows to suspend 'propaganda machine' state media,world,The Guardian,2026-04-15 21:24:20.900,simple_clause,codex,B11,,train
+273,Hungary's prime minister elect vows to suspend 'propaganda machine' state media,world,The Guardian,2026-04-15 21:24:20.900,simple_clause,codex,B11,,dev
 274,Pakistan and Bangladesh migrants are faking they are gay to get asylum in the UK: Report,world,The Times of India,2026-04-15 21:24:20.900,simple_clause,codex,B11,,train
 275,Magyar calls on Orbán to lift veto on Ukraine loan before his exit,world,Euronews,2026-04-15 21:24:20.900,simple_clause,codex,B04,,train
 276,Vietnam's new leader meets China's Xi on his first overseas trip,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
 277,"Trump says new talks with Iran will happen soon. And, Eric Swalwell faces new allegations",world,NPR,2026-04-15 21:24:20.900,coordination,codex,B12,,train
-278,"Pope Leo XIV in Algeria walks in footsteps of his spiritual father, St. Augustine",world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B04,,dev
-279,EU age verification app ready as Europe moves to curb children's social media access,world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B04,,train
+278,"Pope Leo XIV in Algeria walks in footsteps of his spiritual father, St. Augustine",world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B04,,train
+279,EU age verification app ready as Europe moves to curb children's social media access,world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B04,,test
 280,"The Iran War Is Giving China Time, Russia Money, and North Korea an Opening 19FortyFive",world,Unknown,2026-04-15 21:24:20.900,coordination,codex,B12,,train
-281,"Iran Update Special Report, April 14, 2026 Institute for the Study of War",world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,train
+281,"Iran Update Special Report, April 14, 2026 Institute for the Study of War",world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,dev
 282,"Japan to join largest Balikatan war games with 1,400 troops, Type 88 missiles navalnews.com",world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B04,,train
-283,Japan offers $10 billion support to help Asian neighbours secure oil,world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B04,,train
-284,Xi Jinping says the world order is 'crumbling into disarray.' Larry Fink and the IMF are worried about a global recession,world,Fortune,2026-04-15 21:24:20.900,coordination,codex,B12,,train
+283,Japan offers $10 billion support to help Asian neighbours secure oil,world,Reuters,2026-04-15 21:24:20.900,simple_clause,codex,B04,,dev
+284,Xi Jinping says the world order is 'crumbling into disarray.' Larry Fink and the IMF are worried about a global recession,world,Fortune,2026-04-15 21:24:20.900,coordination,codex,B12,,test
 285,Germany to maintain Ukraine aid despite political headwinds,world,DW.com,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,train
 286,"Slovenia's Parliament Speaker Proposes NATO Exit Referendum, Signals Possible Moscow Visit",world,Kyiv Post,2026-04-15 21:24:20.900,coordination,codex,B04,,test
 287,"At least 250 people missing, including Rohingya and Bangladeshis, after boat sinks in Andaman Sea",world,AP News,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,train
-288,Spain finalizes amnesty measure for potentially hundreds of thousands of immigrants,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
-289,Exclusive Europe Is Accelerating a NATO Fallback Plan in Case Trump Pulls Out,world,WSJ,2026-04-15 21:24:20.900,simple_clause,codex,B04,,train
+288,Spain finalizes amnesty measure for potentially hundreds of thousands of immigrants,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,dev
+289,Exclusive Europe Is Accelerating a NATO Fallback Plan in Case Trump Pulls Out,world,WSJ,2026-04-15 21:24:20.900,simple_clause,codex,B04,,test
 290,Putin Demands Answers as Russia's Economy Undershoots Expectations,world,The Moscow Times,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
-291,"After losing loved ones, an Israeli and a Palestinian work together for Middle East peace",world,NPR,2026-04-15 21:24:20.900,simple_clause,codex,B12,,dev
+291,"After losing loved ones, an Israeli and a Palestinian work together for Middle East peace",world,NPR,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
 292,Exploring the green side of Rio de Janeiro: a vast urban rain forest,world,NPR,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B05,,train
-293,Critical Atlantic current significantly more likely to collapse than thought,world,The Guardian,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,test
-294,"China Russia ties are 'precious' in the current international context, Xi Jinping says",world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+293,Critical Atlantic current significantly more likely to collapse than thought,world,The Guardian,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,train
+294,"China Russia ties are 'precious' in the current international context, Xi Jinping says",world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
 295,"Ukrainian robots capture enemy position without troops in historic first, Zelenskyy says",world,Euractiv,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
-296,Hezbollah terrorists caught off guard as IDF troops encircle enemy in Bint Jbeil ynetnews,world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,test
-297,Flotilla carrying activists and aid for Palestinians in Gaza sets sail from Spain,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,test
+296,Hezbollah terrorists caught off guard as IDF troops encircle enemy in Bint Jbeil ynetnews,world,Unknown,2026-04-15 21:24:20.900,noun_phrase_fragment,codex,B12,,train
+297,Flotilla carrying activists and aid for Palestinians in Gaza sets sail from Spain,world,AP News,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
 298,Exclusive: U.K. Ukraine duo beats Americans at their own drone game,world,Axios,2026-04-15 21:24:20.900,simple_clause,codex,B05,,train
 299,Iran used Chinese spy satellite to target US bases,world,Financial Times,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
 300,One million signatures call to suspend EU Israel association agreement,world,Euronews,2026-04-15 21:24:20.900,simple_clause,codex,B12,,train
 301,Done and Dusted? Trump's Portrayal of the War in Iran Collides With Reality.,world,The New York Times,2026-04-15 21:24:20.900,question_form,codex,B13,,train
 302,"Europeans aren't prepared for what it means to align with Iran, Russia",world,The Hill,2026-04-15 21:24:20.901,simple_clause,codex,B05,,dev
-303,Italy suspends defense agreement with Israel,world,Defense News,2026-04-15 21:24:20.901,simple_clause,codex,B05,,test
-304,In Defense of Dumb Dogs,world,The New York Times,2026-04-15 21:24:20.901,noun_phrase_fragment,codex,B13,,train
-305,"One week into the ceasefire, is the end of the Iran war any closer?",world,Yahoo,2026-04-15 21:24:20.901,question_form,codex,B05,,train
+303,Italy suspends defense agreement with Israel,world,Defense News,2026-04-15 21:24:20.901,simple_clause,codex,B05,,train
+304,In Defense of Dumb Dogs,world,The New York Times,2026-04-15 21:24:20.901,noun_phrase_fragment,codex,B13,,dev
+305,"One week into the ceasefire, is the end of the Iran war any closer?",world,Yahoo,2026-04-15 21:24:20.901,question_form,codex,B05,,dev
+306,"Ex Virginia Lt. Gov. Justin Fairfax and wife found dead in murder suicide, police say",domestic,The Washington Post,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,dev
+307,Iran War Live Updates: Hegseth and Pentagon Officials Speak on U.S. Military Blockade,domestic,The New York Times,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,test
+308,Kennedy returns to Capitol Hill with clout diminished,domestic,Axios,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+309,Pope says 'world is being ravaged by a handful of tyrants' amid feud with Trump's White House,domestic,The Guardian,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+310,Rise in Young Men's Religiosity Realigns Gender Gaps,domestic,Gallup News,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+311,"Navy reservist caught following murder of wife, whose body was found in freezer",domestic,NBC News,2026-04-16 12:48:07.285000,passive_clause,codex,B14,,test
+312,Trump Stooge Who Fed Boss Crackpot Christ Meme Unmasked,domestic,The Daily Beast,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,train
+313,Johnson tries again on spy powers vote amid GOP rebellion,domestic,Politico,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+314,Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police 6abc Philadelphia,domestic,Unknown,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+315,Live: Senate voting on reopening mining near Boundary Waters,domestic,Star Tribune,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,train
+316,California 2026 Poll: Swalwell Exit from Governor Race Opens Lane for Democrat Xavier Becerra,domestic,Emerson Polling,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,dev
+317,"U.S. Navy stopped 13 ships from passing Iranian port blockade, Pentagon says",domestic,CNBC,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+318,Trump administration set to launch tariff refund portal. Here's what to know.,domestic,CBS News,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+319,A New Jersey special election could soon narrow the House GOP's razor thin majority,domestic,CNN,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,dev
+320,What Is the Pied à Terre Tax? 5 Things to Know About Hochul's Proposal.,domestic,The New York Times,2026-04-16 12:48:07.285000,question_form,codex,B14,,dev
+321,Iran Linked Ships Take New Path To Trickle Into the Persian Gulf,domestic,Bloomberg.com,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,test
+322,Early voting picks up in Northern Virginia ahead of redistricting referendum,domestic,WTOP,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,test
+323,Commission of Fine Arts votes to move ahead with Trump's proposed victory arch,domestic,NPR,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,train
+324,"House set to break with Trump, voting against ending deportation protections for Haitians",domestic,CBS News,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+325,Trump leans in on a major 2026 issue: possibly replacing Justices Alito and Thomas,domestic,CNN,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+326,Justice Sotomayor issues rare apology for remarks about conservative colleague,domestic,The Washington Post,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,dev
+327,"Pete Hegseth Quotes Violent Prayer From 'Pulp Fiction,' References Bible",domestic,Forbes,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B14,,train
+328,"Floodwaters inundate Wisconsin streets, trapping drivers, as Midwest rebuilds after storms",domestic,AP News,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+329,"3 Killed in Boat Strike in the Pacific, Pentagon Says",domestic,The New York Times,2026-04-16 12:48:07.285000,passive_clause,codex,B14,,train
+330,John Eastman loses his law license in California over 2020 election scheme,domestic,Politico,2026-04-16 12:48:07.285000,simple_clause,codex,B14,,train
+331,Talarico Leads a Democratic Cash Surge: 7 Takeaways From 2026 Filings,domestic,The New York Times,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,test
+332,DNI Tulsi Gabbard sends criminal referral over Trump's 2019 impeachment to Justice Department,domestic,CNN,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+333,Democrats file articles of impeachment against Hegseth for 'high crimes and misdemeanors',domestic,The Guardian,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,test
+334,"Michigan 2026 Poll: Abdul El Sayed, Mallory McMorrow Tied for Lead in Democratic Senate Primary",domestic,Emerson Polling,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B15,,train
+335,"SCOTUS Justice Clarence Thomas, 77, Goes on Unhinged Rant About 'Intellectuals'",domestic,The Daily Beast,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+336,Russ Vought Confronted By Democrats For Constantly Breaking Laws,domestic,HuffPost,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B15,,test
+337,"Trump says the Iran war is 'very close to over' despite no deal, a live blockade, and threats mounting",domestic,Fortune,2026-04-16 12:48:07.285000,coordination,codex,B15,,train
+338,Meet the Americans refusing to pay their taxes in protest of the Trump administration,domestic,Fortune,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B15,,dev
+339,Video shows moment Oklahoma high school principal tackled gunman before being shot,domestic,ABC7 Los Angeles,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,test
+340,How Eric Swalwell's fall was brought on by a network of women who organized online,domestic,NPR,2026-04-16 12:48:07.285000,question_form,codex,B15,,train
+341,Lauren Bullis: Homeland Security worker and another woman are killed in a series of Atlanta area attacks,domestic,CNN,2026-04-16 12:48:07.285000,passive_clause,codex,B15,,dev
+342,US Senate Republicans back Trump military sales to Israel,domestic,Reuters,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+343,NYPD investigation opened over 'disturbing' video of officers' use of force during arrest,domestic,NBC News,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,dev
+344,Trump wants a Tax Day victory lap in Las Vegas. The city's economy isn't cooperating.,domestic,Politico,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+345,US Senate Republicans block latest bid to rein in Trump Iran war powers,domestic,Reuters,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,test
+346,Capitol agenda: GOP losing patience over Warsh fight,domestic,Politico,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B15,,train
+347,"15 year old killed, 2 injured in Eisenhower Park shooting on Long Island, police say",domestic,CBS News,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+348,DeSantis Delays Redistricting Special Session and Adds a Vaccine Bill,domestic,The New York Times,2026-04-16 12:48:07.285000,coordination,codex,B15,,dev
+349,"Labor Department Investigates Texts Sent Among Staff, Secretary and Her Family",domestic,The New York Times,2026-04-16 12:48:07.285000,noun_phrase_fragment,codex,B15,,train
+350,"Secret Service determines no credible threats to UGA rally after Erika Kirk's cancellation, source says",domestic,CBS News,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,test
+351,What is the 25th Amendment and could it be used to remove Trump from office?,domestic,The Conversation,2026-04-16 12:48:07.285000,question_form,codex,B15,,train
+352,"As immigrant deaths in custody grow, ICE reduces what details are made public",domestic,NBC News,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+353,"Majority Of Voters Blame Trump For Recent Rise In Gas Prices, Trump Job Approval Holds Steady At 38%, Quinnipiac University National Poll Finds; 64% Think Threat To End 'A Whole Civilization' Was Unacceptable",domestic,Quinnipiac University Poll,2026-04-16 12:48:07.285000,coordination,codex,B15,,train
+354,Judge blocks above ground construction of White House ballroom,domestic,CNBC,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,dev
+355,Trump administration prepares for pivot to economic warfare on Iran,domestic,PBS,2026-04-16 12:48:07.285000,simple_clause,codex,B15,,train
+356,"Live Updates: Trump says Israel, Lebanon agree to ceasefire as Iran keeps Strait of Hormuz gridlocked",world,CBS News,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,dev
+357,"Russian missiles and drones bombard Ukraine in hourslong attack, killing at least 16",world,AP News,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B16,,test
+358,"Pakistan Looks to Play Peacemaker Between U.S. and Iran, Again",world,The New York Times,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,test
+359,South African politician Julius Malema sentenced to prison for firing gun,world,Al Jazeera,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,test
+360,"Iran US talks turn to interim deal amid rifts over nuclear work, Iranian sources say",world,Reuters,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,test
+361,Pope Leo tells Cameroon's government to root out corruption to find peace,world,BBC,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+362,Hungarian Americans say Orbán's defeat could provide roadmap for countering Trump,world,NPR,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+363,Turkish police detain 162 people over online posts about school shootings,world,BBC,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+364,Why China Isn't Pushing Iran to Accept U.S. Demands to End War,world,The New York Times,2026-04-16 12:48:07.490000,question_form,codex,B16,,test
+365,Online age checks are coming in Europe politico.eu,world,Unknown,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,dev
+366,What's behind Israeli attacks along Lebanon's Litani River? dw.com,world,Unknown,2026-04-16 12:48:07.490000,question_form,codex,B16,,test
+367,Partner held in Zanzibar after American influencer Ashly Robinson dies under mysterious circumstances,world,CBS News,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+368,Lower electricity bills could become a reality thanks to EU proposal,world,Euronews.com,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+369,Sudan Enters Fourth Year of War Amid World's Most Severe Humanitarian Crisis,world,The New York Times,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B16,,train
+370,"Israeli military continues to strike Hezbollah amid Lebanon peace talks, Netanyahu says",world,Reuters,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+371,"In five weeks, this IDF battalion destroyed 1,000 Hezbollah sites",world,The Jerusalem Post,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+372,Bukele signs reforms allowing life prison sentences for people as young as 12,world,NPR,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+373,WSJ: Europe is quietly building a NATO fallback in case the US steps back,world,Euromaidan Press,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+374,Germans take over a day off work sick every month so the government is proposing to cut their pay,world,Fortune,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+375,UK Announces Biggest Ever Drone Package for Ukraine. Here's What's Inside,world,UNITED24 Media,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+376,'We Cannot Lose Sight of Ukraine.' Europeans Promise More Aid to Kyiv.,world,The New York Times,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,train
+377,Kenyan court jails Chinese man in ant smuggling case,world,NBC News,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,test
+378,Why are fuel price protests sweeping the Republic of Ireland?,world,Al Jazeera,2026-04-16 12:48:07.490000,question_form,codex,B16,,train
+379,New Zealand's Finance Minister Says Iran War has Made 'Whole World Poorer',world,Bloomberg.com,2026-04-16 12:48:07.490000,simple_clause,codex,B16,,test
+380,Azeem Ibrahim: Iran Conflict Will Be Decided By Who Can 'Endure The Most',world,Radio Free Europe/Radio Liberty,2026-04-16 12:48:07.490000,passive_clause,codex,B16,,train
+381,"Iran Update Special Report, April 15, 2026 Institute for the Study of War",world,Unknown,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B17,,train
+382,"Hamas refuses to give up weapons, demands Board of Peace change Gaza ceasefire plan",world,The Jerusalem Post,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,dev
+383,Berlin gets a front row seat to German weapons' performance in Ukraine,world,Defense News,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,test
+384,"Exclusive: China moves to block entrance to disputed South China Sea shoal, images show",world,Reuters,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,train
+385,Ukraine Says Russians are Surrendering to Robots 404 Media,world,Unknown,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,test
+386,"North Korea Test Launches Anti ship, Cruise Missiles from First in class Destroyer",world,USNI News,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B17,,test
+387,China Sharpens Retaliatory Tools Against U.S. Ahead of Trump Summit,world,WSJ,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B17,,test
+388,'It couldn't be any worse' Zelensky sounds alarm on Patriot air defense missile shortage,world,The Kyiv Independent,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,train
+389,"Iran used Chinese spy satellite to target US bases, FT reports, Beijing denies story",world,Reuters,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,dev
+390,Hungary's new leader has vowed to wean his country off Russian energy. It will be a painful transition.,world,CBS News,2026-04-16 12:48:07.490000,simple_clause,codex,B17,,dev
+391,Trump's Isolation Deepens as His Ties With Longtime Allies Fray,world,Bloomberg.com,2026-04-16 12:48:07.490000,noun_phrase_fragment,codex,B17,,train
