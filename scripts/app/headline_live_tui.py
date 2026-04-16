@@ -352,17 +352,17 @@ class HeadlineLiveApp(App):
             "[b #ffffff on #88C0D0] Predictions [/b #ffffff on #88C0D0]\nType a headline to start."
         )
         self.query_one("#stats_panel", Static).update(
-            "[b #ffffff on #5E81AC] Headline Stats [/b #ffffff on #5E81AC]\n-"
+            "[b #ffffff on #5E81AC] Headline Stats [/b #ffffff on #5E81AC]\nType a headline to start."
         )
         self.query_one("#comparison_panel", Static).update(
-            "[b #ffffff on #a97ea1] Corpus Comparison [/b #ffffff on #a97ea1]\n-"
+            "[b #ffffff on #a97ea1] Corpus Comparison [/b #ffffff on #a97ea1]\nType a headline to start."
         )
         self.query_one("#evidence_panel", Static).update(
-            "[b #ffffff on #5E81AC] Parse Evidence [/b #ffffff on #5E81AC]\n-"
+            "[b #ffffff on #5E81AC] Parse Evidence [/b #ffffff on #5E81AC]\nType a headline to start."
         )
         self.query_one("#warning_panel", Static).update(
             "[b #ffffff on #b74e58] Live Warnings [/b #ffffff on #b74e58]\n"
-            "Type a headline to see instant alerts."
+            "Type a headline to start."
         )
         self._render_stack_line()
 
