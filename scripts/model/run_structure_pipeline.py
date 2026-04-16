@@ -15,6 +15,7 @@ import sys
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from matplotlib.colors import LinearSegmentedColormap
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -148,6 +149,49 @@ def _generate_readme_graphs(
         plt.tight_layout()
         out = os.path.join(images_dir, "model_performance_summary.png")
         plt.savefig(out, dpi=180)
+        plt.close()
+        print(f"[save] graph: {out}")
+
+        # 3) Performance heatmap (compact + intuitive gradient).
+        heatmap_rows = [
+            ("Structure (all)", structure_all_acc, structure_all_macro),
+            (
+                "Structure (test)",
+                structure_eval["test"]["rule_based"]["accuracy"],
+                structure_eval["test"]["rule_based"]["macro_f1"],
+            ),
+            ("Lead frame (test)", style_eval["test"]["lead_frame"]["accuracy"], style_eval["test"]["lead_frame"]["macro_f1"]),
+            ("Agency style (test)", style_eval["test"]["agency_style"]["accuracy"], style_eval["test"]["agency_style"]["macro_f1"]),
+            ("Density band (test)", style_eval["test"]["density_band"]["accuracy"], style_eval["test"]["density_band"]["macro_f1"]),
+            (
+                "Rhetorical mode (test)",
+                style_eval["test"]["rhetorical_mode"]["accuracy"],
+                style_eval["test"]["rhetorical_mode"]["macro_f1"],
+            ),
+        ]
+        row_labels = [r[0] for r in heatmap_rows]
+        matrix = [[r[1], r[2]] for r in heatmap_rows]
+        col_labels = ["Accuracy", "Macro F1"]
+        tui_rgy = LinearSegmentedColormap.from_list(
+            "tui_rgy",
+            ["#b74e58", "#e7c173", "#97b67c"],
+            N=256,
+        )
+
+        plt.figure(figsize=(6.4, 4.8))
+        im = plt.imshow(matrix, cmap=tui_rgy, vmin=0.0, vmax=1.0, aspect="auto")
+        cbar = plt.colorbar(im, fraction=0.046, pad=0.04)
+        cbar.set_label("Score (0 to 1)")
+        plt.title("Performance Heatmap")
+        plt.xticks(range(len(col_labels)), col_labels)
+        plt.yticks(range(len(row_labels)), row_labels)
+        for i, row in enumerate(matrix):
+            for j, value in enumerate(row):
+                text_color = "white" if value < 0.45 else "black"
+                plt.text(j, i, f"{value:.3f}", ha="center", va="center", color=text_color, fontsize=9)
+        plt.tight_layout()
+        out = os.path.join(images_dir, "performance_heatmap.png")
+        plt.savefig(out, dpi=180, bbox_inches="tight")
         plt.close()
         print(f"[save] graph: {out}")
 

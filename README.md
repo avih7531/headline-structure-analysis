@@ -70,6 +70,8 @@ Held-out test (`n=65`):
 
 ![Model performance summary](images/model_performance_summary.png)
 
+![Performance heatmap](images/performance_heatmap.png)
+
 Note: perfect `lead_frame` and `density_band` scores are expected in this setup, because their gold columns are operationalized with the same deterministic labeling rules used by the profiler. Treat those as consistency checks, while `structure`, `agency_style`, and especially `rhetorical_mode` are the more informative generalization signals.
 
 Metric definitions:
