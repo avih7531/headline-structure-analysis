@@ -85,7 +85,7 @@ def fetch_headlines_from_feed(feed_url: str, category: str) -> List[Dict]:
     Returns:
         List of dictionaries containing headline data
     """
-    print(f"Fetching {category} headlines from RSS feed...")
+    print(f"[collect] fetching {category} feed")
     
     feed = feedparser.parse(feed_url)
     headlines = []
@@ -104,7 +104,7 @@ def fetch_headlines_from_feed(feed_url: str, category: str) -> List[Dict]:
         }
         headlines.append(headline_data)
     
-    print(f"  → Collected {len(headlines)} headlines from {category}")
+    print(f"[collect] {category}: {len(headlines)} headlines")
     return headlines
 
 
@@ -128,7 +128,7 @@ def collect_all_headlines() -> pd.DataFrame:
     # Create DataFrame
     df = pd.DataFrame(all_headlines)
     
-    print(f"\nTotal headlines collected: {len(df)}")
+    print(f"[collect] total fetched: {len(df)}")
     return df
 
 
@@ -146,9 +146,9 @@ def save_headlines(df: pd.DataFrame, output_dir: str = 'data') -> Tuple[str, int
     
     # Load existing headlines if file exists
     if os.path.exists(json_path):
-        print(f"Loading existing headlines from {json_path}...")
+        print(f"[save] loading existing dataset: {json_path}")
         existing_df = pd.read_json(json_path)
-        print(f"  → Found {len(existing_df)} existing headlines")
+        print(f"[save] existing rows: {len(existing_df)}")
         
         # Combine with new headlines
         combined_df = pd.concat([existing_df, df], ignore_index=True)
@@ -159,47 +159,34 @@ def save_headlines(df: pd.DataFrame, output_dir: str = 'data') -> Tuple[str, int
         duplicates_removed = before_dedup - len(combined_df)
         
         if duplicates_removed > 0:
-            print(f"  → Removed {duplicates_removed} duplicate headlines")
+            print(f"[save] duplicates removed: {duplicates_removed}")
         
-        print(f"  → Total headlines after merge: {len(combined_df)}")
+        print(f"[save] merged total rows: {len(combined_df)}")
     else:
-        print(f"Creating new headlines file: {json_path}")
+        print(f"[save] creating dataset: {json_path}")
         combined_df = df
     
     # Save combined data
     combined_df.to_json(json_path, orient='records', indent=2)
-    print(f"Saved {len(df)} new headlines (total: {len(combined_df)} in dataset)")
+    print(f"[save] wrote {len(df)} new rows (dataset total: {len(combined_df)})")
     
     return json_path, len(df)
 
 
 def main() -> None:
     """CLI entrypoint for RSS headline collection."""
-    print("=" * 60)
-    print("News Headline Collection Script")
-    print("=" * 60)
-    print()
+    print("[start] collect_headlines")
     
     # Collect headlines
     headlines_df = collect_all_headlines()
     
-    # Display sample
-    print("\nSample headlines:")
-    print("-" * 60)
-    for _, row in headlines_df.head(10).iterrows():
-        print(f"{row['category'].upper():10} | {row['headline']}")
-    print("-" * 60)
-    
     # Save to file
-    print()
     _, new_count = save_headlines(headlines_df)
     
-    print()
-    print("Collection complete!")
-    print(f"New headlines collected: {new_count}")
-    print(f"  Domestic: {len(headlines_df[headlines_df['category'] == 'domestic'])}")
-    print(f"  World: {len(headlines_df[headlines_df['category'] == 'world'])}")
-    print("\nRun parse_headlines.py to parse new headlines.")
+    domestic_n = len(headlines_df[headlines_df['category'] == 'domestic'])
+    world_n = len(headlines_df[headlines_df['category'] == 'world'])
+    print(f"[done] new rows: {new_count} (domestic={domestic_n}, world={world_n})")
+    print("[next] run scripts/pipeline/parse_headlines.py")
 
 
 if __name__ == '__main__':

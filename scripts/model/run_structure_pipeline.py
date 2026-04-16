@@ -19,7 +19,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def _run(cmd: list[str]) -> None:
     """Execute one subprocess command and fail fast on errors."""
-    print(f"\n$ {' '.join(cmd)}")
+    print(f"[run] {' '.join(cmd)}")
     subprocess.run(cmd, check=True)
 
 
@@ -43,6 +43,7 @@ def _annotation_rows(path: str) -> int:
 
 def main() -> None:
     """CLI entrypoint that orchestrates classification, splitting, and evaluation."""
+    print("[start] run_structure_pipeline")
     parser = argparse.ArgumentParser(description="Run full structure classifier pipeline.")
     parser.add_argument("--sample-size", type=int, default=200)
     parser.add_argument("--seed", type=int, default=42)
@@ -101,7 +102,7 @@ def main() -> None:
         gold_path = default_gold_path
     else:
         print(
-            f"\nUsing existing annotation file ({gold_path}, {existing_rows} rows). "
+            f"[data] using existing annotation file ({gold_path}, {existing_rows} rows). "
             "Pass --regenerate-annotation to overwrite it."
         )
 
@@ -149,7 +150,7 @@ def main() -> None:
         split_cmd.append("--use-suggested-if-empty")
         eval_cmd.append("--fallback-to-suggested")
         print(
-            "\nWARNING: No manual gold labels detected. "
+            "[warn] no manual gold labels detected. "
             "Running bootstrap evaluation using suggested labels."
         )
 
@@ -169,11 +170,11 @@ def main() -> None:
             ]
         )
 
-    print("\nPipeline complete.")
+    print("[done] pipeline complete")
     if has_gold:
-        print("Evaluation used manual gold labels.")
+        print("[mode] evaluation used manual gold labels")
     else:
-        print("Evaluation used suggested labels as temporary stand-in.")
+        print("[mode] evaluation used suggested labels as temporary stand-in")
 
 
 if __name__ == "__main__":

@@ -310,8 +310,8 @@ def main() -> None:
     classified.to_csv(args.output, index=False)
 
     counts = Counter(classified["predicted_structure"])
-    print("Saved predictions:", args.output)
-    print("Label distribution:")
+    print(f"[save] structure predictions: {args.output}")
+    print("[summary] label distribution:")
     for label in LABELS:
         print(f"  {label:22} {counts.get(label, 0)}")
 

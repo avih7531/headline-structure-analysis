@@ -120,14 +120,14 @@ def main() -> None:
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
 
-    print(f"Saved style evaluation: {out_path}")
-    print("All-labeled dimension scores:")
+    print(f"[save] style evaluation report: {out_path}")
+    print("[summary] all-labeled dimension scores:")
     for dim, _, _ in STYLE_DIMS:
         print(
             f"  {dim:16} accuracy={all_eval[dim]['accuracy']:.3f} "
             f"macro_f1={all_eval[dim]['macro_f1']:.3f}"
         )
-    print("Held-out test dimension scores:")
+    print("[summary] held-out test dimension scores:")
     for dim, _, _ in STYLE_DIMS:
         print(
             f"  {dim:16} accuracy={test_eval[dim]['accuracy']:.3f} "

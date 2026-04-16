@@ -112,9 +112,14 @@ def main() -> None:
         os.path.join(base_dir, "gold_test.csv"), index=False
     )
 
-    print(f"Saved split dataset: {args.output}")
-    print("Split counts:")
-    print(labeled_out["split"].value_counts())
+    print(f"[save] split dataset: {args.output}")
+    split_counts = labeled_out["split"].value_counts().to_dict()
+    print(
+        "[summary] split counts: "
+        f"train={split_counts.get('train', 0)}, "
+        f"dev={split_counts.get('dev', 0)}, "
+        f"test={split_counts.get('test', 0)}"
+    )
 
 
 if __name__ == "__main__":

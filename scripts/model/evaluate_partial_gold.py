@@ -54,10 +54,9 @@ def main() -> None:
     conf = _build_confusion(y_true, y_pred, LABELS)
     conf.to_csv(os.path.join(args.output_dir, "partial_confusion_matrix.csv"), index=False)
 
-    print(f"Labeled rows evaluated: {len(pred_df)}")
-    print(f"Partial macro F1: {metrics['macro_f1']:.3f}")
-    print(f"Partial accuracy: {metrics['accuracy']:.3f}")
-    print("Saved: data/evaluation_partial/partial_eval.json")
+    print(f"[summary] labeled rows evaluated: {len(pred_df)}")
+    print(f"[summary] partial macro F1={metrics['macro_f1']:.3f} | accuracy={metrics['accuracy']:.3f}")
+    print("[save] data/evaluation_partial/partial_eval.json")
 
 
 if __name__ == "__main__":

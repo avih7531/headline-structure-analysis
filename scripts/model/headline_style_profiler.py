@@ -140,13 +140,12 @@ def profile_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 def _print_summary(df: pd.DataFrame) -> None:
     """Print compact distribution summaries for generated profile fields."""
-    print("Saved style profiles with the following distributions:")
+    print("[summary] style profile distributions:")
     for col in ["predicted_structure", "lead_frame", "agency_style", "density_band", "rhetorical_mode"]:
         counts = Counter(df[col])
-        print(f"\n{col}:")
-        for label, count in counts.most_common():
-            pct = 100 * count / len(df)
-            print(f"  {label:24} {count:3} ({pct:4.1f}%)")
+        top_label, top_count = counts.most_common(1)[0]
+        pct = 100 * top_count / len(df)
+        print(f"  - {col:18} top={top_label} ({top_count}, {pct:.1f}%)")
 
 
 def main() -> None:
@@ -165,7 +164,7 @@ def main() -> None:
 
     profiled = profile_dataframe(df)
     profiled.to_csv(args.output, index=False)
-    print(f"Saved profiles: {args.output}")
+    print(f"[save] style profiles: {args.output}")
     _print_summary(profiled)
 
 

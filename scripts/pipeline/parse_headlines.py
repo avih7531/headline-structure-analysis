@@ -24,22 +24,21 @@ def load_spacy_model():
     
     try:
         nlp = spacy.load('en_core_web_sm')
-        print("✓ Loaded spaCy model: en_core_web_sm")
+        print("[init] spaCy model loaded: en_core_web_sm")
         return nlp
     except OSError:
-        print("spaCy model 'en_core_web_sm' not found!")
-        print("Attempting to download...")
+        print("[init] spaCy model missing: en_core_web_sm")
+        print("[init] attempting model download")
         try:
             import subprocess
             subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], 
                          check=True, capture_output=True)
             nlp = spacy.load('en_core_web_sm')
-            print("✓ Downloaded and loaded spaCy model")
+            print("[init] spaCy model downloaded and loaded")
             return nlp
         except Exception as e:
-            print(f"ERROR: Could not download spaCy model: {e}")
-            print("\nPlease run manually:")
-            print("  python -m spacy download en_core_web_sm")
+            print(f"[error] could not download spaCy model: {e}")
+            print("[hint] run: python -m spacy download en_core_web_sm")
             raise
 
 
@@ -113,37 +112,12 @@ def parse_headline(headline_text: str, nlp) -> Dict[str, Any]:
 
 
 def analyze_patterns(parsed_df: pd.DataFrame) -> None:
-    """
-    Analyze and display common POS patterns.
-    
-    Args:
-        parsed_df: DataFrame with parsed headlines
-    """
-    print("\n" + "=" * 60)
-    print("PATTERN ANALYSIS")
-    print("=" * 60)
-    
-    # Count POS patterns
+    """Print a compact snapshot of dominant POS patterns."""
     pattern_counts = Counter(parsed_df['pos_pattern'])
-    
-    print(f"\nTotal unique patterns: {len(pattern_counts)}")
-    print("\nTop 20 Most Common POS Patterns:")
-    print("-" * 60)
-    
-    for pattern, count in pattern_counts.most_common(20):
-        percentage = (count / len(parsed_df)) * 100
-        print(f"{count:3d} ({percentage:5.2f}%) | {pattern}")
-    
-    # Show examples for top patterns
-    print("\n" + "=" * 60)
-    print("EXAMPLES OF TOP PATTERNS")
-    print("=" * 60)
-    
+    print(f"[patterns] unique POS patterns: {len(pattern_counts)}")
     for pattern, count in pattern_counts.most_common(5):
-        print(f"\nPattern: {pattern} ({count} occurrences)")
-        examples = parsed_df[parsed_df['pos_pattern'] == pattern]['headline'].head(3)
-        for ex in examples:
-            print(f"  • {ex}")
+        percentage = (count / len(parsed_df)) * 100
+        print(f"[patterns] {count:3d} ({percentage:5.1f}%) | {pattern}")
 
 
 def save_parsed_data(parsed_df: pd.DataFrame, output_dir: str = 'data') -> None:
@@ -156,55 +130,50 @@ def save_parsed_data(parsed_df: pd.DataFrame, output_dir: str = 'data') -> None:
     """
     json_path = os.path.join(output_dir, 'headlines_parsed.json')
     parsed_df.to_json(json_path, orient='records', indent=2)
-    print(f"\nSaved parsed data to: {json_path}")
-    print(f"Total parsed headlines in dataset: {len(parsed_df)}")
+    print(f"[save] parsed dataset: {json_path}")
+    print(f"[save] total parsed rows: {len(parsed_df)}")
 
 
 def main() -> None:
     """CLI entrypoint that incrementally parses new headlines with spaCy."""
-    print("=" * 60)
-    print("News Headline Parser")
-    print("=" * 60)
-    print()
+    print("[start] parse_headlines")
     
     headlines_file = 'data/headlines.json'
     parsed_file = 'data/headlines_parsed.json'
     
     if not os.path.exists(headlines_file):
-        print(f"ERROR: {headlines_file} not found!")
-        print("Please run collect_headlines.py first.")
+        print(f"[error] missing input: {headlines_file}")
+        print("[hint] run scripts/pipeline/collect_headlines.py first")
         return
     
     # Load all headlines
     all_headlines_df = pd.read_json(headlines_file)
-    print(f"Found {len(all_headlines_df)} total headlines in dataset")
+    print(f"[load] total headlines: {len(all_headlines_df)}")
     
     # Check which headlines have already been parsed
     if os.path.exists(parsed_file):
         parsed_df_existing = pd.read_json(parsed_file)
-        print(f"Found {len(parsed_df_existing)} already parsed headlines")
+        print(f"[load] already parsed: {len(parsed_df_existing)}")
         
         # Find unparsed headlines by comparing headline text
         parsed_headlines = set(parsed_df_existing['headline'])
         unparsed_df = all_headlines_df[~all_headlines_df['headline'].isin(parsed_headlines)]
         
-        print(f"Need to parse {len(unparsed_df)} new headlines")
+        print(f"[plan] new headlines to parse: {len(unparsed_df)}")
         
         if len(unparsed_df) == 0:
-            print("\nAll headlines already parsed! Run collect_headlines.py to get new data.")
+            print("[done] nothing new to parse")
             return
     else:
-        print("No existing parsed data found. Parsing all headlines...")
+        print("[plan] no existing parsed file; parsing full dataset")
         unparsed_df = all_headlines_df
         parsed_df_existing = None
     
-    print()
-    
     # Parse only the unparsed headlines
-    print("\nInitializing spaCy parser...")
+    print("[init] loading spaCy model")
     nlp = load_spacy_model()
     
-    print(f"\nParsing {len(unparsed_df)} headlines...")
+    print(f"[run] parsing {len(unparsed_df)} headlines")
     parsed_data = []
     
     for idx, row in unparsed_df.iterrows():
@@ -232,7 +201,7 @@ def main() -> None:
         }
         parsed_data.append(result)
     
-    print(f"  Processing {len(unparsed_df)}/{len(unparsed_df)}... Done!")
+    print(f"[run] processed {len(unparsed_df)}/{len(unparsed_df)}")
     
     # Create DataFrame of newly parsed data
     new_parsed_df = pd.DataFrame(parsed_data)
@@ -240,7 +209,7 @@ def main() -> None:
     # Combine with existing parsed data if any
     if parsed_df_existing is not None:
         combined_parsed_df = pd.concat([parsed_df_existing, new_parsed_df], ignore_index=True)
-        print(f"\nCombined with existing data: {len(combined_parsed_df)} total parsed headlines")
+        print(f"[merge] combined parsed rows: {len(combined_parsed_df)}")
     else:
         combined_parsed_df = new_parsed_df
     
@@ -250,9 +219,7 @@ def main() -> None:
     # Save results
     save_parsed_data(combined_parsed_df)
     
-    print("\n" + "=" * 60)
-    print("Parsing complete!")
-    print("=" * 60)
+    print("[done] parse_headlines complete")
 
 
 if __name__ == '__main__':

@@ -238,17 +238,18 @@ def main() -> None:
         domain_path = os.path.join(args.output_dir, "domain_structure_comparison.csv")
         domain_df.to_csv(domain_path, index=False)
 
-    print(f"Saved evaluation: {eval_path}")
-    print(f"Saved gold predictions: {pred_path}")
-    print(f"Saved test confusion matrix: {conf_path}")
+    print(f"[save] evaluation report: {eval_path}")
+    print(f"[save] gold predictions: {pred_path}")
+    print(f"[save] test confusion matrix: {conf_path}")
     if not domain_df.empty:
-        print("Saved domain comparison: data/evaluation/domain_structure_comparison.csv")
+        print("[save] domain comparison: data/evaluation/domain_structure_comparison.csv")
         top = domain_df.head(3)[["label", "abs_diff_pct_points"]].values.tolist()
-        print("Top domestic-vs-world structural differences (pct points):", top)
+        print("[summary] top domestic-vs-world structural gaps (pp):", top)
 
     test_macro = eval_report["test"]["rule_based"]["macro_f1"]
     dev_macro = eval_report["dev"]["rule_based"]["macro_f1"]
-    print(f"Rule-based macro F1 -> dev: {dev_macro:.3f}, test: {test_macro:.3f}")
+    test_acc = eval_report["test"]["rule_based"]["accuracy"]
+    print(f"[summary] rule-based dev macro F1={dev_macro:.3f} | test macro F1={test_macro:.3f} | test acc={test_acc:.3f}")
 
 
 if __name__ == "__main__":

@@ -108,9 +108,9 @@ def main() -> None:
 
     out_df = pd.DataFrame(rows)
     out_df.to_csv(args.output, index=False)
-    print(f"Saved annotation sheet: {args.output}")
-    print(f"Rows: {len(out_df)}")
-    print("Reminder: fill gold_label manually, then run split_gold_dataset.py")
+    print(f"[save] annotation sheet: {args.output}")
+    print(f"[summary] rows prepared: {len(out_df)}")
+    print("[next] fill gold_label, then run scripts/model/split_gold_dataset.py")
 
 
 if __name__ == "__main__":
