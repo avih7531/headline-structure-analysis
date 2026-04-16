@@ -30,6 +30,27 @@ from scripts.model.headline_structure_classifier import classify_record
 
 CONTENT_POS = {"NOUN", "PROPN", "VERB", "ADJ", "NUM"}
 FUNCTION_POS = {"DET", "PRON", "ADP", "AUX", "CCONJ", "SCONJ", "PART"}
+ACTOR_ENTITY_LABELS = {"PERSON", "ORG", "NORP"}
+EVENT_NOUN_CLUES = {
+    "bombing",
+    "attack",
+    "strike",
+    "blast",
+    "explosion",
+    "shooting",
+    "clash",
+    "conflict",
+    "war",
+    "crash",
+    "earthquake",
+    "flood",
+    "fire",
+    "protest",
+    "election",
+    "trial",
+    "hearing",
+    "investigation",
+}
 LIVE_CUES = (" live", "live:", "live updates", "update", "breaking")
 EXPLAINER_CUES = (
     "what to know",
@@ -46,18 +67,63 @@ def _non_punct(tokens: List[Dict]) -> List[Dict]:
     return [tok for tok in tokens if not tok.get("is_punct", False)]
 
 
-def predict_lead_frame(tokens: List[Dict]) -> str:
-    """Classify whether headline opens with actor, action, or context."""
+def _starts_with_actor_entity(tokens: List[Dict], entities: List[Dict]) -> bool:
+    """Return True when first token anchors a likely human/institutional actor."""
+    clean = _non_punct(tokens)
+    if not clean:
+        return False
+
+    first_text = str(clean[0].get("text", "")).strip()
+    first_pos = clean[0].get("pos", "")
+    if first_pos == "PRON":
+        return True
+    if first_pos == "PROPN":
+        return True
+
+    for ent in entities:
+        ent_text = str(ent.get("text", "")).strip()
+        ent_label = str(ent.get("label", "")).strip()
+        if not ent_text or ent_label not in ACTOR_ENTITY_LABELS:
+            continue
+        if ent_text.split()[0] == first_text:
+            return True
+    return False
+
+
+def _is_event_head(tokens: List[Dict]) -> bool:
+    """Return True when first token appears to be an event noun."""
+    clean = _non_punct(tokens)
+    if not clean:
+        return False
+    first = clean[0]
+    first_text = str(first.get("text", "")).lower()
+    first_lemma = str(first.get("lemma", "")).lower()
+    first_pos = first.get("pos", "")
+    if first_pos != "NOUN":
+        return False
+    if first_text in EVENT_NOUN_CLUES or first_lemma in EVENT_NOUN_CLUES:
+        return True
+    return first_text.endswith("ing") and len(first_text) > 4
+
+
+def predict_lead_frame(tokens: List[Dict], entities: List[Dict]) -> str:
+    """Classify whether headline opens with actor/entity, event, action, or context."""
     clean = _non_punct(tokens)
     if not clean:
         return "other_lead"
+
+    if _starts_with_actor_entity(tokens, entities):
+        return "actor_entity_first"
+    if _is_event_head(tokens):
+        return "event_first"
+
     pos = clean[0].get("pos", "")
-    if pos in {"NOUN", "PROPN", "PRON"}:
-        return "actor_first"
     if pos in {"VERB", "AUX"}:
         return "action_first"
     if pos in {"ADV", "ADJ", "NUM", "DET", "ADP"}:
         return "context_first"
+    if pos == "NOUN":
+        return "actor_entity_first"
     return "other_lead"
 
 
@@ -109,9 +175,10 @@ def profile_record(record: Dict) -> Dict:
     """Build a complete style profile for a single parsed headline."""
     structure_label, matched_rules = classify_record(record)
     tokens = record.get("tokens", [])
+    entities = record.get("entities", [])
     headline = record.get("headline", "")
 
-    lead_frame = predict_lead_frame(tokens)
+    lead_frame = predict_lead_frame(tokens, entities)
     agency_style = predict_agency_style(tokens, structure_label)
     density_score, density_band = compute_density(tokens)
     rhetorical_mode = predict_rhetorical_mode(headline, structure_label)

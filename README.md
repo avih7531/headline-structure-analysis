@@ -21,7 +21,7 @@ From `305` parsed headlines:
 - Headlines with verbs: `92.1%`
 - Active voice: `94.4%` (passive `5.6%`)
 - Headlines with named entities: `96.1%` (avg `2.4`)
-- Actor-first openings: `78.0%`
+- Actor/entity-first openings: `81.6%`
 
 Interpretation: this corpus is mostly dense, actor-led **who-did-what** reporting.
 
@@ -30,12 +30,12 @@ Interpretation: this corpus is mostly dense, actor-led **who-did-what** reportin
 Each headline gets a style profile:
 
 - `structure`: `question_form`, `passive_clause`, `coordination`, `noun_phrase_fragment`, `simple_clause`, `other`
-- `lead_frame`: `actor_first`, `action_first`, `context_first`, `other_lead`
+- `lead_frame`: `actor_entity_first`, `event_first`, `action_first`, `context_first`, `other_lead`
 - `agency_style`: `active_or_nonpassive`, `passive_with_agent`, `passive_agent_omitted`
 - `density_score` + `density_band`
 - `rhetorical_mode`: `straight_report`, `analysis_explainer`, `question_hook`, `live_or_alert`
 
-Example signature: `simple_clause | actor_first | straight_report`
+Example signature: `simple_clause | actor_entity_first | straight_report`
 
 ## Manual annotation and evaluation
 
@@ -131,7 +131,7 @@ Decision path:
 
 Predictions:
 - `structure`: `coordination`
-- `lead_frame`: `actor_first`
+- `lead_frame`: `actor_entity_first`
 - `agency_style`: `active_or_nonpassive`
 - `density_band`: `high_density`
 - `rhetorical_mode`: `analysis_explainer`
@@ -148,7 +148,7 @@ Decision path:
 
 Predictions:
 - `structure`: `noun_phrase_fragment`
-- `lead_frame`: `actor_first`
+- `lead_frame`: `actor_entity_first`
 - `agency_style`: `active_or_nonpassive`
 - `density_band`: `high_density`
 - `rhetorical_mode`: `analysis_explainer`
@@ -164,7 +164,7 @@ Decision path:
 
 Predictions:
 - `structure`: `simple_clause`
-- `lead_frame`: `actor_first`
+- `lead_frame`: `actor_entity_first`
 - `agency_style`: `active_or_nonpassive`
 - `density_band`: `high_density`
 - `rhetorical_mode`: `straight_report`

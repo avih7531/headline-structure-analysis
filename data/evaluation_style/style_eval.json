@@ -11,17 +11,23 @@
           "f1": 1.0,
           "support": 10
         },
-        "actor_first": {
+        "actor_entity_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 238
+          "support": 249
         },
         "context_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 52
+          "support": 40
+        },
+        "event_first": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
         },
         "other_lead": {
           "precision": 1.0,
@@ -122,17 +128,17 @@
           "f1": 1.0,
           "support": 2
         },
-        "actor_first": {
+        "actor_entity_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 41
+          "support": 43
         },
         "context_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 16
+          "support": 14
         }
       }
     },
@@ -221,17 +227,17 @@
           "f1": 1.0,
           "support": 1
         },
-        "actor_first": {
+        "actor_entity_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 54
+          "support": 57
         },
         "context_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 9
+          "support": 6
         },
         "other_lead": {
           "precision": 1.0,

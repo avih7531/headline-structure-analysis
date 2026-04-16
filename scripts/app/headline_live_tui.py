@@ -47,26 +47,27 @@ class CorpusBaselines:
     avg_tokens: float
     avg_density: float
     avg_entities: float
-    actor_first_pct: float
+    actor_entity_first_pct: float
 
 
 def _load_corpus_baselines(path: str = "data/headlines_parsed.json") -> CorpusBaselines:
     """Load baseline stats from parsed corpus for delta-based UI feedback."""
     if not os.path.exists(path):
-        return CorpusBaselines(avg_tokens=0.0, avg_density=0.0, avg_entities=0.0, actor_first_pct=0.0)
+        return CorpusBaselines(avg_tokens=0.0, avg_density=0.0, avg_entities=0.0, actor_entity_first_pct=0.0)
 
     with open(path, "r", encoding="utf-8") as handle:
         data = json.load(handle)
     df = pd.DataFrame(data)
     if df.empty:
-        return CorpusBaselines(avg_tokens=0.0, avg_density=0.0, avg_entities=0.0, actor_first_pct=0.0)
+        return CorpusBaselines(avg_tokens=0.0, avg_density=0.0, avg_entities=0.0, actor_entity_first_pct=0.0)
 
     densities = []
-    actor_first = 0
+    actor_entity_first = 0
     for _, row in df.iterrows():
         tokens = [t for t in row.get("tokens", []) if not t.get("is_punct", False)]
-        if tokens and tokens[0].get("pos") in {"NOUN", "PROPN", "PRON"}:
-            actor_first += 1
+        profile = profile_record(row.to_dict())
+        if profile.get("lead_frame") == "actor_entity_first":
+            actor_entity_first += 1
         content = sum(1 for t in tokens if t.get("pos") in CONTENT_POS)
         densities.append(content / len(tokens) if tokens else 0.0)
 
@@ -75,7 +76,7 @@ def _load_corpus_baselines(path: str = "data/headlines_parsed.json") -> CorpusBa
         avg_tokens=float(df["num_tokens"].mean()),
         avg_density=float(sum(densities) / len(densities)),
         avg_entities=float(avg_entities),
-        actor_first_pct=float(actor_first / len(df) * 100),
+        actor_entity_first_pct=float(actor_entity_first / len(df) * 100),
     )
 
 
@@ -244,7 +245,7 @@ class HeadlineLiveApp(App):
             f"(delta [#e7c173]{density_delta:+.1f} pp[/#e7c173])\n"
             f"- avg entities baseline: [#e7c173]{self.baselines.avg_entities:.2f}[/#e7c173] "
             f"(delta [#e7c173]{ent_delta:+.2f}[/#e7c173])\n"
-            f"- actor-first baseline: [#e7c173]{self.baselines.actor_first_pct:.1f}%[/#e7c173]\n\n"
+            f"- actor/entity-first baseline: [#e7c173]{self.baselines.actor_entity_first_pct:.1f}%[/#e7c173]\n\n"
             f"[b #ffffff on #5E81AC] Instant editorial read [/b #ffffff on #5E81AC]\n"
             f"- opening: [#88C0D0]{profile['lead_frame']}[/#88C0D0]\n"
             f"- tone mode: [#e279a1]{profile['rhetorical_mode']}[/#e279a1]\n"
