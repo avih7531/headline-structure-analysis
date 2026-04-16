@@ -31,6 +31,15 @@ from scripts.pipeline.parse_headlines import load_spacy_model, parse_headline
 CONTENT_POS = {"NOUN", "PROPN", "VERB", "ADJ", "NUM"}
 
 
+class HeadlineInput(Input):
+    """Input widget with a local Ctrl+X clear shortcut."""
+
+    def key_ctrl_x(self) -> None:
+        """Clear the current input buffer when Ctrl+X is pressed."""
+        self.value = ""
+        self.focus()
+
+
 @dataclass
 class CorpusBaselines:
     """Corpus-level reference metrics used for live headline comparison."""
@@ -136,6 +145,7 @@ class HeadlineLiveApp(App):
 
     TITLE = "Headline Style Workbench"
     SUB_TITLE = "Real-time structure + style prediction"
+    BINDINGS = [("ctrl+x", "clear_headline", "Clear headline input")]
 
     def __init__(self) -> None:
         """Initialize application state and precomputed corpus baselines."""
@@ -146,7 +156,7 @@ class HeadlineLiveApp(App):
     def compose(self) -> ComposeResult:
         """Compose static layout widgets for the live workbench."""
         yield Header()
-        yield Input(placeholder="Type a headline... updates on every keystroke", id="headline_input")
+        yield HeadlineInput(placeholder="Type a headline... updates on every keystroke", id="headline_input")
         with Horizontal(id="main"):
             with Vertical(id="left"):
                 yield Static("Waiting for input...", classes="panel", id="prediction_panel")
@@ -276,6 +286,12 @@ class HeadlineLiveApp(App):
 
         panel = self.query_one("#warning_panel", Static)
         panel.update("[b #ffffff on #b74e58] Live Warnings [/b #ffffff on #b74e58]\n" + "\n".join(warnings))
+
+    def action_clear_headline(self) -> None:
+        """Clear headline input quickly via Ctrl+X key binding."""
+        input_widget = self.query_one("#headline_input", Input)
+        input_widget.value = ""
+        input_widget.focus()
 
 
 if __name__ == "__main__":
