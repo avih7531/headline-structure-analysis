@@ -243,3 +243,12 @@ python scripts/model/run_structure_pipeline.py
 # 5) Real-time reporter workbench (Textual TUI)
 python scripts/app/headline_live_tui.py
 ```
+
+## Project requirements
+
+- Python `3.10+` (project tested in a local virtual environment)
+- Python dependencies from `requirements.txt` + spaCy model `en_core_web_md`
+- For slide compilation: `pdflatex` + `make` (run in `slides/`)
+- Precompiled PDFs are already included:
+  - `writeup/project_writeup.pdf`
+  - `slides/slides.pdf`
