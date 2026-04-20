@@ -181,6 +181,28 @@
 \end{frame}
 
 % ----------------------------------------------------------
+% MANUAL TAGGING EXAMPLES
+% ----------------------------------------------------------
+\begin{frame}{Manual Tagging Examples}
+  \textbf{Example 1}
+  \begin{itemize}
+    \item Headline: \textit{Nine killed in second Turkish school shooting in two days}
+    \item Gold label: \texttt{passive\_clause}
+    \item Gold rhetorical mode: \texttt{straight\_report}
+    \item Why: compressed passive event framing (\texttt{NUM + VBN}), omitted agent
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{Example 2}
+  \begin{itemize}
+    \item Headline: \textit{Iran Update Special Report, April 14, 2026 Institute for the Study of War}
+    \item Gold label: \texttt{noun\_phrase\_fragment}
+    \item Gold rhetorical mode: \texttt{analysis\_explainer}
+    \item Why: report-style nominal title with no finite main clause
+  \end{itemize}
+\end{frame}
+
+% ----------------------------------------------------------
 % WHY THESE METRICS
 % ----------------------------------------------------------
 \begin{frame}{Why These Metrics in This Study}
@@ -280,6 +302,40 @@
       \item Macro F1 = class-balanced structural reliability
     \end{itemize}
   \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% WORKED DECISION PATHS
+% ----------------------------------------------------------
+\begin{frame}{Worked Decision Paths (Classifier Logic)}
+  \textbf{Question-form example}
+  \begin{itemize}
+    \item \textit{Are we witnessing the death of expertise?}
+    \item Path: contains ``?'' $\rightarrow$ interrogative rule fires first
+    \item Output: \texttt{question\_form}, \texttt{question\_hook}
+  \end{itemize}
+
+  \vspace{0.6em}
+  \textbf{Passive compressed-event example}
+  \begin{itemize}
+    \item \textit{Nine killed in second Turkish school shooting in two days}
+    \item Path: non-question $\rightarrow$ \texttt{NUM + VBN} passive cue
+    \item Output: \texttt{passive\_clause}, \texttt{passive\_agent\_omitted}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Worked Decision Paths (continued)}
+  \textbf{Nominal report-title example}
+  \begin{itemize}
+    \item \textit{Iran Update Special Report, April 14, 2026 Institute for the Study of War}
+    \item Path: no question $\rightarrow$ no passive predicate $\rightarrow$ no finite clause
+    \item Output: \texttt{noun\_phrase\_fragment}, \texttt{analysis\_explainer}
+  \end{itemize}
+
+  \vspace{0.8em}
+  \begin{block}{Why this matters}
+    These worked paths show that predictions are traceable to explicit rule triggers rather than opaque latent states.
+  \end{block}
 \end{frame}
 
 % ----------------------------------------------------------

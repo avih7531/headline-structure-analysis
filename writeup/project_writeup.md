@@ -100,6 +100,20 @@ Split proportions (structure evaluation):
 
 We use an approximately 60/20/20 split because it balances three competing goals: (i) enough training examples to stabilize rule behavior, (ii) enough development data to diagnose rule changes before final reporting, and (iii) a sufficiently large untouched test set for a credible final estimate. The test split remains isolated during rule iteration to reduce optimistic bias.
 
+### 2.4 Manual Tagging Examples
+
+To make the annotation protocol concrete, two representative manual decisions are shown below.
+
+1. Headline: `Nine killed in second Turkish school shooting in two days`  
+   - Manual `gold_label`: `passive_clause`  
+   - Manual `gold_rhetorical_mode`: `straight_report`  
+   - Rationale: compressed passive event framing with ellipsis of auxiliary (`NUM + VBN` pattern), where agency is omitted.
+
+2. Headline: `Iran Update Special Report, April 14, 2026 Institute for the Study of War`  
+   - Manual `gold_label`: `noun_phrase_fragment`  
+   - Manual `gold_rhetorical_mode`: `analysis_explainer`  
+   - Rationale: report-style nominal title with no finite main clause; discourse function is explanatory/update rather than direct event narration.
+
 ---
 
 ## 3. Methodology
@@ -347,6 +361,56 @@ Practically, the sandbox supports newsroom decision-making in three ways. First,
 *Figure 5: Real-time interpretability interface showing predictions, confidence, parse evidence, and warning diagnostics.*
 
 </div>
+
+### 4.6 Worked Decision-Path Examples
+
+The classifier is rule-priority based; therefore, interpretability is strongest when showing explicit decision paths.
+
+**Example A: question-form path**  
+Headline: `Are we witnessing the death of expertise?`
+
+Decision path:
+1. Contains `?` and interrogative start.
+2. `question_form` rule fires first in priority order.
+3. Downstream style outputs are conditioned on that structure.
+
+Predicted profile:
+- `structure`: `question_form`
+- `lead_frame`: `action_first`
+- `agency_style`: `active_or_nonpassive`
+- `density_band`: `medium_density`
+- `rhetorical_mode`: `question_hook`
+
+**Example B: passive compressed-event path**  
+Headline: `Nine killed in second Turkish school shooting in two days`
+
+Decision path:
+1. Not interrogative.
+2. Passive-fragment cue (`NUM + VBN`) is detected.
+3. Returns `passive_clause` before coordination/fragment fallback rules.
+
+Predicted profile:
+- `structure`: `passive_clause`
+- `lead_frame`: `context_first`
+- `agency_style`: `passive_agent_omitted`
+- `density_band`: `high_density`
+- `rhetorical_mode`: `straight_report`
+
+**Example C: nominal report-title path**  
+Headline: `Iran Update Special Report, April 14, 2026 Institute for the Study of War`
+
+Decision path:
+1. No interrogative cue.
+2. No passive event predicate.
+3. No finite subject-verb clause.
+4. Falls into nominal fragment rule (`noun_phrase_fragment`).
+
+Predicted profile:
+- `structure`: `noun_phrase_fragment`
+- `lead_frame`: `actor_entity_first`
+- `agency_style`: `active_or_nonpassive`
+- `density_band`: `high_density`
+- `rhetorical_mode`: `analysis_explainer`
 
 ---
 
