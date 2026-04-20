@@ -1,7 +1,7 @@
 gold_label,question_form,passive_clause,coordination,noun_phrase_fragment,simple_clause,other
-question_form,4,0,0,0,0,0
-passive_clause,0,4,0,1,0,1
-coordination,0,1,2,0,3,0
-noun_phrase_fragment,0,0,1,9,1,1
-simple_clause,0,2,1,4,44,2
-other,0,0,0,0,2,0
+question_form,5,0,0,0,0,0
+passive_clause,0,2,0,3,2,0
+coordination,0,1,4,0,2,0
+noun_phrase_fragment,0,0,1,9,1,2
+simple_clause,0,3,0,3,57,0
+other,0,0,1,0,0,2

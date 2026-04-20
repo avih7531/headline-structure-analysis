@@ -318,17 +318,17 @@
     \small
     \textbf{Structure (held-out test)}
     \begin{itemize}
-      \item Accuracy: \textcolor{accent}{0.759}
-      \item Macro F1: \textcolor{accent}{0.594}
+      \item Accuracy: \textcolor{accent}{0.806}
+      \item Macro F1: \textcolor{accent}{0.675}
     \end{itemize}
 
     \textbf{Baselines (test)}
     \begin{itemize}
-      \item Majority: 0.639 acc, 0.130 macro F1
-      \item Random: 0.446 acc, 0.187 macro F1
+      \item Majority: 0.643 acc, 0.130 macro F1
+      \item Random: 0.459 acc, 0.159 macro F1
     \end{itemize}
 
-    \textcolor{accent}{+12.0 pp acc over majority; +31.3 pp over random.}
+    \textcolor{accent}{+16.3 pp acc over majority; +34.7 pp over random.}
   \end{columns}
 \end{frame}
 
@@ -341,10 +341,10 @@
       \toprule
       \textbf{Dimension} & \textbf{Accuracy} & \textbf{Macro F1} \\
       \midrule
-      lead\_frame & 0.952 & 0.843 \\
-      agency\_style & 0.952 & 0.844 \\
-      density\_band & 0.952 & 0.958 \\
-      rhetorical\_mode & 0.904 & 0.816 \\
+      lead\_frame & 1.000 & 1.000 \\
+      agency\_style & 0.908 & 0.428 \\
+      density\_band & 1.000 & 1.000 \\
+      rhetorical\_mode & 0.908 & 0.820 \\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -384,9 +384,9 @@
 
     \textbf{5-seed summary}
     \begin{itemize}
-      \item Test accuracy: $0.752 \pm 0.018$
-      \item Test macro F1: $0.549 \pm 0.061$
-      \item Dev macro F1: $0.571 \pm 0.052$
+      \item Test accuracy: $0.740 \pm 0.051$
+      \item Test macro F1: $0.568 \pm 0.076$
+      \item Dev macro F1: $0.608 \pm 0.073$
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -396,8 +396,8 @@
 % ----------------------------------------------------------
 \begin{frame}{Seeding and Split Luck (interpretation)}
   \begin{itemize}
-    \item Per-seed structure test macro F1 spans \textbf{0.483 to 0.623} (spread 0.140).
-    \item Per-seed structure test accuracy spans \textbf{0.723 to 0.771} (spread 0.048).
+    \item Per-seed structure test macro F1 spans \textbf{0.481 to 0.675} (spread 0.194).
+    \item Per-seed structure test accuracy spans \textbf{0.663 to 0.806} (spread 0.143).
     \item Macro F1 varies more than accuracy, so class-balance behavior is the more split-sensitive quantity.
   \end{itemize}
 
@@ -504,7 +504,7 @@
     \textcolor{accent}{\textbf{Headlines are structured linguistic products}}\\[0.4em]
     \large not free-form snippets\\[1.0em]
 
-    \textcolor{accentblue}{\textbf{Structure test: 0.759 accuracy, 0.594 macro F1}}\\[0.4em]
+    \textcolor{accentblue}{\textbf{Structure test: 0.806 accuracy, 0.675 macro F1}}\\[0.4em]
     \textcolor{textsub}{with explicit split-luck quantification}
   \end{center}
 

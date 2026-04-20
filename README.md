@@ -15,13 +15,13 @@ We ask: **Do news headlines follow repeatable structural templates, and can we m
 
 ## What the data says
 
-From `391` parsed headlines:
+From `465` parsed headlines:
 - Average length: `13.7` tokens
 - Content-word ratio: `73.2%`
-- Headlines with verbs: `92.1%`
-- Active voice: `94.6%` (passive `5.4%`)
-- Headlines with named entities: `95.7%` (avg `2.4`)
-- Actor/entity-first openings: `81.6%`
+- Headlines with verbs: `97.2%`
+- Active voice: `95.5%` (passive `4.5%`)
+- Headlines with named entities: `95.9%` (avg `2.4`)
+- Actor/entity-first openings: `77.4%`
 
 Interpretation: this corpus is mostly dense, actor-led **who-did-what** reporting.
 
@@ -42,23 +42,23 @@ Example signature: `simple_clause | actor_entity_first | straight_report`
 ## Manual annotation and evaluation
 
 Manual files:
-- `data/gold_headlines_full_manual.csv` (manual `gold_label` for all 391)
-- `data/gold_headlines_style_manual.csv` (manual `gold_rhetorical_mode` for all 391)
+- `data/gold_headlines_full_manual.csv` (manual `gold_label` for all 464)
+- `data/gold_headlines_style_manual.csv` (manual `gold_rhetorical_mode` for all 464)
 
 Split of manually annotated headlines:
-- Train: `233` (`59.6%`)
-- Dev: `75` (`19.2%`)
-- Held-out test: `83` (`21.2%`)
+- Train: `276` (`59.5%`)
+- Dev: `90` (`19.4%`)
+- Held-out test: `98` (`21.1%`)
 
 ### Structure model scores
-- All-labeled: accuracy `0.776`, macro F1 `0.578`
-- Dev macro F1 `0.516`
-- Held-out test: accuracy `0.759`, macro F1 `0.594`
+- All-labeled: accuracy `0.772`, macro F1 `0.601`
+- Dev macro F1 `0.561`
+- Held-out test: accuracy `0.806`, macro F1 `0.675`
 
 Split-stability check (5 random seeds: `13,42,87,123,202`):
-- Test accuracy mean `0.752 ± 0.018`
-- Test macro F1 mean `0.549 ± 0.061`
-- Dev macro F1 mean `0.571 ± 0.052`
+- Test accuracy mean `0.740 ± 0.051`
+- Test macro F1 mean `0.568 ± 0.076`
+- Dev macro F1 mean `0.608 ± 0.073`
 
 This is our explicit seeding/luck check: the band shows how much the score moves from random split choice alone.
 
@@ -66,16 +66,16 @@ This is our explicit seeding/luck check: the band shows how much the score moves
 
 ### Style-dimension scores
 All-labeled (full evaluation slice):
-- `lead_frame`: accuracy `0.941`, macro F1 `0.900`
-- `agency_style`: accuracy `0.946`, macro F1 `0.665`
-- `density_band`: accuracy `0.980`, macro F1 `0.966`
-- `rhetorical_mode`: accuracy `0.903`, macro F1 `0.777`
+- `lead_frame`: accuracy `0.989`, macro F1 `0.986`
+- `agency_style`: accuracy `0.935`, macro F1 `0.622`
+- `density_band`: accuracy `0.994`, macro F1 `0.995`
+- `rhetorical_mode`: accuracy `0.914`, macro F1 `0.785`
 
-Held-out test (`n=83`):
-- `lead_frame`: accuracy `0.952`, macro F1 `0.843`
-- `agency_style`: accuracy `0.952`, macro F1 `0.844`
-- `density_band`: accuracy `0.952`, macro F1 `0.958`
-- `rhetorical_mode`: accuracy `0.904`, macro F1 `0.816`
+Held-out test (`n=98`):
+- `lead_frame`: accuracy `1.000`, macro F1 `1.000`
+- `agency_style`: accuracy `0.908`, macro F1 `0.428`
+- `density_band`: accuracy `1.000`, macro F1 `1.000`
+- `rhetorical_mode`: accuracy `0.908`, macro F1 `0.820`
 
 ![Model performance summary](images/model_performance_summary.png)
 

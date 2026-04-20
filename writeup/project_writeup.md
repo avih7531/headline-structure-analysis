@@ -14,7 +14,7 @@
 
 News headlines are highly compressed linguistic objects: they must communicate maximal information under extreme length constraints. This study investigates whether headline construction follows stable syntactic rules that can be modeled computationally without deep semantic interpretation. We build an end-to-end NLP pipeline that collects RSS headlines, parses them with spaCy, extracts POS/dependency/entity features, and predicts both structural and stylistic labels using rule-based classifiers.
 
-Using a manually annotated **gold-standard reference set** (human-verified labels used as ground truth), we evaluate a six-class structural classifier and a multi-dimensional style profiler (`lead_frame`, `agency_style`, `density_band`, `rhetorical_mode`). On held-out test data, the structure model reaches **0.759 accuracy** and **0.594 macro F1**. Relative to test baselines, this is a +12.0 percentage-point gain in accuracy over majority prediction and a +31.3 percentage-point gain over random assignment, with macro F1 improving from 0.130 (majority) and 0.187 (random) to 0.594. Style dimensions show strong performance for framing and density labels (e.g., `density_band` test macro F1 **0.958**) and moderate performance for rhetorical distinctions. To quantify split luck, we run a 5-seed stability sweep and report mean plus variance rather than a single point estimate (structure test macro F1: **0.549 +/- 0.061**).
+Using a manually annotated **gold-standard reference set** (human-verified labels used as ground truth), we evaluate a six-class structural classifier and a multi-dimensional style profiler (`lead_frame`, `agency_style`, `density_band`, `rhetorical_mode`). On held-out test data, the structure model reaches **0.806 accuracy** and **0.675 macro F1**. Relative to test baselines, this is a +16.3 percentage-point gain in accuracy over majority prediction and a +34.7 percentage-point gain over random assignment, with macro F1 improving from 0.130 (majority) and 0.159 (random) to 0.675. Style dimensions show very strong performance for framing and density labels (e.g., `density_band` test macro F1 **1.000**) and moderate performance for agency/rhetorical distinctions. To quantify split luck, we run a 5-seed stability sweep and report mean plus variance rather than a single point estimate (structure test macro F1: **0.568 +/- 0.076**).
 
 Results show that headline writing is governed by recurrent structural templates, high information density, and consistent agency/framing patterns. The work contributes a reproducible, interpretable framework for headline form analysis with practical value for summarization, newsroom style auditing, and media framing research.
 
@@ -88,15 +88,15 @@ Without a gold-standard set, evaluation becomes circular: a model would effectiv
 - comparison across models and experimental settings,
 - reproducible train/dev/test protocol design.
 
-The manually labeled evaluation set contains `391` headlines for structural and style assessment.
+The manually labeled evaluation set contains `464` headlines for structural and style assessment.
 
 Split proportions (structure evaluation):
 
 | Split | Count | Percent |
 |:--|--:|--:|
-| Train | 233 | 59.6% |
-| Dev | 75 | 19.2% |
-| Test | 83 | 21.2% |
+| Train | 276 | 59.5% |
+| Dev | 90 | 19.4% |
+| Test | 98 | 21.1% |
 
 We use an approximately 60/20/20 split because it balances three competing goals: (i) enough training examples to stabilize rule behavior, (ii) enough development data to diagnose rule changes before final reporting, and (iii) a sufficiently large untouched test set for a credible final estimate. The test split remains isolated during rule iteration to reduce optimistic bias.
 
@@ -225,34 +225,34 @@ Aggregate structure metrics:
 
 | Evaluation Slice | Accuracy | Macro F1 |
 |:--|--:|--:|
-| All-labeled (`n=391`) | 0.776 | 0.578 |
-| Dev (`n=75`) | - | 0.516 |
-| Test (`n=83`) | 0.759 | 0.594 |
+| All-labeled (`n=465` evaluation slice) | 0.772 | 0.601 |
+| Dev (`n=90`) | - | 0.561 |
+| Test (`n=98`) | 0.806 | 0.675 |
 
 Baseline context on held-out test:
 
 | Model | Accuracy | Macro F1 |
 |:--|--:|--:|
-| Rule-based classifier | 0.759 | 0.594 |
-| Majority baseline | 0.639 | 0.130 |
-| Random baseline | 0.446 | 0.187 |
+| Rule-based classifier | 0.806 | 0.675 |
+| Majority baseline | 0.643 | 0.130 |
+| Random baseline | 0.459 | 0.159 |
 
-Interpretation: the classifier improves accuracy by +12.0 points over majority and +31.3 points over random; macro F1 improves by +0.464 and +0.406 respectively. This indicates genuine multi-class signal recovery rather than frequency matching of the dominant class.
+Interpretation: the classifier improves accuracy by +16.3 points over majority and +34.7 points over random; macro F1 improves by +0.545 and +0.516 respectively. This indicates genuine multi-class signal recovery rather than frequency matching of the dominant class.
 
 Per-label behavior (all-labeled):
 
 | Label | Precision | Recall | F1 |
 |:--|--:|--:|--:|
-| `question_form` | 0.950 | 0.950 | 0.950 |
-| `passive_clause` | 0.500 | 0.417 | 0.455 |
-| `coordination` | 0.692 | 0.375 | 0.486 |
-| `noun_phrase_fragment` | 0.647 | 0.611 | 0.629 |
-| `simple_clause` | 0.866 | 0.882 | 0.874 |
-| `other` | 0.050 | 0.143 | 0.074 |
+| `question_form` | 0.960 | 0.960 | 0.960 |
+| `passive_clause` | 0.478 | 0.344 | 0.400 |
+| `coordination` | 0.722 | 0.448 | 0.553 |
+| `noun_phrase_fragment` | 0.578 | 0.627 | 0.602 |
+| `simple_clause` | 0.882 | 0.865 | 0.874 |
+| `other` | 0.138 | 0.500 | 0.216 |
 
 **Key finding:** the model is strong on dominant classes (`simple_clause`, `question_form`), weaker on sparse/ambiguous categories (`other`, `coordination`, some passive variants). In substantive terms, the system captures the primary newsroom syntactic backbone but remains conservative on edge constructions where label boundaries are less operationally crisp.
 
-For test accuracy, a normal-approximation 95% interval is approximately $[0.667, 0.851]$. Since majority and random baselines lie well below the point estimate and outside this interval range near the center, the gain is practically large and statistically distinguishable at this sample size. (A full paired significance test is outside this phase's scope.)
+For test accuracy, a normal-approximation 95% interval is approximately $[0.728, 0.884]$. Since majority and random baselines lie well below this central range, the gain is practically large and statistically distinguishable at this sample size. (A full paired significance test is outside this phase's scope.)
 
 ---
 
@@ -262,19 +262,19 @@ All-slice style evaluation:
 
 | Dimension | Accuracy | Macro F1 |
 |:--|--:|--:|
-| `lead_frame` | 0.941 | 0.900 |
-| `agency_style` | 0.946 | 0.665 |
-| `density_band` | 0.980 | 0.966 |
-| `rhetorical_mode` | 0.903 | 0.777 |
+| `lead_frame` | 0.989 | 0.986 |
+| `agency_style` | 0.935 | 0.622 |
+| `density_band` | 0.994 | 0.995 |
+| `rhetorical_mode` | 0.914 | 0.785 |
 
 Held-out test style evaluation:
 
 | Dimension | Accuracy | Macro F1 |
 |:--|--:|--:|
-| `lead_frame` | 0.952 | 0.843 |
-| `agency_style` | 0.952 | 0.844 |
-| `density_band` | 0.952 | 0.958 |
-| `rhetorical_mode` | 0.904 | 0.816 |
+| `lead_frame` | 1.000 | 1.000 |
+| `agency_style` | 0.908 | 0.428 |
+| `density_band` | 1.000 | 1.000 |
+| `rhetorical_mode` | 0.908 | 0.820 |
 
 <div align="center">
 
@@ -302,11 +302,11 @@ Held-out test style evaluation:
 
 | Metric | Mean | Std. Dev. |
 |:--|--:|--:|
-| Structure test accuracy | 0.752 | 0.018 |
-| Structure test macro F1 | 0.549 | 0.061 |
-| Structure dev macro F1 | 0.571 | 0.052 |
-| Style test rhetorical macro F1 | 0.784 | 0.040 |
-| Style test agency macro F1 | 0.652 | 0.145 |
+| Structure test accuracy | 0.740 | 0.051 |
+| Structure test macro F1 | 0.568 | 0.076 |
+| Structure dev macro F1 | 0.608 | 0.073 |
+| Style test rhetorical macro F1 | 0.771 | 0.063 |
+| Style test agency macro F1 | 0.611 | 0.168 |
 
 <div align="center">
 
@@ -316,13 +316,13 @@ Held-out test style evaluation:
 
 </div>
 
-Observed per-seed structure test macro F1 ranges from 0.483 to 0.623 (spread 0.140), while structure test accuracy ranges from 0.723 to 0.771 (spread 0.048). This confirms that macro-class balance is more split-sensitive than top-line accuracy. Therefore, reporting only seed 42 (macro F1 0.594) would slightly overestimate expected macro performance relative to the 5-seed mean (0.549).
+Observed per-seed structure test macro F1 ranges from 0.481 to 0.675 (spread 0.194), while structure test accuracy ranges from 0.663 to 0.806 (spread 0.143). This confirms that split choice can materially change both class balance and top-line reliability. In this refreshed run, seed 42 happens to be a strong split and would overestimate expected performance if reported alone.
 
 For the seed mean estimates, approximate 95% intervals are:
 
 $$
-\bar{m}_{\text{test macro F1}} \in [0.495, 0.602], \quad
-\bar{m}_{\text{test accuracy}} \in [0.736, 0.768]
+\bar{m}_{\text{test macro F1}} \in [0.502, 0.634], \quad
+\bar{m}_{\text{test accuracy}} \in [0.695, 0.785]
 $$
 
 These intervals quantify uncertainty of the mean under split randomness and make the "luck" framing operational rather than rhetorical.

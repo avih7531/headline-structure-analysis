@@ -1,99 +1,99 @@
 {
   "train_distribution": {
-    "noun_phrase_fragment": 32,
-    "simple_clause": 158,
-    "passive_clause": 14,
+    "simple_clause": 187,
+    "noun_phrase_fragment": 35,
+    "passive_clause": 19,
     "other": 4,
-    "coordination": 14,
-    "question_form": 12
+    "coordination": 17,
+    "question_form": 15
   },
   "dev": {
-    "n": 75,
+    "n": 90,
     "rule_based": {
-      "accuracy": 0.8,
-      "macro_precision": 0.6882716049382717,
-      "macro_recall": 0.5557692307692307,
-      "macro_f1": 0.6007944389275074,
-      "micro_precision": 0.8,
-      "micro_recall": 0.8,
-      "micro_f1": 0.8000000000000002,
+      "accuracy": 0.7888888888888889,
+      "macro_precision": 0.6656420765027322,
+      "macro_recall": 0.7682306940371456,
+      "macro_f1": 0.670239623448866,
+      "micro_precision": 0.7888888888888889,
+      "micro_recall": 0.7888888888888889,
+      "micro_f1": 0.7888888888888889,
       "per_label": {
         "question_form": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 4
+          "support": 5
         },
         "passive_clause": {
           "precision": 0.5,
-          "recall": 0.25,
-          "f1": 0.3333333333333333,
-          "support": 4
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 6
         },
         "coordination": {
-          "precision": 1.0,
-          "recall": 0.5,
-          "f1": 0.6666666666666666,
-          "support": 4
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "support": 5
         },
         "noun_phrase_fragment": {
-          "precision": 0.7777777777777778,
-          "recall": 0.7,
-          "f1": 0.7368421052631577,
-          "support": 10
+          "precision": 0.625,
+          "recall": 0.45454545454545453,
+          "f1": 0.5263157894736842,
+          "support": 11
         },
         "simple_clause": {
-          "precision": 0.8518518518518519,
-          "recall": 0.8846153846153846,
-          "f1": 0.8679245283018868,
-          "support": 52
+          "precision": 0.8688524590163934,
+          "recall": 0.8548387096774194,
+          "f1": 0.8617886178861789,
+          "support": 62
         },
         "other": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1": 0.33333333333333337,
           "support": 1
         }
       }
     },
     "majority_baseline": {
-      "accuracy": 0.6933333333333334,
-      "macro_precision": 0.11555555555555556,
+      "accuracy": 0.6888888888888889,
+      "macro_precision": 0.11481481481481481,
       "macro_recall": 0.16666666666666666,
-      "macro_f1": 0.13648293963254593,
-      "micro_precision": 0.6933333333333334,
-      "micro_recall": 0.6933333333333334,
-      "micro_f1": 0.6933333333333334,
+      "macro_f1": 0.13596491228070176,
+      "micro_precision": 0.6888888888888889,
+      "micro_recall": 0.6888888888888889,
+      "micro_f1": 0.6888888888888889,
       "per_label": {
         "question_form": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 5
         },
         "passive_clause": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 6
         },
         "coordination": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 5
         },
         "noun_phrase_fragment": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 10
+          "support": 11
         },
         "simple_clause": {
-          "precision": 0.6933333333333334,
+          "precision": 0.6888888888888889,
           "recall": 1.0,
-          "f1": 0.8188976377952756,
-          "support": 52
+          "f1": 0.8157894736842105,
+          "support": 62
         },
         "other": {
           "precision": 0.0,
@@ -104,43 +104,43 @@
       }
     },
     "random_baseline": {
-      "accuracy": 0.5066666666666667,
-      "macro_precision": 0.20895445134575572,
-      "macro_recall": 0.2121794871794872,
-      "macro_f1": 0.2076839826839827,
-      "micro_precision": 0.5066666666666667,
-      "micro_recall": 0.5066666666666667,
-      "micro_f1": 0.5066666666666667,
+      "accuracy": 0.5,
+      "macro_precision": 0.15959821428571427,
+      "macro_recall": 0.1585206907787553,
+      "macro_f1": 0.1579161579161579,
+      "micro_precision": 0.5,
+      "micro_recall": 0.5,
+      "micro_f1": 0.5,
       "per_label": {
         "question_form": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 5
         },
         "passive_clause": {
           "precision": 0.14285714285714285,
-          "recall": 0.25,
-          "f1": 0.18181818181818182,
-          "support": 4
+          "recall": 0.16666666666666666,
+          "f1": 0.15384615384615383,
+          "support": 6
         },
         "coordination": {
-          "precision": 0.25,
-          "recall": 0.25,
-          "f1": 0.25,
-          "support": 4
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
         },
         "noun_phrase_fragment": {
-          "precision": 0.1,
-          "recall": 0.1,
-          "f1": 0.10000000000000002,
-          "support": 10
+          "precision": 0.14285714285714285,
+          "recall": 0.09090909090909091,
+          "f1": 0.1111111111111111,
+          "support": 11
         },
         "simple_clause": {
-          "precision": 0.7608695652173914,
-          "recall": 0.6730769230769231,
-          "f1": 0.7142857142857143,
-          "support": 52
+          "precision": 0.671875,
+          "recall": 0.6935483870967742,
+          "f1": 0.6825396825396826,
+          "support": 62
         },
         "other": {
           "precision": 0.0,
@@ -152,145 +152,145 @@
     }
   },
   "test": {
-    "n": 83,
+    "n": 98,
     "rule_based": {
-      "accuracy": 0.7710843373493976,
-      "macro_precision": 0.5968652037617556,
-      "macro_recall": 0.5151991614255765,
-      "macro_f1": 0.5490293229423664,
-      "micro_precision": 0.7710843373493976,
-      "micro_recall": 0.7710843373493976,
-      "micro_f1": 0.7710843373493976,
+      "accuracy": 0.7346938775510204,
+      "macro_precision": 0.6238873327108622,
+      "macro_recall": 0.5326007326007326,
+      "macro_f1": 0.5701847629328546,
+      "micro_precision": 0.7346938775510204,
+      "micro_recall": 0.7346938775510204,
+      "micro_f1": 0.7346938775510203,
       "per_label": {
         "question_form": {
           "precision": 1.0,
-          "recall": 0.75,
-          "f1": 0.8571428571428571,
-          "support": 4
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 5
         },
         "passive_clause": {
-          "precision": 0.6,
-          "recall": 0.5,
-          "f1": 0.5454545454545454,
-          "support": 6
+          "precision": 0.5714285714285714,
+          "recall": 0.5714285714285714,
+          "f1": 0.5714285714285714,
+          "support": 7
         },
         "coordination": {
-          "precision": 0.5,
-          "recall": 0.3333333333333333,
-          "f1": 0.4,
-          "support": 6
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5,
+          "support": 7
         },
         "noun_phrase_fragment": {
-          "precision": 0.6363636363636364,
-          "recall": 0.5833333333333334,
-          "f1": 0.6086956521739131,
-          "support": 12
+          "precision": 0.7777777777777778,
+          "recall": 0.5384615384615384,
+          "f1": 0.6363636363636364,
+          "support": 13
         },
         "simple_clause": {
-          "precision": 0.8448275862068966,
-          "recall": 0.9245283018867925,
-          "f1": 0.8828828828828829,
-          "support": 53
+          "precision": 0.7941176470588235,
+          "recall": 0.8571428571428571,
+          "f1": 0.8244274809160305,
+          "support": 63
         },
         "other": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 2
+          "support": 3
         }
       }
     },
     "majority_baseline": {
-      "accuracy": 0.6385542168674698,
-      "macro_precision": 0.10642570281124497,
+      "accuracy": 0.6428571428571429,
+      "macro_precision": 0.10714285714285715,
       "macro_recall": 0.16666666666666666,
-      "macro_f1": 0.12990196078431374,
-      "micro_precision": 0.6385542168674698,
-      "micro_recall": 0.6385542168674698,
-      "micro_f1": 0.6385542168674698,
+      "macro_f1": 0.13043478260869565,
+      "micro_precision": 0.6428571428571429,
+      "micro_recall": 0.6428571428571429,
+      "micro_f1": 0.6428571428571429,
       "per_label": {
         "question_form": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 5
         },
         "passive_clause": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 6
+          "support": 7
         },
         "coordination": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 6
+          "support": 7
         },
         "noun_phrase_fragment": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 12
+          "support": 13
         },
         "simple_clause": {
-          "precision": 0.6385542168674698,
+          "precision": 0.6428571428571429,
           "recall": 1.0,
-          "f1": 0.7794117647058824,
-          "support": 53
+          "f1": 0.782608695652174,
+          "support": 63
         },
         "other": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 2
+          "support": 3
         }
       }
     },
     "random_baseline": {
-      "accuracy": 0.5301204819277109,
-      "macro_precision": 0.2007861635220126,
-      "macro_recall": 0.19523060796645705,
-      "macro_f1": 0.19775586049170954,
-      "micro_precision": 0.5301204819277109,
-      "micro_recall": 0.5301204819277109,
-      "micro_f1": 0.5301204819277109,
+      "accuracy": 0.4387755102040816,
+      "macro_precision": 0.14775115594787724,
+      "macro_recall": 0.14428164428164428,
+      "macro_f1": 0.14598842018196856,
+      "micro_precision": 0.4387755102040816,
+      "micro_recall": 0.4387755102040816,
+      "micro_f1": 0.43877551020408156,
       "per_label": {
         "question_form": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 4
+          "support": 5
         },
         "passive_clause": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 6
+          "support": 7
         },
         "coordination": {
-          "precision": 0.2,
-          "recall": 0.16666666666666666,
-          "f1": 0.1818181818181818,
-          "support": 6
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7
         },
         "noun_phrase_fragment": {
-          "precision": 0.25,
-          "recall": 0.25,
-          "f1": 0.25,
-          "support": 12
+          "precision": 0.23076923076923078,
+          "recall": 0.23076923076923078,
+          "f1": 0.23076923076923078,
+          "support": 13
         },
         "simple_clause": {
-          "precision": 0.7547169811320755,
-          "recall": 0.7547169811320755,
-          "f1": 0.7547169811320754,
-          "support": 53
+          "precision": 0.6557377049180327,
+          "recall": 0.6349206349206349,
+          "f1": 0.6451612903225806,
+          "support": 63
         },
         "other": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 2
+          "support": 3
         }
       }
     }

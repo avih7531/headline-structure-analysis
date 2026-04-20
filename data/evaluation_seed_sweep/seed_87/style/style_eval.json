@@ -1,249 +1,144 @@
 {
   "all": {
-    "n": 392,
+    "n": 465,
     "lead_frame": {
-      "accuracy": 0.9413265306122449,
-      "macro_f1": 0.8998582081799921,
+      "accuracy": 0.946236559139785,
+      "macro_f1": 0.9123995582429222,
       "per_label": {
         "action_first": {
-          "precision": 0.6470588235294118,
-          "recall": 0.8461538461538461,
-          "f1": 0.7333333333333334,
-          "support": 13
+          "precision": 0.6842105263157895,
+          "recall": 0.8666666666666667,
+          "f1": 0.7647058823529413,
+          "support": 15
         },
         "actor_entity_first": {
-          "precision": 0.9805825242718447,
-          "recall": 0.9498432601880877,
-          "f1": 0.964968152866242,
-          "support": 319
+          "precision": 0.9833333333333333,
+          "recall": 0.9516129032258065,
+          "f1": 0.9672131147540983,
+          "support": 372
         },
         "context_first": {
-          "precision": 0.8214285714285714,
-          "recall": 0.9019607843137255,
-          "f1": 0.8598130841121495,
-          "support": 51
+          "precision": 0.8356164383561644,
+          "recall": 0.9242424242424242,
+          "f1": 0.8776978417266188,
+          "support": 66
         },
         "event_first": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
-          "support": 1
+          "support": 2
         },
         "other_lead": {
-          "precision": 0.8888888888888888,
+          "precision": 0.9090909090909091,
           "recall": 1.0,
-          "f1": 0.9411764705882353,
-          "support": 8
+          "f1": 0.9523809523809523,
+          "support": 10
         }
       }
     },
     "agency_style": {
-      "accuracy": 0.9464285714285714,
-      "macro_f1": 0.664965972899987,
+      "accuracy": 0.9354838709677419,
+      "macro_f1": 0.6146453089244851,
       "per_label": {
         "active_or_nonpassive": {
-          "precision": 0.9623655913978495,
-          "recall": 0.9808219178082191,
-          "f1": 0.9715061058344641,
-          "support": 365
+          "precision": 0.9504504504504504,
+          "recall": 0.9813953488372092,
+          "f1": 0.965675057208238,
+          "support": 430
         },
         "passive_agent_omitted": {
-          "precision": 0.6470588235294118,
-          "recall": 0.5238095238095238,
-          "f1": 0.5789473684210527,
-          "support": 21
+          "precision": 0.6111111111111112,
+          "recall": 0.39285714285714285,
+          "f1": 0.4782608695652174,
+          "support": 28
         },
         "passive_with_agent": {
           "precision": 0.6666666666666666,
-          "recall": 0.3333333333333333,
-          "f1": 0.4444444444444444,
-          "support": 6
+          "recall": 0.2857142857142857,
+          "f1": 0.4,
+          "support": 7
         }
       }
     },
     "density_band": {
-      "accuracy": 0.9795918367346939,
-      "macro_f1": 0.9662383778299724,
+      "accuracy": 0.9806451612903225,
+      "macro_f1": 0.9732704516363643,
       "per_label": {
         "high_density": {
           "precision": 1.0,
-          "recall": 0.9744525547445255,
-          "f1": 0.9870609981515711,
-          "support": 274
+          "recall": 0.9748427672955975,
+          "f1": 0.9872611464968153,
+          "support": 318
         },
         "low_density": {
           "precision": 1.0,
-          "recall": 0.9,
-          "f1": 0.9473684210526316,
-          "support": 10
+          "recall": 0.9333333333333333,
+          "f1": 0.9655172413793104,
+          "support": 15
         },
         "medium_density": {
-          "precision": 0.9310344827586207,
+          "precision": 0.9361702127659575,
           "recall": 1.0,
-          "f1": 0.9642857142857143,
-          "support": 108
+          "f1": 0.967032967032967,
+          "support": 132
         }
       }
     },
     "rhetorical_mode": {
-      "accuracy": 0.9030612244897959,
-      "macro_f1": 0.7766894117881957,
+      "accuracy": 0.9139784946236559,
+      "macro_f1": 0.7854369006415481,
       "per_label": {
         "analysis_explainer": {
-          "precision": 0.7857142857142857,
-          "recall": 0.2682926829268293,
-          "f1": 0.39999999999999997,
-          "support": 41
+          "precision": 0.8,
+          "recall": 0.2727272727272727,
+          "f1": 0.4067796610169491,
+          "support": 44
         },
         "live_or_alert": {
-          "precision": 0.7647058823529411,
-          "recall": 0.8666666666666667,
-          "f1": 0.8125,
-          "support": 15
+          "precision": 0.7777777777777778,
+          "recall": 0.875,
+          "f1": 0.823529411764706,
+          "support": 16
         },
         "question_hook": {
-          "precision": 0.9,
+          "precision": 0.92,
           "recall": 1.0,
-          "f1": 0.9473684210526316,
-          "support": 18
+          "f1": 0.9583333333333334,
+          "support": 23
         },
         "straight_report": {
-          "precision": 0.9149560117302052,
-          "recall": 0.9811320754716981,
-          "f1": 0.9468892261001518,
-          "support": 318
+          "precision": 0.9238329238329238,
+          "recall": 0.9842931937172775,
+          "f1": 0.9531051964512041,
+          "support": 382
         }
       }
     }
   },
   "dev": {
-    "n": 75,
+    "n": 90,
     "lead_frame": {
-      "accuracy": 0.9733333333333334,
-      "macro_f1": 0.9109195402298851,
+      "accuracy": 0.9333333333333333,
+      "macro_f1": 0.8800258397932816,
       "per_label": {
         "action_first": {
-          "precision": 0.75,
-          "recall": 0.75,
-          "f1": 0.75,
-          "support": 4
-        },
-        "actor_entity_first": {
-          "precision": 0.9827586206896551,
-          "recall": 0.9827586206896551,
-          "f1": 0.9827586206896551,
-          "support": 58
-        },
-        "context_first": {
-          "precision": 1.0,
+          "precision": 0.6,
           "recall": 1.0,
-          "f1": 1.0,
-          "support": 13
-        }
-      }
-    },
-    "agency_style": {
-      "accuracy": 0.96,
-      "macro_f1": 0.7595744680851064,
-      "per_label": {
-        "active_or_nonpassive": {
-          "precision": 0.971830985915493,
-          "recall": 0.9857142857142858,
-          "f1": 0.9787234042553192,
-          "support": 70
-        },
-        "passive_agent_omitted": {
-          "precision": 1.0,
-          "recall": 0.6666666666666666,
-          "f1": 0.8,
+          "f1": 0.7499999999999999,
           "support": 3
         },
-        "passive_with_agent": {
-          "precision": 0.5,
-          "recall": 0.5,
-          "f1": 0.5,
-          "support": 2
-        }
-      }
-    },
-    "density_band": {
-      "accuracy": 0.96,
-      "macro_f1": 0.8629287657790267,
-      "per_label": {
-        "high_density": {
-          "precision": 1.0,
-          "recall": 0.9583333333333334,
-          "f1": 0.9787234042553191,
-          "support": 48
-        },
-        "low_density": {
-          "precision": 1.0,
-          "recall": 0.5,
-          "f1": 0.6666666666666666,
-          "support": 2
-        },
-        "medium_density": {
-          "precision": 0.8928571428571429,
-          "recall": 1.0,
-          "f1": 0.9433962264150945,
-          "support": 25
-        }
-      }
-    },
-    "rhetorical_mode": {
-      "accuracy": 0.8666666666666667,
-      "macro_f1": 0.6580796252927401,
-      "per_label": {
-        "analysis_explainer": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 6
-        },
-        "live_or_alert": {
-          "precision": 0.7142857142857143,
-          "recall": 0.7142857142857143,
-          "f1": 0.7142857142857143,
-          "support": 7
-        },
-        "question_hook": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 4
-        },
-        "straight_report": {
-          "precision": 0.875,
-          "recall": 0.9655172413793104,
-          "f1": 0.9180327868852458,
-          "support": 58
-        }
-      }
-    }
-  },
-  "test": {
-    "n": 83,
-    "lead_frame": {
-      "accuracy": 0.9518072289156626,
-      "macro_f1": 0.8522222222222222,
-      "per_label": {
-        "action_first": {
-          "precision": 0.25,
-          "recall": 1.0,
-          "f1": 0.4,
-          "support": 1
-        },
         "actor_entity_first": {
-          "precision": 0.9859154929577465,
-          "recall": 0.958904109589041,
-          "f1": 0.9722222222222222,
-          "support": 73
+          "precision": 0.9841269841269841,
+          "recall": 0.9393939393939394,
+          "f1": 0.9612403100775193,
+          "support": 66
         },
         "context_first": {
-          "precision": 1.0,
-          "recall": 0.8,
-          "f1": 0.888888888888889,
-          "support": 5
+          "precision": 0.8888888888888888,
+          "recall": 0.8888888888888888,
+          "f1": 0.8888888888888888,
+          "support": 18
         },
         "event_first": {
           "precision": 1.0,
@@ -252,28 +147,28 @@
           "support": 1
         },
         "other_lead": {
-          "precision": 1.0,
+          "precision": 0.6666666666666666,
           "recall": 1.0,
-          "f1": 1.0,
-          "support": 3
+          "f1": 0.8,
+          "support": 2
         }
       }
     },
     "agency_style": {
-      "accuracy": 0.9397590361445783,
-      "macro_f1": 0.5225806451612903,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.5940828402366864,
       "per_label": {
         "active_or_nonpassive": {
-          "precision": 0.9615384615384616,
-          "recall": 0.974025974025974,
-          "f1": 0.967741935483871,
-          "support": 77
+          "precision": 0.9651162790697675,
+          "recall": 1.0,
+          "f1": 0.9822485207100593,
+          "support": 83
         },
         "passive_agent_omitted": {
-          "precision": 0.6,
-          "recall": 0.6,
-          "f1": 0.6,
-          "support": 5
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
         },
         "passive_with_agent": {
           "precision": 0.0,
@@ -284,56 +179,161 @@
       }
     },
     "density_band": {
-      "accuracy": 0.9879518072289156,
-      "macro_f1": 0.9902987281869269,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.9273086283693805,
       "per_label": {
         "high_density": {
           "precision": 1.0,
-          "recall": 0.9827586206896551,
-          "f1": 0.9913043478260869,
-          "support": 58
+          "recall": 0.967741935483871,
+          "f1": 0.9836065573770492,
+          "support": 62
         },
         "low_density": {
           "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 1
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "support": 4
         },
         "medium_density": {
-          "precision": 0.96,
+          "precision": 0.8888888888888888,
           "recall": 1.0,
-          "f1": 0.9795918367346939,
+          "f1": 0.9411764705882353,
           "support": 24
         }
       }
     },
     "rhetorical_mode": {
-      "accuracy": 0.9036144578313253,
-      "macro_f1": 0.8090172239108409,
+      "accuracy": 0.9444444444444444,
+      "macro_f1": 0.8133640552995391,
       "per_label": {
         "analysis_explainer": {
-          "precision": 0.75,
-          "recall": 0.3,
-          "f1": 0.4285714285714285,
-          "support": 10
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.28571428571428575,
+          "support": 5
         },
         "live_or_alert": {
           "precision": 1.0,
           "recall": 1.0,
           "f1": 1.0,
+          "support": 4
+        },
+        "question_hook": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "straight_report": {
+          "precision": 0.9493670886075949,
+          "recall": 0.9868421052631579,
+          "f1": 0.967741935483871,
+          "support": 76
+        }
+      }
+    }
+  },
+  "test": {
+    "n": 98,
+    "lead_frame": {
+      "accuracy": 0.9489795918367347,
+      "macro_f1": 0.8279505582137161,
+      "per_label": {
+        "action_first": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 2
+        },
+        "actor_entity_first": {
+          "precision": 0.975609756097561,
+          "recall": 0.963855421686747,
+          "f1": 0.9696969696969697,
+          "support": 83
+        },
+        "context_first": {
+          "precision": 0.8,
+          "recall": 0.8888888888888888,
+          "f1": 0.8421052631578948,
+          "support": 9
+        },
+        "other_lead": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        }
+      }
+    },
+    "agency_style": {
+      "accuracy": 0.8877551020408163,
+      "macro_f1": 0.5468684321143338,
+      "per_label": {
+        "active_or_nonpassive": {
+          "precision": 0.9347826086956522,
+          "recall": 0.945054945054945,
+          "f1": 0.9398907103825138,
+          "support": 91
+        },
+        "passive_agent_omitted": {
+          "precision": 0.16666666666666666,
+          "recall": 0.14285714285714285,
+          "f1": 0.15384615384615383,
+          "support": 7
+        }
+      }
+    },
+    "density_band": {
+      "accuracy": 0.9897959183673469,
+      "macro_f1": 0.9919515397975177,
+      "per_label": {
+        "high_density": {
+          "precision": 1.0,
+          "recall": 0.9846153846153847,
+          "f1": 0.9922480620155039,
+          "support": 65
+        },
+        "low_density": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "medium_density": {
+          "precision": 0.967741935483871,
+          "recall": 1.0,
+          "f1": 0.9836065573770492,
+          "support": 30
+        }
+      }
+    },
+    "rhetorical_mode": {
+      "accuracy": 0.8979591836734694,
+      "macro_f1": 0.7038159371492705,
+      "per_label": {
+        "analysis_explainer": {
+          "precision": 0.8333333333333334,
+          "recall": 0.4166666666666667,
+          "f1": 0.5555555555555556,
+          "support": 12
+        },
+        "live_or_alert": {
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1": 0.4,
           "support": 2
         },
         "question_hook": {
-          "precision": 0.75,
+          "precision": 0.8333333333333334,
           "recall": 1.0,
-          "f1": 0.8571428571428571,
-          "support": 3
+          "f1": 0.9090909090909091,
+          "support": 5
         },
         "straight_report": {
-          "precision": 0.9178082191780822,
-          "recall": 0.9852941176470589,
-          "f1": 0.9503546099290779,
-          "support": 68
+          "precision": 0.927710843373494,
+          "recall": 0.9746835443037974,
+          "f1": 0.9506172839506173,
+          "support": 79
         }
       }
     }

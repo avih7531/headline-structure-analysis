@@ -1,36 +1,36 @@
 headline,category,gold_label,split,predicted_structure,matched_rules
 Charles 'Sonny' Burton is slated for execution. He hopes the Alabama governor will grant him clemency,domestic,passive_clause,test,passive_clause,passive_dependency_or_aux_vbn
-Alexander brothers convicted of sex trafficking in Manhattan federal court,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Alexander brothers convicted of sex trafficking in Manhattan federal court,domestic,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
 US Steps Up Iran Strikes as Oil Industry Faces More Upheaval,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 FBI hunts for clues after 2 men charged with lighting bombs at NYC protest,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 US investigators begin search of Epstein's former ranch in New Mexico,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Shots Fired at U.S. Consulate in Toronto, Police Say",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Shots Fired at U.S. Consulate in Toronto, Police Say",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Iran war's oil shock fuels GOP political anxiety,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Growing Evidence U.S. Tomahawk Struck School In Iran,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Growing Evidence U.S. Tomahawk Struck School In Iran,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Georgia special election to replace MTG tests the power of Trump's endorsement,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Trump's 'free flow of energy' vow fails to restart shipping in strait of Hormuz,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Workers at OpenAI show support for Anthropic as the company says it could lose $5 billion in its feud with the Pentagon,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Capitol agenda: Trump's Doral demands ripple through GOP,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Capitol agenda: Trump's Doral demands ripple through GOP,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "Judge limits crowd control devices at Portland ICE building, says federal officers must identify themselves Oregon Public Broadcasting",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Trio named to replace Alina Habba as U.S. attorney is also serving illegally, judge says",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-DOJ's Ed Martin faces ethics charges from disciplinary office over threatening letter to Georgetown University,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Democrats' Reckless DHS Shutdown Hits Americans Hard as 100,000+ Workers Go Without Pay",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Trio named to replace Alina Habba as U.S. attorney is also serving illegally, judge says",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+DOJ's Ed Martin faces ethics charges from disciplinary office over threatening letter to Georgetown University,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Democrats' Reckless DHS Shutdown Hits Americans Hard as 100,000+ Workers Go Without Pay",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 GOP lawmaker says he's leaving the Republican Party and will serve as an independent,domestic,simple_clause,train,coordination,coordination_cc_conj_pattern
 "Hawaii to see 'potentially life threatening weather' with torrential rain, flooding",domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-U.S. and Iran Predicted a Very Different War Than the One Now Being Waged,domestic,simple_clause,test,passive_clause,passive_dependency_or_aux_vbn
+U.S. and Iran Predicted a Very Different War Than the One Now Being Waged,domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
 Kentucky soldier stationed in Saudi Arabia is 7th U.S. military death in Iran war,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Wife Of Teacher Killed In High School Prank Wants Charges Dropped,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Rand Paul eyes next week for Mullin DHS confirmation hearing,domestic,simple_clause,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Oakland police identify both people killed in weekend mass shooting,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Rand Paul eyes next week for Mullin DHS confirmation hearing,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Oakland police identify both people killed in weekend mass shooting,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "'No words spoken': Chinatown stabbing suspect has criminal record, prominent father",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Democrats threaten more Iran war powers votes, call for Hegseth, Rubio to testify",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 "PSP Honors Fallen Corporal Timothy O'Connor Jr., Killed During Traffic Stop",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 """Disgusting sh*t"": Rep. Andy Ogles' anti Muslim post sparks furious internal backlash",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Trump administration widens its 2020 election probe as it obtains records from Arizona,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Champion high school mariachi musician and family released from immigration detention after growing outcry,domestic,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Ohio State president resigns after 'inappropriate relationship,"" university announces",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Ohio State president resigns after 'inappropriate relationship,"" university announces",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Thune: Talking filibuster 'more complicated and risky' than people realize,domestic,other,train,other,fallback_other
-"Capturing Iran's highly enriched uranium would require a large US ground force, sources say",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Capturing Iran's highly enriched uranium would require a large US ground force, sources say",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Two Supreme Court Justices Debate Handling of Trump Emergency Cases,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Early Iran strikes cost $5.6 billion in munitions, Pentagon estimates",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "U.S. Military Action Against Iran: Over Half Of Voters Oppose It, 74% Oppose Sending Ground Troops Into Iran, Quinnipiac University National Poll Finds; Vast Majority Expects The Conflict To Last Months Or More",domestic,coordination,train,coordination,coordination_cc_conj_pattern
@@ -38,164 +38,164 @@ Mississippi and Georgia Elections: What to Watch in Today's Primaries,domestic,q
 Trump Antisemitism Inquiry Demanding List of Jews at Penn Heads to Court,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Trump gives mixed signals on Iran war. And, how Epstein built ties to scientists",world,coordination,dev,simple_clause,finite_subject_verb_clause
 IDF hits Hezbollah command centers and finance body as rockets fly at northern Israel,world,coordination,train,simple_clause,finite_subject_verb_clause
-Trump says he's 'not happy' with Iran's choice of new supreme leader,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Trump says he's 'not happy' with Iran's choice of new supreme leader,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 Australia grants asylum to 5 Iranian soccer players after Trump pressure,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Iran war: What is happening on day 11 of US Israel attacks?,world,question_form,test,question_form,question_punctuation_or_interrogative_start
-"Who Is Balendra Shah, the Rapper Set to Be Nepal's Next Prime Minister?",world,question_form,train,question_form,question_punctuation_or_interrogative_start
-Top Iranian security official threatens Trump with death politico.eu,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Iran war: What is happening on day 11 of US Israel attacks?,world,question_form,dev,question_form,question_punctuation_or_interrogative_start
+"Who Is Balendra Shah, the Rapper Set to Be Nepal's Next Prime Minister?",world,question_form,dev,question_form,question_punctuation_or_interrogative_start
+Top Iranian security official threatens Trump with death politico.eu,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Exclusive: U.S. dismissed Ukraine deal for anti Iran drone tech last year,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Reducing Europe's nuclear energy sector was 'strategic mistake', EU chief says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-North Korea denounces 'muscle flexing' US South Korean military exercises,world,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+North Korea denounces 'muscle flexing' US South Korean military exercises,world,simple_clause,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
 American Farmers Dealt New Blow as Trump's Iran War Escalates,world,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
 Bag containing weed and cash accidentally donated to a New Zealand charity shop,world,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
-"Macron says France, allies preparing 'defensive' mission to reopen Strait of Hormuz",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"In a 'Suicide War,' Hezbollah Pulls Israel Onto Its Own Turf in Lebanon",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Lebanon asks U.S. for direct peace talks with Israel to end fighting,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Macron says France, allies preparing 'defensive' mission to reopen Strait of Hormuz",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"In a 'Suicide War,' Hezbollah Pulls Israel Onto Its Own Turf in Lebanon",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Lebanon asks U.S. for direct peace talks with Israel to end fighting,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Hundreds killed in Haiti drone strikes, including 60 civilians: Report",world,noun_phrase_fragment,train,other,fallback_other
 Iraq war's aftermath was a disaster for the US the Iran war is headed in the same direction,world,coordination,train,passive_clause,passive_dependency_or_aux_vbn
-U.S. orders more diplomats to leave Middle East,world,simple_clause,dev,other,fallback_other
-"US, Iran spar over status of Iranian warship sunk by submarine",world,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+U.S. orders more diplomats to leave Middle East,world,simple_clause,train,other,fallback_other
+"US, Iran spar over status of Iranian warship sunk by submarine",world,simple_clause,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Actuarial Warfare: How Seven Insurance Letters Closed the World's Most Critical Chokepoint and Why Markets Are Mispricing Duration by 300% Shanaka Anslem Perera,world,other,test,coordination,coordination_cc_conj_pattern
 Trump and Putin discuss end to Iran and Ukraine wars on call,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Frightening footage shows Iranian 'cluster warhead' explode on Israel street in deadly attack,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Rubble without a cause: What's America's Iran endgame?,world,question_form,train,question_form,question_punctuation_or_interrogative_start
+Frightening footage shows Iranian 'cluster warhead' explode on Israel street in deadly attack,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Rubble without a cause: What's America's Iran endgame?,world,question_form,test,question_form,question_punctuation_or_interrogative_start
 "Iranian Kurdish fighters say they're ready to strike Tehran, waiting for opening",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Iran Update Evening Special Report: March 9, 2026 Institute for the Study of War",world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 GPS jamming: The invisible battle in the Middle East,world,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Bahrain declares force majeure as Iran sets its only refinery ablaze,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Bahrain declares force majeure as Iran sets its only refinery ablaze,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Top Iranian Security Official Warns Trump: 'Be Careful Not To Get Eliminated Yourself',world,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
 "Greek operated tanker with Saudi oil cargo sails through Hormuz, ship tracking data shows",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Iran signals Hormuz safe passage to countries expelling U.S. and Israeli diplomats investingLive,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Civilians Killed by Strikes in Gulf States Are Almost All Migrant Workers,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 The 'Fourth Successor': Iran's plan for a long war with the US and Israel,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Supreme Court Justices Jackson and Kavanaugh clash over handling of Trump cases,domestic,simple_clause,dev,other,fallback_other
+Supreme Court Justices Jackson and Kavanaugh clash over handling of Trump cases,domestic,simple_clause,test,other,fallback_other
 "ICE officers confirmed at Bush Airport for second day, TSA waits grow to 4 hours",domestic,coordination,train,simple_clause,finite_subject_verb_clause
-Chavez Revelations Force Teachers to Rethink How They Teach His Legacy,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Chavez Revelations Force Teachers to Rethink How They Teach His Legacy,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 US quadruple amputee cornhole champion arrested on suspicion of murder,domestic,passive_clause,test,other,fallback_other
 Should You Need to Prove Citizenship to Vote? Ask Kansas.,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
-Trump says peace talks progressing as Iran officials deny negotiations,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Gregory Bovino's Final Days: Harsh Words and Few Regrets,domestic,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Trump says peace talks progressing as Iran officials deny negotiations,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Gregory Bovino's Final Days: Harsh Words and Few Regrets,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Loud Explosions Reportedly Rock Tehran As Iran Warns Gulf Neighbors Of Energy Retaliation If Trump Attacks Power Grid: Dow Futures Trade Flat,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-TSA wait times stretch up to 6 hours as ICE and other Homeland Security agents deployed to 14 airports,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Deal emerges to end Homeland Security budget standoff as TSA disruptions deepen,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Here's what to know as the scope of damage from Hawaii's floods becomes clearer,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-The old and weak president is losing because he's old and weak alternet.org,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Stitt picks energy executive Alan Armstrong as next Oklahoma senator,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+TSA wait times stretch up to 6 hours as ICE and other Homeland Security agents deployed to 14 airports,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Deal emerges to end Homeland Security budget standoff as TSA disruptions deepen,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Here's what to know as the scope of damage from Hawaii's floods becomes clearer,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+The old and weak president is losing because he's old and weak alternet.org,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Stitt picks energy executive Alan Armstrong as next Oklahoma senator,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Supreme Court to scrutinize former policy of turning away asylum seekers at southern border,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Valero shuts Texas refinery after explosion, sources say",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Rubio testifies against friend accused of secretly working for Maduro,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Taliban releases U.S. citizen Dennis Coyle over a year after he was detained,domestic,simple_clause,dev,passive_clause,passive_dependency_or_aux_vbn
+"Valero shuts Texas refinery after explosion, sources say",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Rubio testifies against friend accused of secretly working for Maduro,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Taliban releases U.S. citizen Dennis Coyle over a year after he was detained,domestic,simple_clause,test,passive_clause,passive_dependency_or_aux_vbn
 Philadelphia 'No Kings' protest 2026: What to know ahead of March 28 rally,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Trump casts Florida mail ballot as he pushes Congress to severely limit that voting option,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Pentagon revises rules for journalists after lawsuit loss, raising press group's ire",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Trump casts Florida mail ballot as he pushes Congress to severely limit that voting option,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Pentagon revises rules for journalists after lawsuit loss, raising press group's ire",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Markwayne Mullin confirmed as the next secretary of Homeland Security,domestic,passive_clause,dev,simple_clause,finite_subject_verb_clause
-DCCC launches geotargeted digital ad campaign hitting GOP for gas prices,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-"Is the US talking to Iran's Mohammad Bagher Ghalibaf, and who is he?",domestic,question_form,test,question_form,question_punctuation_or_interrogative_start
-Kennedy Center renovation hit with lawsuit filed by preservationists,domestic,passive_clause,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Judge appoints new US attorney in NJ after courts rejected Justice Department workarounds,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+DCCC launches geotargeted digital ad campaign hitting GOP for gas prices,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Is the US talking to Iran's Mohammad Bagher Ghalibaf, and who is he?",domestic,question_form,dev,question_form,question_punctuation_or_interrogative_start
+Kennedy Center renovation hit with lawsuit filed by preservationists,domestic,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Judge appoints new US attorney in NJ after courts rejected Justice Department workarounds,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Radio Host Tells Trump 'People Are Gonna Treat' His Death 'Like Mardi Gras',domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Immigration arrest at SFO sparks concerns over potential breach of California sanctuary law,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Gigantic 'Heat Dome' Baking The Whole US May Be Historic, Scientists Say",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Immigration arrest at SFO sparks concerns over potential breach of California sanctuary law,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Gigantic 'Heat Dome' Baking The Whole US May Be Historic, Scientists Say",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Californians may need to mail ballots early as Supreme Court signals support for new election day deadline,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "GOP sheriff seizes 650,000 ballots in challenge to California redistricting vote",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 DHS funding talks in limbo after Trump calls on GOP to link bill to SAVE America Act,domestic,noun_phrase_fragment,dev,simple_clause,finite_subject_verb_clause
 Middle East crisis live: Pakistan reportedly favouring Vance for role in possible US Iran peace talks,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Iran Charges Some Ships Hormuz Transit Fees for Safe Passage,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Airstrikes batter Iran as it attacks Israel and Gulf states, while diplomatic efforts gather pace",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Denmark holds early elections spurred by Trump's threats to take Greenland,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-President Milei Is Rebranding the Atrocities of Argentina's Dictatorship,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Airstrikes batter Iran as it attacks Israel and Gulf states, while diplomatic efforts gather pace",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Denmark holds early elections spurred by Trump's threats to take Greenland,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+President Milei Is Rebranding the Atrocities of Argentina's Dictatorship,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "Colombian military plane crash kills at least 66, wounds dozens",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Smotrich says Litani River should be Israel's new border with Lebanon,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Belgian authorities arrest two Ashab al Yamin linked minors for suspected antisemitic Antwerp arson,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-How Pakistan Is Trying to Reshape Its Image Abroad,world,question_form,train,question_form,question_punctuation_or_interrogative_start
+Belgian authorities arrest two Ashab al Yamin linked minors for suspected antisemitic Antwerp arson,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+How Pakistan Is Trying to Reshape Its Image Abroad,world,question_form,test,question_form,question_punctuation_or_interrogative_start
 "Palestine weekly wrap: West Bank attacks surge, Israel restricts Gaza aid",world,coordination,train,simple_clause,finite_subject_verb_clause
-How does the current global oil crisis compare with the 1973 oil embargo?,world,question_form,dev,question_form,question_punctuation_or_interrogative_start
-"Epic river migrations of fish rapidly collapsing, UN report finds",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"At least five killed in massive wave of Russian strikes across Ukraine, officials say",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Kim vows to 'irreversibly' cement North Korea's nuclear status,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-"Israel, Iran trade strikes as U.S. says it is pausing attacks on energy targets",world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Hormuz fertiliser block will upend world's food production,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+How does the current global oil crisis compare with the 1973 oil embargo?,world,question_form,train,question_form,question_punctuation_or_interrogative_start
+"Epic river migrations of fish rapidly collapsing, UN report finds",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"At least five killed in massive wave of Russian strikes across Ukraine, officials say",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Kim vows to 'irreversibly' cement North Korea's nuclear status,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Israel, Iran trade strikes as U.S. says it is pausing attacks on energy targets",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Hormuz fertiliser block will upend world's food production,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Giorgia Meloni's big electoral setback in Italy,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 "Report Shows Earth's Climate is Out of Balance, as Indicators Hit New Extremes",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Capitol agenda: Reconciliation is revived , Thune says",world,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
+"Capitol agenda: Reconciliation is revived , Thune says",world,simple_clause,dev,passive_clause,passive_dependency_or_aux_vbn
 Ukraine Spent Big to Shield Energy Industry From Drones. Is the Mideast Next?,world,question_form,train,question_form,question_punctuation_or_interrogative_start
 Iran's Fars report gas infrastructure hit as conflict broadens to energy assets investingLive,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 China protests to Japan about Tokyo embassy break in,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-President Donald Trump Just Made a Huge Announcement About the Iran War: Here's Why it Could Be a Major Turning Point for the Stock Market,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Jewish volunteer ambulances set on fire in London in apparent antisemitic attack,world,passive_clause,train,simple_clause,finite_subject_verb_clause
+President Donald Trump Just Made a Huge Announcement About the Iran War: Here's Why it Could Be a Major Turning Point for the Stock Market,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Jewish volunteer ambulances set on fire in London in apparent antisemitic attack,world,passive_clause,dev,simple_clause,finite_subject_verb_clause
 Lebanon declares Iranian ambassador persona non grata amid Israeli attacks,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 French far right misses big targets but says it is on track for presidency politico.eu,world,coordination,test,coordination,coordination_cc_conj_pattern
-"Trump threats, U.S. troop build up raise specter of battle for Hormuz",world,simple_clause,train,other,fallback_other
+"Trump threats, U.S. troop build up raise specter of battle for Hormuz",world,simple_clause,test,other,fallback_other
 EU reacts to 'concerning' report of Hungarian leak to Russia,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"IDF: Israeli Killed Near Lebanon Border Struck by IDF Fire, Not Hezbollah",world,passive_clause,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
+"IDF: Israeli Killed Near Lebanon Border Struck by IDF Fire, Not Hezbollah",world,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Day 23 of U.S. and Israeli Attacks on Iran: More Than 15% of the Total Fatalities Are Children,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 2 Weeks of Iran War Released More Carbon Emissions Than 84 Countries Do Yearly,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Retired Patriot Battalion Commander On The Challenges Of Defeating Iran's Barrages,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 German president slams Trump's Iran war as illegal politico.eu,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Are we witnessing the death of expertise?,world,question_form,dev,question_form,question_punctuation_or_interrogative_start
-Cargo Spacecraft Suffers Glitch En Route to ISS newser.com,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Saudis and UAE Take Steps Toward Joining Iran War, WSJ Reports",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Europe's far right backs Orbán as Hungary's coming election puts his brand to the test,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Ukrainian drones killing Russian troops faster than Moscow can replace them, drone commander says",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Are we witnessing the death of expertise?,world,question_form,train,question_form,question_punctuation_or_interrogative_start
+Cargo Spacecraft Suffers Glitch En Route to ISS newser.com,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Saudis and UAE Take Steps Toward Joining Iran War, WSJ Reports",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Europe's far right backs Orbán as Hungary's coming election puts his brand to the test,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Ukrainian drones killing Russian troops faster than Moscow can replace them, drone commander says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Thousands of Marines to Arrive in Centcom the Same Day as Trump's Iran Deadline,world,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
 "Pit viper, flying snake and geckos among new species uncovered in Cambodian caves",world,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Study: Birthright travelers look different after Oct. 7 but the effect remains the same,world,coordination,dev,coordination,coordination_cc_conj_pattern
-'Good decision.' Le Pen supports Hungary blocking EU's Ukraine loan politico.eu,world,simple_clause,train,other,fallback_other
+Study: Birthright travelers look different after Oct. 7 but the effect remains the same,world,coordination,train,coordination,coordination_cc_conj_pattern
+'Good decision.' Le Pen supports Hungary blocking EU's Ukraine loan politico.eu,world,simple_clause,test,other,fallback_other
 Putin is the real winner in Trump's Iran war as it puts Russian oil back on the map,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Ukraine hits major Russian oil port near Finland,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Strikes hit Tehran safe houses as checkpoints spread nationwide ایران اینترنشنال,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Israel launches new strikes on Tehran as Trump pauses Iran energy attacks,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Iran attacks in Strait of Hormuz are 'economic terrorism against every nation,' UAE oil CEO says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Russia's 'meat assaults' in Ukraine cost it over 6,000 troops in four days, Kyiv says politico.eu",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Ukraine hits major Russian oil port near Finland,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Strikes hit Tehran safe houses as checkpoints spread nationwide ایران اینترنشنال,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Israel launches new strikes on Tehran as Trump pauses Iran energy attacks,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Iran attacks in Strait of Hormuz are 'economic terrorism against every nation,' UAE oil CEO says",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Russia's 'meat assaults' in Ukraine cost it over 6,000 troops in four days, Kyiv says politico.eu",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Pope Leo says aerial military strikes should be banned,world,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
 Trump's new red line could set the Iran war on a fateful course,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Iran War: Five Things to Know,world,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Thousands of 'No Kings' protests planned in opposition to Trump amid Iran war,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Bills to pay FAA and TSA workers during shutdowns get introduced but keep stalling in Congress,domestic,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
-"California attack survivors, who were not believed by police, get the last word against kidnapper",domestic,simple_clause,test,passive_clause,passive_dependency_or_aux_vbn
+Bills to pay FAA and TSA workers during shutdowns get introduced but keep stalling in Congress,domestic,passive_clause,dev,passive_clause,passive_dependency_or_aux_vbn
+"California attack survivors, who were not believed by police, get the last word against kidnapper",domestic,simple_clause,dev,passive_clause,passive_dependency_or_aux_vbn
 Pentagon prepares for weeks of ground operations in Iran,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Missing aid boats land in Cuba after being located by Mexican navy nbcnews.com,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Record Number of T.S.A. Employees Called Out on Friday,domestic,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
 US House passes stopgap DHS funding bill after Republicans reject Senate deal theguardian.com,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Vice President JD Vance tops CPAC's straw poll to be US president in 2028,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Navy shipyard workers approve a contract deal with Bath Iron Works, ending weeklong strike",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Vice President JD Vance tops CPAC's straw poll to be US president in 2028,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Navy shipyard workers approve a contract deal with Bath Iron Works, ending weeklong strike",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 "At CPAC, many Republicans stand by Trump on Iran. But they're divided on how the war could end.",domestic,coordination,train,simple_clause,finite_subject_verb_clause
 "USS Tripoli Operating in CENTCOM, USS Gerald R. Ford in Croatia",domestic,coordination,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Live Updates: Hundreds protest outside ICE building in Portland Oregon Public Broadcasting,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-All clear given at State Capitol after bomb threat scare,domestic,passive_clause,train,simple_clause,finite_subject_verb_clause
-ICE at Airports Trains Us to Accept Being Terrorized in Our Daily Lives,domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
-"'Premature': Anthropic still in trouble despite court win, lawyers and lobbyists say",domestic,other,train,simple_clause,finite_subject_verb_clause
+All clear given at State Capitol after bomb threat scare,domestic,passive_clause,dev,simple_clause,finite_subject_verb_clause
+ICE at Airports Trains Us to Accept Being Terrorized in Our Daily Lives,domestic,simple_clause,test,passive_clause,passive_dependency_or_aux_vbn
+"'Premature': Anthropic still in trouble despite court win, lawyers and lobbyists say",domestic,other,test,simple_clause,finite_subject_verb_clause
 F.B.I. Said to Dig Up Old Investigative Files on Democratic Lawmaker,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 How successful has Trump been in his now one month old war in Iran?,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
-Reza Pahlavi pledges to 'make Iran great again' at 2026 CPAC conference,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-CPAC activists embrace Paxton as MAGA's choice for Senate over Cornyn,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-U.S. Tomahawks are being used in Iran war faster than stockpile is being refilled,domestic,passive_clause,test,passive_clause,passive_dependency_or_aux_vbn
-FBI confirms hackers targeted Kash Patel's personal emails,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Reza Pahlavi pledges to 'make Iran great again' at 2026 CPAC conference,domestic,simple_clause,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
+CPAC activists embrace Paxton as MAGA's choice for Senate over Cornyn,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+U.S. Tomahawks are being used in Iran war faster than stockpile is being refilled,domestic,passive_clause,dev,passive_clause,passive_dependency_or_aux_vbn
+FBI confirms hackers targeted Kash Patel's personal emails,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Trump just ended a 165 year tradition by signing your dollar bills here's why no president has ever done it before,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Trump wants a deadlocked Congress to move on AI. Frustrated states say they already have,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Iran War Live Updates: Tehran Hit by Heavy Airstrikes as U.S. Marines Arrive in Middle East,world,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Yemen's Houthis launch ballistic missile at Israel as Middle East conflict escalates,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 How Pakistan Wooed Trump and Styled Itself as a Peace Broker in Iran Conflict,world,coordination,train,question_form,question_punctuation_or_interrogative_start
 "European allies say Russia is helping Iran more than the U.S. has acknowledged, sources say",world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Ukraine war briefing: Zelenskyy drums up defence agreements with Gulf states on countering missiles and drones theguardian.com,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Iranian attack on Saudi base injures U.S. troops as more American forces arrive in the Middle East pbs.org,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Nepal's former prime minister KP Sharma Oli arrested over deaths during Gen Z protests,world,passive_clause,dev,simple_clause,finite_subject_verb_clause
+Ukraine war briefing: Zelenskyy drums up defence agreements with Gulf states on countering missiles and drones theguardian.com,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Iranian attack on Saudi base injures U.S. troops as more American forces arrive in the Middle East pbs.org,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Nepal's former prime minister KP Sharma Oli arrested over deaths during Gen Z protests,world,passive_clause,test,simple_clause,finite_subject_verb_clause
 "Israel kills 3 journalists in Lebanon, including reporter for Hezbollah run broadcaster",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Maersk halts operations at Oman's Salalah port due to security incident,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 IDF says almost done targeting 'critical' Iranian military sites as waves of strikes hit Tehran,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 "The ripple effect of the Iran war on struggling U.S. farmers: ""It couldn't have come at a worst time""",world,other,train,simple_clause,finite_subject_verb_clause
 Pope Leo's message to the rich in his first foreign trip of the year,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Iran Allows 20 More Ships To Pass Through Strait Of Hormuz, Pakistan Says: 'Meaningful Step Toward Peace'",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Iran Allows 20 More Ships To Pass Through Strait Of Hormuz, Pakistan Says: 'Meaningful Step Toward Peace'",world,simple_clause,test,simple_clause,finite_subject_verb_clause
 Several hurt as Iranian missile hits Jerusalem area town; Hezbollah continues to strike north,world,coordination,train,coordination,coordination_cc_conj_pattern
 Paris: Suspected bomb attack outside Bank of America foiled dw.com,world,passive_clause,train,simple_clause,finite_subject_verb_clause
 Ten lessons from the first month of the Iran war,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Thousands gather for anti far right march in London,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Watch the Earth split in real time: Stunning footage captures a 2.5 meter fault slip in seconds,world,other,dev,simple_clause,finite_subject_verb_clause
+Thousands gather for anti far right march in London,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Watch the Earth split in real time: Stunning footage captures a 2.5 meter fault slip in seconds,world,other,test,simple_clause,finite_subject_verb_clause
 Indonesia starts implementing social media restrictions for children under 16,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Rubio says Iran war to last weeks, no US ground troops needed",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Emirates Global Aluminium Says Smelter Site Damaged in Attack,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Orbán loses his cool as crowd boos him over Ukraine,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Iran: Is another 1970s‑style oil crisis looming? dw.com,world,question_form,test,question_form,question_punctuation_or_interrogative_start
+"Rubio says Iran war to last weeks, no US ground troops needed",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Emirates Global Aluminium Says Smelter Site Damaged in Attack,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Orbán loses his cool as crowd boos him over Ukraine,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Iran: Is another 1970s‑style oil crisis looming? dw.com,world,question_form,train,question_form,question_punctuation_or_interrogative_start
 Iran says nuclear sites hit after Israel warns attacks 'will escalate',world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Iran's response to U.S. peace proposal expected Friday, sources say",world,passive_clause,train,simple_clause,finite_subject_verb_clause
 Ukraine Says It Attacked Russia's Yaroslavl Refinery,world,simple_clause,train,simple_clause,finite_subject_verb_clause
@@ -205,99 +205,99 @@ Noelia Castillo Ramos Encouraged by Dad to Walk in Heartbreaking Video Before De
 "Iran's Hormuz toll booth points toward an L shaped price plateau, not the V shaped recovery traders want",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Iran Moves to Assert Control Over Strait While Trading Strikes With Israel,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 A Female Royal Navy Sailor Found Guilty of Repeated Sexual Assaults on Warship Crew,world,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
-Justice Sonia Sotomayor issues unusual apology over 'hurtful' remarks about colleague Brett Kavanaugh,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-"Husband of Michigan woman missing in the Bahamas leaves country, lawyer says",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Justice Sonia Sotomayor issues unusual apology over 'hurtful' remarks about colleague Brett Kavanaugh,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Husband of Michigan woman missing in the Bahamas leaves country, lawyer says",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Bernie Sanders pushes resolutions to block US weapons sales to Israel,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Republicans worry White House 'nonsense' is hurting midterm prospects,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Newly released surveillance video shows Oklahoma high school principal tackling gunman,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Scoop: Trump discussed ""Jesus"" meme with Bill Pulte before posting it, sources say",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Republicans worry White House 'nonsense' is hurting midterm prospects,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Newly released surveillance video shows Oklahoma high school principal tackling gunman,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Scoop: Trump discussed ""Jesus"" meme with Bill Pulte before posting it, sources say",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Inside the sudden downfall of Eric Swalwell,domestic,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Hormuz traffic remains at a trickle as US blockade of Iranian ports appears to hold,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Hormuz traffic remains at a trickle as US blockade of Iranian ports appears to hold,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Popes have spoken out on politics before. But with Trump and Pope Leo it's different,domestic,coordination,test,simple_clause,finite_subject_verb_clause
-Trump says war in Iran 'can be over very soon' amid uncertain peace negotiations,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Trump says war in Iran 'can be over very soon' amid uncertain peace negotiations,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 New York Gov. Kathy Hochul pushes for NYC pied à terre tax to close spending deficit,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Grisly New Addition to Search for American Missing in Bahamas,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Omaha Police Fatally Shoot Woman Who Cut 3 Year Old Boy With Knife at Walmart,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Omaha Police Fatally Shoot Woman Who Cut 3 Year Old Boy With Knife at Walmart,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Guard: More could have been saved at Camp Mystic if more adults helped evacuate San Antonio Express,domestic,passive_clause,test,passive_clause,passive_dependency_or_aux_vbn
 Economic Fury Targets Illicit Oil Smuggling Network Run by Iranian Regime Elite U.S. Department of the Treasury (.gov),domestic,simple_clause,train,other,fallback_other
-House Democrats file articles of impeachment against Hegseth,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+House Democrats file articles of impeachment against Hegseth,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Republicans, White House considering warrant related amendment in high stakes FISA talks",domestic,noun_phrase_fragment,train,other,fallback_other
-"DeSantis delays Florida's redistricting session and tacks on AI, vaccines",domestic,simple_clause,train,other,fallback_other
+"DeSantis delays Florida's redistricting session and tacks on AI, vaccines",domestic,simple_clause,dev,other,fallback_other
 Raleigh Water Activates Stage 1 Water Restrictions as Drought Conditions Continue,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-House defies Trump on immigration with move to shield Haitians,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+House defies Trump on immigration with move to shield Haitians,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 'SantaCon' organizer accused of pocketing more than $1 million earmarked to charities,domestic,passive_clause,train,other,fallback_other
-It's Tax Day. Treasury says 53 million filers used new Trump tax breaks before the deadline,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Super Typhoon Sinlaku pounds remote U.S. islands in the Pacific Ocean,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-AIDS activists disrupt Vought's testimony on Trump's budget,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Citizen Naturalized Under Joe Biden Brutally Murders DHS Employee Lauren Bullis,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+It's Tax Day. Treasury says 53 million filers used new Trump tax breaks before the deadline,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Super Typhoon Sinlaku pounds remote U.S. islands in the Pacific Ocean,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+AIDS activists disrupt Vought's testimony on Trump's budget,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Citizen Naturalized Under Joe Biden Brutally Murders DHS Employee Lauren Bullis,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Trump says China has agreed not to send weapons to Iran,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-'Less people and better results:' IRS CEO says filing season goals met after 27% staffing cut,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Erika Kirk cancels Turning Point USA appearance with JD Vance after 'very serious threats',domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+'Less people and better results:' IRS CEO says filing season goals met after 27% staffing cut,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Erika Kirk cancels Turning Point USA appearance with JD Vance after 'very serious threats',domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "All of Michigan under Flood Watch as roads washed out, dams fail, people evacuated",domestic,coordination,test,simple_clause,finite_subject_verb_clause
-"Severe weather causes damage to Ann Arbor buildings, power outages, flooded roads",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Severe weather causes damage to Ann Arbor buildings, power outages, flooded roads",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 CNN Anchor Laughs at Trump Claim That Fox 'Misquoted' Him in Live Interview,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-"As Trump threatened to fire Powell, federal prosecutors showed up unannounced at the Federal Reserve building",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Trump administration moves to erase Jan. 6 riot convictions for seditious conspiracy,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"As Trump threatened to fire Powell, federal prosecutors showed up unannounced at the Federal Reserve building",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Trump administration moves to erase Jan. 6 riot convictions for seditious conspiracy,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 Key Trump lawyer who tried to overturn 2020 election permanently disbarred,domestic,passive_clause,test,simple_clause,finite_subject_verb_clause
 "Billionaires, dark money fuel questions ahead of 2026 midterms",domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Nearly 60% of U.S. farmers say their finances are getting worse as fertilizer, fuel costs rise: Survey",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-"Trump Breaks With Meloni, Italy's Leader, Amid Dispute Over Pope and Iran",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Videos Show Officers Beating Man During Arrest in Brooklyn,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Nearly 60% of U.S. farmers say their finances are getting worse as fertilizer, fuel costs rise: Survey",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Trump Breaks With Meloni, Italy's Leader, Amid Dispute Over Pope and Iran",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Videos Show Officers Beating Man During Arrest in Brooklyn,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Roy Cooper far outraises Michael Whatley in North Carolina Senate race,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "In group chats and meetings, Republicans are privately petrified the Iran war could cost them the midterms",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 White House budget chief Russell Vought won't estimate Iran war cost in testimony,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-"Syracuse University Chancellor Kent Syverud diagnosed with brain cancer, steps down",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
-Capitol agenda: Cory Mills under fire but not going anywhere,domestic,noun_phrase_fragment,test,coordination,coordination_cc_conj_pattern
-Houston in showdown with state over immigration ordinance,domestic,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-The Senate Is 'Prepared' To Confirm A Supreme Court Justice And Ted Cruz Might Be The Pick,domestic,coordination,train,coordination,coordination_cc_conj_pattern
-Tax Day arrives with Republicans struggling to sell their cuts,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Syracuse University Chancellor Kent Syverud diagnosed with brain cancer, steps down",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Capitol agenda: Cory Mills under fire but not going anywhere,domestic,noun_phrase_fragment,train,coordination,coordination_cc_conj_pattern
+Houston in showdown with state over immigration ordinance,domestic,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
+The Senate Is 'Prepared' To Confirm A Supreme Court Justice And Ted Cruz Might Be The Pick,domestic,coordination,dev,coordination,coordination_cc_conj_pattern
+Tax Day arrives with Republicans struggling to sell their cuts,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "DNI Gabbard targets whistleblower, ex inspector general in criminal referral",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Hedge funds think they can make a killing on Trump tariff refunds politico.eu,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Cities scramble to comply with or fight major state housing law,domestic,simple_clause,train,coordination,coordination_cc_conj_pattern
+Hedge funds think they can make a killing on Trump tariff refunds politico.eu,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Cities scramble to comply with or fight major state housing law,domestic,simple_clause,test,coordination,coordination_cc_conj_pattern
 WATCH LIVE: Severe storms hit parts of Kansas City area on Wednesday evening,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 GOP leaders struggle to keep $75B immigration plan narrow,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Senate rejects resolution to block Trump from striking Iran,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+Senate rejects resolution to block Trump from striking Iran,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 James Talarico raises record breaking $27 million in first quarter for Senate bid,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Caltrans to close section of I 80 in SF. 'It's going to be crazy.',domestic,other,train,simple_clause,finite_subject_verb_clause
 New federal Medicaid rules require 1 month of work. Some states demand more.,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "Spanberger amends, signs sweeping gun legislation reshaping Virginia's firearm laws",domestic,coordination,test,coordination,coordination_cc_conj_pattern
-House passes aviation safety bill in response to deadly midair collision near D.C.,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+House passes aviation safety bill in response to deadly midair collision near D.C.,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 A bipartisan duo helped force Reps. Swalwell and Gonzales to resign. They say other House members could be next.,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "At least 75 vehicles involved in I 70 pileup near Eisenhower Tunnel, 19 people taken to hospital",domestic,coordination,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Iran claims oil tanker transits Strait of Hormuz amid U.S. blockade on Iranian ports,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Gavin Newsom faces growing pressure to intervene in a scrambled California governor's race,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Trump threatens to shred UK trade deal over Starmer's Iran war opposition politico.eu,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Iran War News Live Updates: Blockade 'Fully Implemented' as Mediators Push for U.S. Iran Ceasefire Extension,world,other,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Iran War News Live Updates: Blockade 'Fully Implemented' as Mediators Push for U.S. Iran Ceasefire Extension,world,other,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 "Israeli security cabinet discusses possible Lebanon ceasefire, senior official says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Sudan enters a fourth year of war as officials lament an 'abandoned crisis',world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Nine killed in second Turkish school shooting in two days,world,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
-Hungary's prime minister elect vows to suspend 'propaganda machine' state media,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Pakistan and Bangladesh migrants are faking they are gay to get asylum in the UK: Report,world,simple_clause,dev,other,fallback_other
+Sudan enters a fourth year of war as officials lament an 'abandoned crisis',world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Nine killed in second Turkish school shooting in two days,world,passive_clause,dev,passive_clause,passive_dependency_or_aux_vbn
+Hungary's prime minister elect vows to suspend 'propaganda machine' state media,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Pakistan and Bangladesh migrants are faking they are gay to get asylum in the UK: Report,world,simple_clause,test,other,fallback_other
 Magyar calls on Orbán to lift veto on Ukraine loan before his exit,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Vietnam's new leader meets China's Xi on his first overseas trip,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Vietnam's new leader meets China's Xi on his first overseas trip,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 "Trump says new talks with Iran will happen soon. And, Eric Swalwell faces new allegations",world,coordination,train,simple_clause,finite_subject_verb_clause
 "Pope Leo XIV in Algeria walks in footsteps of his spiritual father, St. Augustine",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-EU age verification app ready as Europe moves to curb children's social media access,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+EU age verification app ready as Europe moves to curb children's social media access,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 "The Iran War Is Giving China Time, Russia Money, and North Korea an Opening 19FortyFive",world,coordination,train,coordination,coordination_cc_conj_pattern
 "Iran Update Special Report, April 14, 2026 Institute for the Study of War",world,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
 "Japan to join largest Balikatan war games with 1,400 troops, Type 88 missiles navalnews.com",world,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Japan offers $10 billion support to help Asian neighbours secure oil,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Xi Jinping says the world order is 'crumbling into disarray.' Larry Fink and the IMF are worried about a global recession,world,coordination,test,simple_clause,finite_subject_verb_clause
+Japan offers $10 billion support to help Asian neighbours secure oil,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Xi Jinping says the world order is 'crumbling into disarray.' Larry Fink and the IMF are worried about a global recession,world,coordination,train,simple_clause,finite_subject_verb_clause
 Germany to maintain Ukraine aid despite political headwinds,world,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
 "Slovenia's Parliament Speaker Proposes NATO Exit Referendum, Signals Possible Moscow Visit",world,coordination,test,simple_clause,finite_subject_verb_clause
 "At least 250 people missing, including Rohingya and Bangladeshis, after boat sinks in Andaman Sea",world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Spain finalizes amnesty measure for potentially hundreds of thousands of immigrants,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Exclusive Europe Is Accelerating a NATO Fallback Plan in Case Trump Pulls Out,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Exclusive Europe Is Accelerating a NATO Fallback Plan in Case Trump Pulls Out,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Putin Demands Answers as Russia's Economy Undershoots Expectations,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 "After losing loved ones, an Israeli and a Palestinian work together for Middle East peace",world,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Exploring the green side of Rio de Janeiro: a vast urban rain forest,world,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
 Critical Atlantic current significantly more likely to collapse than thought,world,noun_phrase_fragment,train,other,fallback_other
-"China Russia ties are 'precious' in the current international context, Xi Jinping says",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"China Russia ties are 'precious' in the current international context, Xi Jinping says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Ukrainian robots capture enemy position without troops in historic first, Zelenskyy says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Hezbollah terrorists caught off guard as IDF troops encircle enemy in Bint Jbeil ynetnews,world,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
 Flotilla carrying activists and aid for Palestinians in Gaza sets sail from Spain,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Exclusive: U.K. Ukraine duo beats Americans at their own drone game,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Iran used Chinese spy satellite to target US bases,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Iran used Chinese spy satellite to target US bases,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 One million signatures call to suspend EU Israel association agreement,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 One million signatures call to suspend EU Israel association agreement,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Done and Dusted? Trump's Portrayal of the War in Iran Collides With Reality.,world,question_form,train,question_form,question_punctuation_or_interrogative_start
@@ -306,88 +306,161 @@ Italy suspends defense agreement with Israel,world,simple_clause,train,simple_cl
 In Defense of Dumb Dogs,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
 "One week into the ceasefire, is the end of the Iran war any closer?",world,question_form,train,question_form,question_punctuation_or_interrogative_start
 "Ex Virginia Lt. Gov. Justin Fairfax and wife found dead in murder suicide, police say",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Iran War Live Updates: Hegseth and Pentagon Officials Speak on U.S. Military Blockade,domestic,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Kennedy returns to Capitol Hill with clout diminished,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Pope says 'world is being ravaged by a handful of tyrants' amid feud with Trump's White House,domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
-Rise in Young Men's Religiosity Realigns Gender Gaps,domestic,simple_clause,dev,other,fallback_other
-"Navy reservist caught following murder of wife, whose body was found in freezer",domestic,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
+Iran War Live Updates: Hegseth and Pentagon Officials Speak on U.S. Military Blockade,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Kennedy returns to Capitol Hill with clout diminished,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Pope says 'world is being ravaged by a handful of tyrants' amid feud with Trump's White House,domestic,simple_clause,test,passive_clause,passive_dependency_or_aux_vbn
+Rise in Young Men's Religiosity Realigns Gender Gaps,domestic,simple_clause,train,other,fallback_other
+"Navy reservist caught following murder of wife, whose body was found in freezer",domestic,passive_clause,test,passive_clause,passive_dependency_or_aux_vbn
 Trump Stooge Who Fed Boss Crackpot Christ Meme Unmasked,domestic,noun_phrase_fragment,train,other,fallback_other
-Johnson tries again on spy powers vote amid GOP rebellion,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Johnson tries again on spy powers vote amid GOP rebellion,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police 6abc Philadelphia,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Live: Senate voting on reopening mining near Boundary Waters,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-California 2026 Poll: Swalwell Exit from Governor Race Opens Lane for Democrat Xavier Becerra,domestic,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
+California 2026 Poll: Swalwell Exit from Governor Race Opens Lane for Democrat Xavier Becerra,domestic,noun_phrase_fragment,dev,simple_clause,finite_subject_verb_clause
 "U.S. Navy stopped 13 ships from passing Iranian port blockade, Pentagon says",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Trump administration set to launch tariff refund portal. Here's what to know.,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Trump administration set to launch tariff refund portal. Here's what to know.,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
 A New Jersey special election could soon narrow the House GOP's razor thin majority,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-What Is the Pied à Terre Tax? 5 Things to Know About Hochul's Proposal.,domestic,question_form,dev,question_form,question_punctuation_or_interrogative_start
+What Is the Pied à Terre Tax? 5 Things to Know About Hochul's Proposal.,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
 Iran Linked Ships Take New Path To Trickle Into the Persian Gulf,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Early voting picks up in Northern Virginia ahead of redistricting referendum,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Early voting picks up in Northern Virginia ahead of redistricting referendum,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Commission of Fine Arts votes to move ahead with Trump's proposed victory arch,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"House set to break with Trump, voting against ending deportation protections for Haitians",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+"House set to break with Trump, voting against ending deportation protections for Haitians",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Trump leans in on a major 2026 issue: possibly replacing Justices Alito and Thomas,domestic,simple_clause,train,other,fallback_other
 Justice Sotomayor issues rare apology for remarks about conservative colleague,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Pete Hegseth Quotes Violent Prayer From 'Pulp Fiction,' References Bible",domestic,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
-"Floodwaters inundate Wisconsin streets, trapping drivers, as Midwest rebuilds after storms",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"3 Killed in Boat Strike in the Pacific, Pentagon Says",domestic,passive_clause,dev,passive_clause,passive_dependency_or_aux_vbn
-John Eastman loses his law license in California over 2020 election scheme,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Floodwaters inundate Wisconsin streets, trapping drivers, as Midwest rebuilds after storms",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"3 Killed in Boat Strike in the Pacific, Pentagon Says",domestic,passive_clause,test,passive_clause,passive_dependency_or_aux_vbn
+John Eastman loses his law license in California over 2020 election scheme,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Talarico Leads a Democratic Cash Surge: 7 Takeaways From 2026 Filings,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-DNI Tulsi Gabbard sends criminal referral over Trump's 2019 impeachment to Justice Department,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+DNI Tulsi Gabbard sends criminal referral over Trump's 2019 impeachment to Justice Department,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Democrats file articles of impeachment against Hegseth for 'high crimes and misdemeanors',domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Michigan 2026 Poll: Abdul El Sayed, Mallory McMorrow Tied for Lead in Democratic Senate Primary",domestic,noun_phrase_fragment,train,other,fallback_other
+"Michigan 2026 Poll: Abdul El Sayed, Mallory McMorrow Tied for Lead in Democratic Senate Primary",domestic,noun_phrase_fragment,dev,other,fallback_other
 "SCOTUS Justice Clarence Thomas, 77, Goes on Unhinged Rant About 'Intellectuals'",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
 Russ Vought Confronted By Democrats For Constantly Breaking Laws,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Trump says the Iran war is 'very close to over' despite no deal, a live blockade, and threats mounting",domestic,coordination,train,coordination,coordination_cc_conj_pattern
+"Trump says the Iran war is 'very close to over' despite no deal, a live blockade, and threats mounting",domestic,coordination,dev,coordination,coordination_cc_conj_pattern
 Meet the Americans refusing to pay their taxes in protest of the Trump administration,domestic,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
-Video shows moment Oklahoma high school principal tackled gunman before being shot,domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
-How Eric Swalwell's fall was brought on by a network of women who organized online,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
+Video shows moment Oklahoma high school principal tackled gunman before being shot,domestic,simple_clause,dev,passive_clause,passive_dependency_or_aux_vbn
+How Eric Swalwell's fall was brought on by a network of women who organized online,domestic,question_form,test,question_form,question_punctuation_or_interrogative_start
 Lauren Bullis: Homeland Security worker and another woman are killed in a series of Atlanta area attacks,domestic,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
-US Senate Republicans back Trump military sales to Israel,domestic,simple_clause,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-NYPD investigation opened over 'disturbing' video of officers' use of force during arrest,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Trump wants a Tax Day victory lap in Las Vegas. The city's economy isn't cooperating.,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-US Senate Republicans block latest bid to rein in Trump Iran war powers,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-Capitol agenda: GOP losing patience over Warsh fight,domestic,noun_phrase_fragment,dev,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"15 year old killed, 2 injured in Eisenhower Park shooting on Long Island, police say",domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
-DeSantis Delays Redistricting Special Session and Adds a Vaccine Bill,domestic,coordination,dev,simple_clause,finite_subject_verb_clause
+US Senate Republicans back Trump military sales to Israel,domestic,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+NYPD investigation opened over 'disturbing' video of officers' use of force during arrest,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Trump wants a Tax Day victory lap in Las Vegas. The city's economy isn't cooperating.,domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+US Senate Republicans block latest bid to rein in Trump Iran war powers,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Capitol agenda: GOP losing patience over Warsh fight,domestic,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+"15 year old killed, 2 injured in Eisenhower Park shooting on Long Island, police say",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+DeSantis Delays Redistricting Special Session and Adds a Vaccine Bill,domestic,coordination,train,simple_clause,finite_subject_verb_clause
 "Labor Department Investigates Texts Sent Among Staff, Secretary and Her Family",domestic,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
-"Secret Service determines no credible threats to UGA rally after Erika Kirk's cancellation, source says",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-What is the 25th Amendment and could it be used to remove Trump from office?,domestic,question_form,dev,question_form,question_punctuation_or_interrogative_start
+"Secret Service determines no credible threats to UGA rally after Erika Kirk's cancellation, source says",domestic,simple_clause,test,simple_clause,finite_subject_verb_clause
+What is the 25th Amendment and could it be used to remove Trump from office?,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
 "As immigrant deaths in custody grow, ICE reduces what details are made public",domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
-"Majority Of Voters Blame Trump For Recent Rise In Gas Prices, Trump Job Approval Holds Steady At 38%, Quinnipiac University National Poll Finds; 64% Think Threat To End 'A Whole Civilization' Was Unacceptable",domestic,coordination,dev,coordination,coordination_cc_conj_pattern
-Judge blocks above ground construction of White House ballroom,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
-Trump administration prepares for pivot to economic warfare on Iran,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Majority Of Voters Blame Trump For Recent Rise In Gas Prices, Trump Job Approval Holds Steady At 38%, Quinnipiac University National Poll Finds; 64% Think Threat To End 'A Whole Civilization' Was Unacceptable",domestic,coordination,test,coordination,coordination_cc_conj_pattern
+Judge blocks above ground construction of White House ballroom,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Trump administration prepares for pivot to economic warfare on Iran,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
 "Live Updates: Trump says Israel, Lebanon agree to ceasefire as Iran keeps Strait of Hormuz gridlocked",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Russian missiles and drones bombard Ukraine in hourslong attack, killing at least 16",world,noun_phrase_fragment,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
-"Pakistan Looks to Play Peacemaker Between U.S. and Iran, Again",world,simple_clause,test,other,fallback_other
+"Pakistan Looks to Play Peacemaker Between U.S. and Iran, Again",world,simple_clause,train,other,fallback_other
 South African politician Julius Malema sentenced to prison for firing gun,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 "Iran US talks turn to interim deal amid rifts over nuclear work, Iranian sources say",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Pope Leo tells Cameroon's government to root out corruption to find peace,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Pope Leo tells Cameroon's government to root out corruption to find peace,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 Hungarian Americans say Orbán's defeat could provide roadmap for countering Trump,world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Turkish police detain 162 people over online posts about school shootings,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Turkish police detain 162 people over online posts about school shootings,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 Why China Isn't Pushing Iran to Accept U.S. Demands to End War,world,question_form,train,question_form,question_punctuation_or_interrogative_start
 Online age checks are coming in Europe politico.eu,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-What's behind Israeli attacks along Lebanon's Litani River? dw.com,world,question_form,train,question_form,question_punctuation_or_interrogative_start
-Partner held in Zanzibar after American influencer Ashly Robinson dies under mysterious circumstances,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+What's behind Israeli attacks along Lebanon's Litani River? dw.com,world,question_form,test,question_form,question_punctuation_or_interrogative_start
+Partner held in Zanzibar after American influencer Ashly Robinson dies under mysterious circumstances,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Lower electricity bills could become a reality thanks to EU proposal,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Sudan Enters Fourth Year of War Amid World's Most Severe Humanitarian Crisis,world,noun_phrase_fragment,dev,simple_clause,finite_subject_verb_clause
-"Israeli military continues to strike Hezbollah amid Lebanon peace talks, Netanyahu says",world,simple_clause,test,simple_clause,finite_subject_verb_clause
-"In five weeks, this IDF battalion destroyed 1,000 Hezbollah sites",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Israeli military continues to strike Hezbollah amid Lebanon peace talks, Netanyahu says",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"In five weeks, this IDF battalion destroyed 1,000 Hezbollah sites",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
 Bukele signs reforms allowing life prison sentences for people as young as 12,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-WSJ: Europe is quietly building a NATO fallback in case the US steps back,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Germans take over a day off work sick every month so the government is proposing to cut their pay,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
-UK Announces Biggest Ever Drone Package for Ukraine. Here's What's Inside,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+WSJ: Europe is quietly building a NATO fallback in case the US steps back,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Germans take over a day off work sick every month so the government is proposing to cut their pay,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+UK Announces Biggest Ever Drone Package for Ukraine. Here's What's Inside,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 'We Cannot Lose Sight of Ukraine.' Europeans Promise More Aid to Kyiv.,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Kenyan court jails Chinese man in ant smuggling case,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Kenyan court jails Chinese man in ant smuggling case,world,simple_clause,test,simple_clause,finite_subject_verb_clause
 Why are fuel price protests sweeping the Republic of Ireland?,world,question_form,train,question_form,question_punctuation_or_interrogative_start
-New Zealand's Finance Minister Says Iran War has Made 'Whole World Poorer',world,simple_clause,test,simple_clause,finite_subject_verb_clause
+New Zealand's Finance Minister Says Iran War has Made 'Whole World Poorer',world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Azeem Ibrahim: Iran Conflict Will Be Decided By Who Can 'Endure The Most',world,passive_clause,train,passive_clause,passive_dependency_or_aux_vbn
 "Iran Update Special Report, April 15, 2026 Institute for the Study of War",world,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
-"Hamas refuses to give up weapons, demands Board of Peace change Gaza ceasefire plan",world,simple_clause,test,simple_clause,finite_subject_verb_clause
-Berlin gets a front row seat to German weapons' performance in Ukraine,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Hamas refuses to give up weapons, demands Board of Peace change Gaza ceasefire plan",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Berlin gets a front row seat to German weapons' performance in Ukraine,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "Exclusive: China moves to block entrance to disputed South China Sea shoal, images show",world,simple_clause,train,simple_clause,finite_subject_verb_clause
 Ukraine Says Russians are Surrendering to Robots 404 Media,world,simple_clause,train,simple_clause,finite_subject_verb_clause
 "North Korea Test Launches Anti ship, Cruise Missiles from First in class Destroyer",world,noun_phrase_fragment,train,other,fallback_other
-China Sharpens Retaliatory Tools Against U.S. Ahead of Trump Summit,world,noun_phrase_fragment,train,simple_clause,finite_subject_verb_clause
-'It couldn't be any worse' Zelensky sounds alarm on Patriot air defense missile shortage,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-"Iran used Chinese spy satellite to target US bases, FT reports, Beijing denies story",world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Hungary's new leader has vowed to wean his country off Russian energy. It will be a painful transition.,world,simple_clause,train,simple_clause,finite_subject_verb_clause
-Trump's Isolation Deepens as His Ties With Longtime Allies Fray,world,noun_phrase_fragment,dev,simple_clause,finite_subject_verb_clause
+China Sharpens Retaliatory Tools Against U.S. Ahead of Trump Summit,world,noun_phrase_fragment,dev,simple_clause,finite_subject_verb_clause
+'It couldn't be any worse' Zelensky sounds alarm on Patriot air defense missile shortage,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Iran used Chinese spy satellite to target US bases, FT reports, Beijing denies story",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Hungary's new leader has vowed to wean his country off Russian energy. It will be a painful transition.,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Trump's Isolation Deepens as His Ties With Longtime Allies Fray,world,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
+"8 children killed in mass shooting in Shreveport, Louisiana, police say",domestic,passive_clause,train,simple_clause,finite_subject_verb_clause
+Canada's prime minister says economic ties with US are a weakness that must be corrected,domestic,simple_clause,train,passive_clause,passive_dependency_or_aux_vbn
+Five people shot on Iowa City Ped Mall thegazette.com,domestic,passive_clause,train,simple_clause,finite_subject_verb_clause
+"Hundreds trying to storm Wisconsin beagle research facility met with rubber bullets, pepper spray",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Iran reverses course on opening Strait of Hormuz as hardliners take front seat in Tehran,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Is Trump Acting Crazy On Purpose? New Report Suggests Yes.,domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
+Oil prices jump 7% after Iran and U.S. attack ships as tensions escalate over Strait of Hormuz,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+Pete Buttigieg Spots What's Oh So 'Insulting' About Trump's AI Jesus Post,domestic,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Republican senator criticizes Trump's 'holy war' with Pope Leo,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+This tariff refund portal is about to be America's hottest website,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Trump Signs Executive Order Endorsing Psychedelic Psilocybin and Ibogaine; Asks 'Can I Have Some, Please?'",domestic,question_form,train,question_form,question_punctuation_or_interrogative_start
+Trump says US Iran talks to continue Monday in Pakistan,domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Trump says US delegation will travel to Islamabad on Monday, Iran declines talks",domestic,coordination,test,simple_clause,finite_subject_verb_clause
+"Waltz defends Trump's threat to bomb 'every single power plant' in Iran ABC News Breaking News, Latest News and Videos",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Woodland Hills woman Shamim Mafi arrested at LAX for alleged trafficking of drones, bombs, ammo for Iran, US prosecutors say",domestic,simple_clause,train,simple_clause,finite_subject_verb_clause
+'Such a f ing distraction': Labor Department probe overshadows Trump's worker agency,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"26 years later, IDF restores its south Lebanon security zone with key changes",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+A mass shooting in Ukraine's capital leaves 6 dead before police shot and killed the gunman,world,coordination,train,coordination,coordination_cc_conj_pattern
+"Book Review: 'When We See You Again,' by Rachel Goldberg Polin",world,noun_phrase_fragment,train,other,fallback_other
+EU and Magyar agreed to work together for release of EU cash after weekend talks,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Hamas Officials Say Group Is Ready to Hand Over Some Weapons,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Hormuz Shipping Traffic Grinds to a Halt as Tensions Deepen,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"In Angola, love for an American pope but not for an American president",world,noun_phrase_fragment,dev,other,fallback_other
+North Korea launches multiple short range ballistic missiles toward sea,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Rumen Radev looks set to win Bulgarian Parliamentary election,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+"Starmer's Mandelson nightmare never ends. This time, it may cost him his job as U.K. leader",world,coordination,train,simple_clause,finite_subject_verb_clause
+UK police investigating if arson attacks on Jewish sites in London are the work of Iranian proxies,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+UN chief strongly condemns killing of another peacekeeper in southern Lebanon,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Ukraine pushes for Europe to build defense system against ballistic weapons,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+'I thought I might die': A Palestinian mother's account of Israeli detention,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+'Sex In exchange for food or money': Gaza's widows sexually exploited by Hamas ynetnews,world,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+"12 countries, including Pakistan, condemn Israel's move to appoint envoy to Somaliland",world,simple_clause,test,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Archaeologists Uncover a Massive Circular Temple in Egypt With a Water Network Connected Directly to the Nile,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"At anti Trump rally, Sánchez promises to 'twist the arm' of the global right politico.eu",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Baltic states bar Slovak prime minister from using airspace for travel to Moscow,world,simple_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Bodies of 50 infants dumped at Trinidad graveyard,world,passive_clause,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+Chernobyl's radioactive landscape is testament to nature's resilience and survival spirit,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+China is the Iran war's biggest winner. It never fired a shot,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Commander who rebuilt Hezbollah's Radwan Force killed, Lebanese media says ynetnews",world,passive_clause,train,simple_clause,finite_subject_verb_clause
+Cruise Ships Seized Brief Hormuz Reopening to Flee Persian Gulf,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Elderly Passenger Overboard From Carnival Splendor Triggers Major Operation, Next Sailing Delayed",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Ex Scottish Labour leader Dugdale appointed as Stonewall chairwoman,world,passive_clause,train,simple_clause,finite_subject_verb_clause
+Fire Destroys Most of Coastal Village in Malaysia,world,simple_clause,dev,other,fallback_other
+Give me your tired …,world,other,dev,other,fallback_other
+How Iran has been studying lessons from the war in Ukraine,world,question_form,train,question_form,question_punctuation_or_interrogative_start
+"IDF reservist killed by Hezbollah explosive in Lebanon amid truce, 3 troops hurt",world,passive_clause,train,simple_clause,finite_subject_verb_clause
+"IDF says photo of soldier destroying Jesus statue in Lebanon is genuine, vows action",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+It Takes 2 Minutes to Hack the EU's New Age Verification App,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Japan seals largest ever defense contract with frigate sale to Australia,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Jared Kushner Probe Puts New Spotlight on EA Buyout,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Mediators push US Iran ceasefire extension as deal hopes fade,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+Medics Decry Israeli Attacks on Ambulance Crews,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Moscow bombards Ukraine while Kyiv targets Russian oil facilities,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Padre Guilherme hosts rave in Argentina's capital honoring late Pope Francis,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Photos: How overfishing in Southeast Asia is an ecological and human crisis,world,noun_phrase_fragment,test,simple_clause,finite_subject_verb_clause
+"Putin finally admits Russia's economy is in trouble and grasps for answers, after warnings about a financial crisis have been piling up",world,coordination,dev,coordination,coordination_cc_conj_pattern
+Sexual misconduct allegations shake Gaza Freedom Flotilla,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Spain pushes to end EU Israel association agreement politico.eu,world,simple_clause,test,simple_clause,finite_subject_verb_clause
+"Spain, Brazil, Mexico vow to boost Cuba aid amid US threats",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+The Iranian Regime's Deceptive Negotiation Strategy: No Surprises Jerusalem Center for Security and Foreign Affairs,world,noun_phrase_fragment,train,noun_phrase_fragment,no_finite_clause_nominal_fragment
+The UK France plan to fix Iran crisis without Donald Trump,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+Thousands of Parisians evacuated as WW2 bomb detonated in situ,world,passive_clause,train,other,fallback_other
+Thousands protest across Israel against Netanyahu gov't ahead of Memorial Day,world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+UAE official: More than 90% of Iran's targets were civilian infrastructure,world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"Ukraine war latest: Ukraine strikes Russian drone plant in Taganrog, military confirms",world,simple_clause,dev,simple_clause,finite_subject_verb_clause
+Venezuela's Maria Corina Machado draws a huge Madrid crowd and rebuffs meeting with Spain's PM,world,simple_clause,dev,coordination,coordination_cc_conj_pattern
+Why nearly every farmer who grows these chile peppers is a woman,world,question_form,dev,question_form,question_punctuation_or_interrogative_start
+"With Trump Novices, Can the U.S. Win the 'Art Olympics'?",world,question_form,dev,question_form,question_punctuation_or_interrogative_start
+"With a handshake, Spain and Mexico put diplomatic tussle over their colonial past behind them",world,simple_clause,test,simple_clause,finite_subject_verb_clause
+100 Historical Photos That Feel Like Witchcraft To Be Looking At In 2026,world,noun_phrase_fragment,train,other,fallback_other
+"He Was Flying His Drone Over a Crowded Australian Beach When He Spotted an Underwater Tornado, Invisible and Dangerous for Anyone in the Water",world,simple_clause,train,simple_clause,finite_subject_verb_clause
+"The World Is Running Out of People and It Has Nothing to Do With War, Disease, or Natural Disaster",world,coordination,dev,coordination,coordination_cc_conj_pattern
