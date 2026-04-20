@@ -1,0 +1,528 @@
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% ============================================================
+% THEME AND STYLING (matched to slides_example.tex)
+% ============================================================
+\usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
+
+% Colors - Dark theme with accent colors
+\definecolor{darkbg}{HTML}{1a1a2e}
+\definecolor{darkfg}{HTML}{16213e}
+\definecolor{accent}{HTML}{e94560}
+\definecolor{accentblue}{HTML}{00d9ff}
+\definecolor{textlight}{HTML}{eaeaea}
+\definecolor{textsub}{HTML}{a0a0a0}
+
+\setbeamercolor{normal text}{fg=textlight, bg=darkbg}
+\setbeamercolor{alerted text}{fg=accent}
+\setbeamercolor{example text}{fg=accentblue}
+\setbeamercolor{frametitle}{fg=textlight, bg=darkfg}
+\setbeamercolor{title}{fg=textlight}
+\setbeamercolor{subtitle}{fg=textsub}
+\setbeamercolor{author}{fg=textsub}
+\setbeamercolor{date}{fg=textsub}
+\setbeamercolor{block title}{fg=textlight, bg=darkfg}
+\setbeamercolor{block body}{fg=textlight, bg=darkfg!50!darkbg}
+\setbeamercolor{item}{fg=accent}
+\setbeamercolor{subitem}{fg=accentblue}
+
+% Progress bar
+\metroset{progressbar=frametitle}
+\setbeamercolor{progress bar}{fg=accent, bg=darkfg}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{xcolor}
+\graphicspath{{../images/}}
+
+% ============================================================
+% TITLE INFO
+% ============================================================
+\title{Structural Patterns in News Headlines}
+\subtitle{A Computational Linguistic Analysis Using NLP}
+\author{Victor Derani \and Avi Herman \and Kylie Lin}
+\date{NLP Final Project}
+\institute{Department of Computer Science}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ----------------------------------------------------------
+% TITLE
+% ----------------------------------------------------------
+\begin{frame}[plain]
+  \maketitle
+\end{frame}
+
+% ----------------------------------------------------------
+% QUESTION
+% ----------------------------------------------------------
+\begin{frame}{The Question}
+  \begin{center}
+    \Large
+    \textcolor{accent}{Do news headlines follow stable syntactic templates}\\[0.5em]
+    \textcolor{accentblue}{that can be modeled and evaluated rigorously?}\\[1.5em]
+    \normalsize
+    \textcolor{textsub}{Focus: linguistic form, not topic semantics.}\\[0.5em]
+    \textcolor{textsub}{Goal: interpretable structure + style prediction.}
+  \end{center}
+\end{frame}
+
+% ----------------------------------------------------------
+% MOTIVATION
+% ----------------------------------------------------------
+\begin{frame}{Why Headlines?}
+  \begin{columns}
+    \column{0.52\textwidth}
+    \textbf{Headlines are extreme compression:}
+    \begin{itemize}
+      \item Minimal length, maximal information
+      \item Strong editorial constraints
+      \item High public exposure and downstream impact
+    \end{itemize}
+
+    \vspace{0.8em}
+    \textbf{NLP relevance:}
+    \begin{itemize}
+      \item Concise generation
+      \item Summarization quality control
+      \item Framing and agency analysis
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \begin{block}{Core Thesis}
+      Headline writing is not free-form text production; it is a constrained system with reproducible structural regularities.
+    \end{block}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% HYPOTHESIS
+% ----------------------------------------------------------
+\begin{frame}{Hypothesis and Falsification}
+  \begin{block}{Hypothesis}
+    News headlines follow stable, reusable syntactic templates that are recoverable from parse-level features at rates above trivial baselines.
+  \end{block}
+
+  \vspace{0.8em}
+
+  \textbf{Falsification criteria:}
+  \begin{itemize}
+    \item Macro F1 collapses toward majority/random behavior
+    \item No dominant recurring templates in corpus-level analysis
+    \item Large instability across random train/dev/test splits
+    \item Rules cannot be linked to parse evidence
+  \end{itemize}
+\end{frame}
+
+% ----------------------------------------------------------
+% PIPELINE
+% ----------------------------------------------------------
+\begin{frame}{Pipeline Overview}
+  \textbf{End-to-end workflow}
+  \begin{enumerate}
+    \item RSS headline collection
+    \item spaCy parsing (POS, dependencies, entities, roots)
+    \item Structural analysis and diagnostics
+    \item Rule-based structure and style prediction
+    \item Gold-standard evaluation + split-stability sweep
+  \end{enumerate}
+
+  \vspace{1em}
+
+  \begin{block}{Parsing robustness}
+    Model preference hierarchy + normalization + fallback parse selection for difficult casing/formatting conditions.
+  \end{block}
+\end{frame}
+
+% ----------------------------------------------------------
+% GOLD EXPLANATION
+% ----------------------------------------------------------
+\begin{frame}{What ``Gold'' Means and Why We Need It}
+  \textbf{Gold-standard labels = human-verified ground truth}
+
+  \vspace{0.8em}
+
+  \begin{columns}
+    \column{0.5\textwidth}
+    \textbf{Why necessary:}
+    \begin{itemize}
+      \item Prevent circular evaluation
+      \item Measure true error, not self-agreement
+      \item Enable valid precision/recall/F1
+      \item Support fair model comparisons
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \textbf{Dataset design:}
+    \begin{itemize}
+      \item 391 manually labeled headlines
+      \item Train/Dev/Test = 59.6\% / 19.2\% / 21.2\%
+      \item Split chosen to balance:
+      \begin{itemize}
+        \item rule learning capacity (train),
+        \item tuning diagnostics (dev),
+        \item unbiased final estimate (test)
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
+
+  \vspace{0.8em}
+
+  \textcolor{accent}{Without gold annotation, high scores can be meaningless.}
+\end{frame}
+
+% ----------------------------------------------------------
+% WHY THESE METRICS
+% ----------------------------------------------------------
+\begin{frame}{Why These Metrics in This Study}
+  \begin{columns}
+    \column{0.52\textwidth}
+    \textbf{Accuracy}
+    \begin{itemize}
+      \item Fraction of headlines whose predicted label equals the gold label
+      \item Useful for top-line editorial reliability
+    \end{itemize}
+
+    \textbf{Precision$_c$ / Recall$_c$}
+    \begin{itemize}
+      \item Precision$_c$: when we predict class $c$, how often are we right?
+      \item Recall$_c$: of true class-$c$ headlines, how many do we recover?
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \textbf{$F1_c$}
+    \begin{itemize}
+      \item Harmonic mean of precision and recall for class $c$
+      \item Punishes one-sided behavior
+    \end{itemize}
+
+    \textbf{Macro F1}
+    \begin{itemize}
+      \item Equal average over classes
+      \item Critical under imbalance (`simple\_clause` dominates)
+      \item Prevents "high accuracy, poor minority labels"
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% LABEL SET
+% ----------------------------------------------------------
+\begin{frame}{Structural and Style Label Space}
+  \begin{columns}
+    \column{0.52\textwidth}
+    \textbf{Structure labels}
+    \begin{itemize}
+      \item question\_form
+      \item passive\_clause
+      \item coordination
+      \item noun\_phrase\_fragment
+      \item simple\_clause
+      \item other
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \textbf{Style dimensions}
+    \begin{itemize}
+      \item lead\_frame
+      \item agency\_style
+      \item density\_band
+      \item rhetorical\_mode
+    \end{itemize}
+  \end{columns}
+
+  \vspace{0.8em}
+
+  \[
+  \text{signature} = \text{structure}\;|\;\text{lead\_frame}\;|\;\text{rhetorical\_mode}
+  \]
+\end{frame}
+
+% ----------------------------------------------------------
+% METRICS
+% ----------------------------------------------------------
+\begin{frame}{Evaluation Metrics}
+  \begin{columns}
+    \column{0.56\textwidth}
+    \[
+    \text{Accuracy} = \frac{\#\text{correct}}{\#\text{total}}
+    \]
+    \[
+    \text{Precision}_c = \frac{TP_c}{TP_c + FP_c},\quad
+    \text{Recall}_c = \frac{TP_c}{TP_c + FN_c}
+    \]
+    \[
+    F1_c = \frac{2PR}{P+R},\quad
+    \text{Macro F1} = \frac{1}{|C|}\sum_{c\in C} F1_c
+    \]
+
+    \column{0.44\textwidth}
+    \textbf{Why Macro F1 matters}
+    \begin{itemize}
+      \item Class imbalance is substantial
+      \item Prevents dominant classes from hiding failures
+      \item Better reflects minority-class behavior
+    \end{itemize}
+
+    \vspace{0.6em}
+    \textbf{In our context}
+    \begin{itemize}
+      \item Accuracy = top-line headline match rate
+      \item Macro F1 = class-balanced structural reliability
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% CORPUS FINDINGS
+% ----------------------------------------------------------
+\begin{frame}{Corpus-Level Findings}
+  \begin{columns}
+    \column{0.55\textwidth}
+    \includegraphics[width=\textwidth]{structure_label_distribution.png}
+
+    \column{0.45\textwidth}
+    \textbf{Headline profile}
+    \begin{itemize}
+      \item Avg length: 13.7 tokens
+      \item Content-word ratio: 73.2\%
+      \item Headlines with verbs: 92.1\%
+      \item Active/non-passive: 94.6\%
+      \item Named entities present: 95.7\%
+      \item Actor/entity-first openings: 81.6\%
+    \end{itemize}
+  \end{columns}
+
+  \vspace{0.5em}
+  \textcolor{accent}{Finding: headline form is compact, entity-heavy, and strongly action-oriented.}
+\end{frame}
+
+% ----------------------------------------------------------
+% PERFORMANCE SUMMARY
+% ----------------------------------------------------------
+\begin{frame}{Model Performance Overview}
+  \begin{columns}
+    \column{0.62\textwidth}
+    \includegraphics[width=\textwidth]{model_performance_summary.png}
+
+    \column{0.38\textwidth}
+    \small
+    \textbf{Structure (held-out test)}
+    \begin{itemize}
+      \item Accuracy: \textcolor{accent}{0.759}
+      \item Macro F1: \textcolor{accent}{0.594}
+    \end{itemize}
+
+    \textbf{Baselines (test)}
+    \begin{itemize}
+      \item Majority: 0.639 acc, 0.130 macro F1
+      \item Random: 0.446 acc, 0.187 macro F1
+    \end{itemize}
+
+    \textcolor{accent}{+12.0 pp acc over majority; +31.3 pp over random.}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% STYLE SUMMARY
+% ----------------------------------------------------------
+\begin{frame}{Style Performance (held-out test)}
+  \begin{center}
+    \begin{tabular}{lcc}
+      \toprule
+      \textbf{Dimension} & \textbf{Accuracy} & \textbf{Macro F1} \\
+      \midrule
+      lead\_frame & 0.952 & 0.843 \\
+      agency\_style & 0.952 & 0.844 \\
+      density\_band & 0.952 & 0.958 \\
+      rhetorical\_mode & 0.904 & 0.816 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \vspace{1em}
+  \begin{block}{Interpretation}
+    Density and framing are highly recoverable; rhetorical mode remains harder because it depends on broader discourse cues and boundary judgments.
+  \end{block}
+\end{frame}
+
+% ----------------------------------------------------------
+% HEATMAP
+% ----------------------------------------------------------
+\begin{frame}{Performance Heatmap}
+  \begin{center}
+    \includegraphics[height=0.78\textheight]{performance_heatmap.png}
+  \end{center}
+  \centering
+  \textcolor{textsub}{Compact view of performance across structure and style outputs.}
+\end{frame}
+
+% ----------------------------------------------------------
+% SEED STABILITY
+% ----------------------------------------------------------
+\begin{frame}{Seeding and Split Luck}
+  \begin{columns}
+    \column{0.62\textwidth}
+    \includegraphics[width=\textwidth]{seed_stability_summary.png}
+
+    \column{0.38\textwidth}
+    \small
+    \textbf{Why this analysis?}
+    \begin{itemize}
+      \item One split can be lucky/unlucky
+      \item Need expected performance, not one draw
+    \end{itemize}
+
+    \textbf{5-seed summary}
+    \begin{itemize}
+      \item Test accuracy: $0.752 \pm 0.018$
+      \item Test macro F1: $0.549 \pm 0.061$
+      \item Dev macro F1: $0.571 \pm 0.052$
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% SEED INTERPRETATION
+% ----------------------------------------------------------
+\begin{frame}{Seeding and Split Luck (interpretation)}
+  \begin{itemize}
+    \item Per-seed structure test macro F1 spans \textbf{0.483 to 0.623} (spread 0.140).
+    \item Per-seed structure test accuracy spans \textbf{0.723 to 0.771} (spread 0.048).
+    \item Macro F1 varies more than accuracy, so class-balance behavior is the more split-sensitive quantity.
+  \end{itemize}
+
+  \vspace{0.8em}
+  \begin{block}{Implication}
+    Reporting only one split can overstate confidence. We therefore treat the seed mean as the expected score and the sample standard deviation as an uncertainty descriptor.
+  \end{block}
+\end{frame}
+
+% ----------------------------------------------------------
+% SPLIT STATS FORMULAS
+% ----------------------------------------------------------
+\begin{frame}{How We Quantify Split Variability}
+  For metric values $m_1,\dots,m_K$ over $K$ random seeds:
+
+  \[
+  \bar{m} = \frac{1}{K}\sum_{i=1}^{K} m_i
+  \]
+
+  \[
+  s = \sqrt{\frac{1}{K-1}\sum_{i=1}^{K}(m_i-\bar{m})^2}
+  \]
+
+  \vspace{0.8em}
+
+  \begin{itemize}
+    \item $\bar{m}$ estimates expected performance under split randomness
+    \item $s$ measures split sensitivity (evaluation volatility)
+    \item Per-seed trajectories reveal whether variance is smooth or driven by specific difficult splits
+  \end{itemize}
+\end{frame}
+
+% ----------------------------------------------------------
+% TUI
+% ----------------------------------------------------------
+\begin{frame}{Interactive TUI Sandbox for Journalists}
+  \begin{columns}
+    \column{0.58\textwidth}
+    \centering
+    \includegraphics[height=0.72\textheight]{../images/tui_image.png}
+
+    \column{0.42\textwidth}
+    \textbf{What it enables}
+    \begin{itemize}
+      \item Real-time prediction with confidence
+      \item Parse-level evidence for every decision
+      \item Instant iteration over headline variants
+      \item Early warning for risky phrasing
+    \end{itemize}
+
+    \vspace{0.8em}
+    \textcolor{accentblue}{Acts as a sandbox for editorial A/B testing before publication.}
+  \end{columns}
+\end{frame}
+
+% ----------------------------------------------------------
+% DISCUSSION
+% ----------------------------------------------------------
+\begin{frame}{Discussion: What Worked and What Remains Hard}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \textbf{Strong signals}
+    \begin{itemize}
+      \item Dominant templates are recoverable
+      \item Multi-dimensional style profiling is informative
+      \item Interpretability is operational, not cosmetic
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \textbf{Difficult regions}
+    \begin{itemize}
+      \item Sparse ``other'' class behavior
+      \item Coordination vs. simple-clause boundary cases
+      \item Passive edge forms under punctuation/noise
+    \end{itemize}
+  \end{columns}
+
+  \vspace{0.8em}
+  \textcolor{accentblue}{Interpretation: gains are large versus baseline, but minority-structure distinctions remain the principal error source.}
+\end{frame}
+
+% ----------------------------------------------------------
+% LIMITATIONS
+% ----------------------------------------------------------
+\begin{frame}{Limitations}
+  \begin{itemize}
+    \item Rule-based systems are highly interpretable but less flexible than fully learned models
+    \item Class imbalance can mask minority-class weaknesses
+    \item Some labels remain intrinsically subjective at boundary cases
+    \item Source and language scope limit broad external generalization
+    \item No external lexical expansion in this phase (intentional scope constraint)
+  \end{itemize}
+
+  \vspace{1em}
+  \textcolor{accent}{Despite these limits, structural signal remains strong and measurable.}
+\end{frame}
+
+% ----------------------------------------------------------
+% CONCLUSION
+% ----------------------------------------------------------
+\begin{frame}{Conclusion}
+  \begin{center}
+    \Large
+    \textcolor{accent}{\textbf{Headlines are structured linguistic products}}\\[0.4em]
+    \large not free-form snippets\\[1.0em]
+
+    \textcolor{accentblue}{\textbf{Structure test: 0.759 accuracy, 0.594 macro F1}}\\[0.4em]
+    \textcolor{textsub}{with explicit split-luck quantification}
+  \end{center}
+
+  \vspace{1.4em}
+
+  \begin{block}{Bottom Line}
+    Interpretable NLP can capture headline form, evaluate it against human gold standards, and provide practical editorial tooling through a real-time sandbox interface.
+  \end{block}
+\end{frame}
+
+\begin{frame}[plain]
+  \begin{center}
+    \vspace{3em}
+    \Huge
+    \textit{``Headline form is measurable,}\\[0.3em]
+    \textit{predictable, and actionable.''}
+  \end{center}
+\end{frame}
+
+\end{document}
+
