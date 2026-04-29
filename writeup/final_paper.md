@@ -10,11 +10,11 @@ Evaluated against a manually annotated gold-standard set of 464 headlines, the c
 These results demonstrate that headline writing follows certain linguistic rules and that those rules can be captured by interpretable, parse-grounded methods rather than opaque neural models. The framework offers practical value for text summarization, editorial style auditing, and media framing analysis, and is exposed through an interactive terminal sandbox that lets a user watch structure, agency, and rhetorical mode shift in real time as a headline is rewritten.
 
 ## 2. Introduction:
-News headlines are one of the most widely consumed forms of text in the modern world. Millions of people rely on them as their primary source of information, often using them to form opinions and make immediate decisions. Although short, headlines are designed to convey maximal knowledge despite their brevity. Unlike standard prose, headlines follow specific grammatical conventions, which often omit function words and restructure sentences to achieve brevity and impact. Headlines must balance clarity and informativeness with engagement and efficiency.
-
-From a computational perspective, headlines are an extreme case of information compression. Understanding how they achieve such a high density of information efficiently can provide important insights about language efficiency and structure. This is particularly relevant in the NLP world, as many tasks like summarization, question answering, and text generation aim to be as concise and clear as possible. In an era where users receive constant information and prefer scanning titles over reading full articles, dismantling the headline's structure can help design systems that deliver more efficient information. Search engines depend on generating concise summaries, and by identifying the structural rules behind effective headlines, we can improve their performance and generation systems.
-
-Understanding these structures can also help detect misinformation and manipulative phrasing. Because millions of people use headlines to comprehend the world around them, headline form plays a critical role in shaping public perception. If we can break down their structural patterns and categorize which headlines show impartiality and which show bias, we can contribute to tools that detect potential deception. These motivations led us to investigate the following research questions:
+News headlines are one of the most widely consumed forms of text in the modern world. Millions of people rely on them as their primary source of information, often using them to form opinions and make immediate decisions. Although short, headlines are designed to convey maximal knowledge despite their brevity. Different from standard prose, headlines follow specific grammatical conventions, which often omit function words and restructure sentences to achieve brevity and impact. Headlines must balance clarity and informativeness with engagement and efficiency. As noted by Atwell and Drakos (1987), “A corpus of English text samples can constitute a definitive source of data in the linguistic constructs or structures.” 
+From a computational perspective, headlines are an extreme case of information compression. Understanding how they achieve such a high density of information efficiently can provide important insights about language efficiency and structure. Consequently, this is particularly relevant in the NLP world as many tasks like summarization, inquiry response, and text generation aim to be as concise and clear as possible. As Zhao et al. (2024) wrote, “Headline Generation is an essential task in Natural Language Processing (NLP).” Understanding these structures can bring multiple advantages, both in and out of the NLP perspective.
+In an era where we receive constant information, users prefer scanning titles over reading full articles; therefore, dismantling the headline’s structure can help design systems that deliver more efficient information. In addition, many search engines depend on generating concise summaries, and by identifying the best structural rules through effective headlines, we can improve their performance and generation system. 
+Understanding these structures can also detect misinformation or manipulative phrasing. As mentioned before, millions of people use headlines to comprehend the world around them, therefore,  playing a critical role in shaping public perception. If we are able to break down their structural patterns and categorize which headlines show impartiality and which ones show bias, we can contribute to tools that detect potential deception.
+These motivations led us to investigate the following research questions:
 
 * What grammatical structures are most common in news headlines, and how do headlines achieve high information density?
 * What syntactic templates dominate headline construction, and are these patterns consistent across different news domains?
@@ -326,8 +326,35 @@ Beyond text generation, prior research has explored syntactic analysis in noisy 
 In summary, prior work has primarily emphasized generation, semantic understanding, and downstream performance, often using neural and multimodal approaches. In contrast, our work contributes a structural, interpretable analysis of headline syntax, focusing on identifying consistent grammatical templates, decomposing them along multiple style dimensions, and evaluating their robustness across both domains and random splits.
 
 ## 7. Conclusion
-This project demonstrated that news headlines follow consistent structural patterns despite their brevity. We developed an NLP pipeline that collected, parsed, analyzed, and classified headlines using a rule-based framework grounded in syntactic features. The classifier achieves 0.806 accuracy and 0.675 macro F1 on a manually annotated held-out test set, beating a majority baseline by +16.3 percentage points in accuracy and a random baseline by +34.7 points, and a 5-seed split-stability sweep places its expected macro F1 between 0.502 and 0.634 with 95% confidence. None of H1's four falsification criteria were met: the structural signal is real, the templates are dominant, the variance is meaningful but bounded, and every prediction is traceable to explicit parse evidence.
+This project demonstrated that news headlines follow consistent structural patterns despite their brevity. We developed an NLP pipeline that collected, parsed, analyzed, and classified headlines using a rule-based framework that was grounded in syntactic features. This approach reflects earlier work showing that grammatical structure can be learned from unrestricted text using pattern-based methods. (Atwell and Drakos, 1987). The results achieved strong performance on a manually annotated gold-standard dataset, outperforming baseline approaches while having interpretability. 
+Our findings supported the hypothesis that headline construction is governed by stable linguistic templates, high information density, and recurring stylistic conventions, rather than randomness. By combining structural classification with a multi-dimensional style profile, the results proved to be a more interpretable representation of headline form. The rule-based approach demonstrated that meaningful performance can be achieved without reliance on opaque models, enabling a more transparent analysis and practical applicability. 
+Beyond this study, the framework offers potential applications in automated summarization, editorial tooling, and media framing analysis. Prior work in headline generation similarly emphasizes the importance of producing concise, informative outputs in NLP systems (Zhao et al., 2024). Future work may extend this approach through hybrid models, larger and more diverse datasets, and multilingual analysis to further explore the universality of headline structure. 
 
-By combining structural classification with a multi-dimensional style profile, the system produces a richer and more interpretable representation of headline form than a single label could. The rule-based approach demonstrates that meaningful performance is achievable without opaque neural models, and the interactive TUI sandbox shows that interpretability translates directly into practical value: an editor can iterate phrasing and watch structure, agency, and rhetorical mode shift in real time. Beyond this study, the framework offers concrete applications in automated summarization, editorial tooling, and media framing analysis. Future work may extend this approach through hybrid neural-rule models, larger and more diverse datasets, and multilingual analysis to further test the universality of headline structure.
+## 8. Bibliography
+Atwell, Eric Steven and Nicos Frixou Drakos. 1987. Pattern recognition applied to the  
+    acquisition of a grammatical classification system from unrestricted English text.  
+    In *Proceedings of the 10th International Joint Conference on Artificial Intelligence  
+    (IJCAI-87)*, pages 677–680, Milan, Italy.
+
+Eggleston, Chloe and Brendan O’Connor. 2022. Cross-Dialect Social Media Dependency  
+    Parsing for Social Scientific Entity Attribute Analysis. In *Proceedings of the Eighth  
+    Workshop on Noisy User-generated Text (W-NUT 2022)*, pages 38–50, Gyeongju,  
+    Republic of Korea. Association for Computational Linguistics.
+
+Dukić, David, Kiril Gashteovski, Goran Glavaš, and Jan Snajder. 2024. Leveraging Open  
+    Information Extraction for More Robust Domain Transfer of Event Trigger Detection.  
+    In *Findings of the Association for Computational Linguistics: EACL 2024*, pages  
+    1197–1213, St. Julian’s, Malta. Association for Computational Linguistics.
+
+Zhao, Junzhe, Yingxi Wang, Huizhi Liang, and Nicolay Rusnachenko. 2024. NCL_NLP at  
+    SemEval-2024 Task 7: CoT-NumHG: A CoT-Based SFT Training Strategy with Large  
+    Language Models for Number-Focused Headline Generation. In *Proceedings of the  
+    18th International Workshop on Semantic Evaluation (SemEval-2024)*, pages 261–269,  
+    Mexico City, Mexico. Association for Computational Linguistics.
+
+Qiao, Lingfeng, Chen Wu, Ye Liu, Haoyuan Peng, Di Yin, and Bo Ren. 2022. Grafting  
+    Pre-trained Models for Multimodal Headline Generation. In *Proceedings of the 2022  
+    Conference on Empirical Methods in Natural Language Processing: Industry Track*,  
+    pages 244–253, Abu Dhabi, UAE. Association for Computational Linguistics.
 
 > **Bottom line:** News headlines are not free-form snippets; they are reproducible syntactic products. Interpretable, parse-grounded NLP can measure that structure directly, evaluate it rigorously, and put it in front of the people who write headlines.
