@@ -38,14 +38,39 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, backgrounds}
 \usepackage{xcolor}
 \graphicspath{{../images/}}
+
+% Section page styling: keep the metropolis section transitions visible
+\setbeamercolor{section title}{fg=textlight}
+\setbeamercolor{section in head/foot}{fg=textsub, bg=darkbg}
+
+% Reusable TikZ styles
+\tikzset{
+  pipenode/.style={
+    draw=accentblue, fill=darkfg, text=textlight,
+    rounded corners=4pt, minimum height=1.0cm, minimum width=1.9cm,
+    align=center, font=\small\bfseries, line width=0.6pt
+  },
+  pipearrow/.style={-{Stealth[length=2.5mm]}, line width=0.7pt, draw=accent},
+  herostat/.style={
+    draw=accentblue, fill=darkfg, text=textlight,
+    rounded corners=6pt, minimum height=2.4cm, minimum width=4.0cm,
+    align=center, line width=0.7pt
+  },
+  prioritybox/.style={
+    draw=accent, fill=darkfg, text=textlight,
+    rounded corners=3pt, minimum height=0.7cm, minimum width=2.6cm,
+    align=center, font=\small, line width=0.5pt
+  }
+}
 
 % ============================================================
 % TITLE INFO
 % ============================================================
 \title{Structural Patterns in News Headlines}
-\subtitle{A Computational Linguistic Analysis Using NLP}
+\subtitle{Recovering form, framing, and rhetorical mode with interpretable rules}
 \author{Victor Derani \and Avi Herman \and Kylie Lin}
 \date{NLP Final Project}
 \institute{Department of Computer Science}
@@ -61,6 +86,8 @@
 \begin{frame}[plain]
   \maketitle
 \end{frame}
+
+\section{Setup}
 
 % ----------------------------------------------------------
 % QUESTION
@@ -123,24 +150,43 @@
   \end{itemize}
 \end{frame}
 
+\section{Method}
+
 % ----------------------------------------------------------
 % PIPELINE
 % ----------------------------------------------------------
 \begin{frame}{Pipeline Overview}
-  \textbf{End-to-end workflow}
-  \begin{enumerate}
-    \item RSS headline collection
-    \item spaCy parsing (POS, dependencies, entities, roots)
-    \item Structural analysis and diagnostics
-    \item Rule-based structure and style prediction
-    \item Gold-standard evaluation + split-stability sweep
-  \end{enumerate}
+  \begin{center}
+    \begin{tikzpicture}[node distance=0.55cm and 0.55cm]
+      \node[pipenode] (collect)  {Collect\\\scriptsize RSS feeds};
+      \node[pipenode, right=of collect] (parse) {Parse\\\scriptsize spaCy};
+      \node[pipenode, right=of parse]   (analyze) {Analyze\\\scriptsize features};
+      \node[pipenode, right=of analyze] (classify) {Classify\\\scriptsize rules};
+      \node[pipenode, right=of classify] (eval) {Evaluate\\\scriptsize gold + seeds};
 
-  \vspace{1em}
+      \draw[pipearrow] (collect)  -- (parse);
+      \draw[pipearrow] (parse)    -- (analyze);
+      \draw[pipearrow] (analyze)  -- (classify);
+      \draw[pipearrow] (classify) -- (eval);
+    \end{tikzpicture}
+  \end{center}
 
-  \begin{block}{Parsing robustness}
-    Model preference hierarchy + normalization + fallback parse selection for difficult casing/formatting conditions.
-  \end{block}
+  \vspace{0.3em}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \textbf{What flows through}
+    \begin{itemize}
+      \item Tokens, POS tags, dependencies, entities
+      \item Macro POS templates and openings
+      \item Rule-priority structural label
+      \item Multi-dimensional style profile
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \begin{block}{Parsing robustness}
+      Model preference hierarchy plus normalization and a fallback parse pass for difficult casing and formatting conditions.
+    \end{block}
+  \end{columns}
 \end{frame}
 
 % ----------------------------------------------------------
@@ -164,9 +210,9 @@
     \column{0.5\textwidth}
     \textbf{Dataset design:}
     \begin{itemize}
-      \item 391 manually labeled headlines
-      \item Train/Dev/Test = 59.6\% / 19.2\% / 21.2\%
-      \item Split chosen to balance:
+      \item 464 manually labeled headlines
+      \item Train / Dev / Test $=$ 276 / 90 / 98
+      \item About 60 / 20 / 20 split, balanced for:
       \begin{itemize}
         \item rule learning capacity (train),
         \item tuning diagnostics (dev),
@@ -338,6 +384,38 @@
   \end{block}
 \end{frame}
 
+\section{Results}
+
+% ----------------------------------------------------------
+% HERO RESULT
+% ----------------------------------------------------------
+\begin{frame}{Headline Result}
+  \begin{center}
+    \begin{tikzpicture}[node distance=0.6cm and 0.7cm]
+      \node[herostat] (acc) {%
+        \textcolor{accent}{\Huge \textbf{0.806}}\\[0.2em]
+        \small accuracy (test, $n=98$)\\
+        \scriptsize +16.3 pp over majority
+      };
+      \node[herostat, right=of acc] (f1) {%
+        \textcolor{accent}{\Huge \textbf{0.675}}\\[0.2em]
+        \small macro F1 (test)\\
+        \scriptsize 0.130 majority $\rightarrow$ 0.675
+      };
+      \node[herostat, right=of f1] (sweep) {%
+        \textcolor{accent}{\Huge \textbf{0.568}}\\[0.2em]
+        \small 5-seed mean macro F1\\
+        \scriptsize $\pm$ 0.076 across splits
+      };
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.6em}
+  \begin{center}
+    \textcolor{accentblue}{Headline form is recoverable, structurally constrained, and stylistically decomposable.}
+  \end{center}
+\end{frame}
+
 % ----------------------------------------------------------
 % CORPUS FINDINGS
 % ----------------------------------------------------------
@@ -486,28 +564,33 @@
   \end{itemize}
 \end{frame}
 
+\section{Practical Use}
+
 % ----------------------------------------------------------
 % TUI
 % ----------------------------------------------------------
 \begin{frame}{Interactive TUI Sandbox for Journalists}
-  \begin{columns}
-    \column{0.58\textwidth}
+  \begin{columns}[T]
+    \column{0.62\textwidth}
     \centering
-    \includegraphics[height=0.72\textheight]{../images/tui_image.png}
+    \includegraphics[width=\textwidth]{../images/tui_image.png}
 
-    \column{0.42\textwidth}
+    \column{0.38\textwidth}
+    \small
     \textbf{What it enables}
     \begin{itemize}
-      \item Real-time prediction with confidence
-      \item Parse-level evidence for every decision
-      \item Instant iteration over headline variants
-      \item Early warning for risky phrasing
+      \item Real-time prediction + confidence
+      \item Parse evidence per decision
+      \item Instant headline A/B iteration
+      \item Warnings for risky phrasing
     \end{itemize}
 
     \vspace{0.8em}
-    \textcolor{accentblue}{Acts as a sandbox for editorial A/B testing before publication.}
+    \textcolor{accentblue}{A live sandbox for editorial A/B testing before publication.}
   \end{columns}
 \end{frame}
+
+\section{Wrap-up}
 
 % ----------------------------------------------------------
 % DISCUSSION
@@ -573,10 +656,15 @@
 
 \begin{frame}[plain]
   \begin{center}
-    \vspace{3em}
+    \vspace{2.5em}
     \Huge
     \textit{``Headline form is measurable,}\\[0.3em]
     \textit{predictable, and actionable.''}
+
+    \vspace{2.5em}
+    \normalsize
+    \textcolor{textsub}{Victor Derani \quad$\cdot$\quad Avi Herman \quad$\cdot$\quad Kylie Lin}\\[0.3em]
+    \textcolor{textsub}{\small github.com/avih7531/headline-structure-analysis}
   \end{center}
 \end{frame}
 
