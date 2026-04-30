@@ -204,16 +204,38 @@ Predictions:
 │   ├── gold_headlines_style_manual.csv
 │   ├── evaluation/
 │   └── evaluation_style/
-└── scripts/
-    ├── pipeline/
-    │   ├── collect_headlines.py
-    │   ├── parse_headlines.py
-    │   └── analyze_structure.py
-    └── model/
-        ├── headline_structure_classifier.py
-        ├── headline_style_profiler.py
-        ├── evaluate_style_profile.py
-        └── run_structure_pipeline.py
+├── images/
+│   ├── tui_image.png / tui_image.svg
+│   ├── structure_label_distribution.png
+│   ├── model_performance_summary.png
+│   ├── performance_heatmap.png
+│   └── seed_stability_summary.png
+├── scripts/
+│   ├── pipeline/
+│   │   ├── collect_headlines.py
+│   │   ├── parse_headlines.py
+│   │   └── analyze_structure.py
+│   ├── model/
+│   │   ├── headline_structure_classifier.py
+│   │   ├── headline_style_profiler.py
+│   │   ├── evaluate_style_profile.py
+│   │   └── run_structure_pipeline.py
+│   └── app/
+│       └── headline_live_tui.py
+├── slides/
+│   ├── slides.tex
+│   ├── slides.pdf
+│   └── Makefile
+└── writeup/
+    ├── final_paper.md          # canonical Markdown source
+    ├── final_paper.pdf         # rendered Markdown (top-level reference PDF)
+    └── acl/                    # ACL camera-ready LaTeX build
+        ├── final_paper.tex
+        ├── final_paper.pdf     # 10-page two-column ACL PDF
+        ├── custom.bib
+        ├── acl.sty
+        ├── acl_natbib.bst
+        └── Makefile
 ```
 
 ## Setup
@@ -249,6 +271,8 @@ python scripts/app/headline_live_tui.py
 - Python `3.10+` (project tested in a local virtual environment)
 - Python dependencies from `requirements.txt` + spaCy model `en_core_web_md`
 - For slide compilation: `pdflatex` + `make` (run in `slides/`)
+- For the ACL camera-ready paper: `tectonic` (preferred — auto-fetches packages) or a TeX Live install with `pdflatex` + `bibtex` (run `make` in `writeup/acl/`)
 - Precompiled PDFs are already included:
-  - `writeup/project_writeup.pdf`
+  - `writeup/final_paper.pdf` (Markdown render)
+  - `writeup/acl/final_paper.pdf` (ACL camera-ready, 10-page two-column)
   - `slides/slides.pdf`
