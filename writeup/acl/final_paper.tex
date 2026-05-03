@@ -47,6 +47,7 @@ These motivations led us to three concrete research questions:
 \end{itemize}
 
 \subsection{Hypothesis and Falsification Criteria}
+\label{sec:hypothesis}
 We adopt an explicit, falsifiable hypothesis up front so that the rest of the paper can be read as a direct test of it:
 
 \begin{quote}
@@ -413,10 +414,17 @@ Predicted profile: \texttt{noun\_phrase\_fragment} / \texttt{actor\_entity\_firs
 
 These three examples are how we check H1's \emph{interpretability} criterion. Every label traces back to a specific rule, a specific priority position, and a specific surface feature. That is the property that makes the system auditable in comparison to a black-box neural model.
 
+These same examples also explain why the features matter for summarization. A question-form headline can be attention-grabbing, but it is often a weak neutral summary because the reader must resolve the question before recovering the event. A passive compressed headline can fit the space budget while hiding the agent, which is useful for brevity but risky if a summarizer needs to preserve who did what. A nominal report-title headline, by contrast, often behaves more like a section label or index entry than a sentence summary. Detecting those forms lets a summarization system decide whether to keep the wording, expand it, or rewrite it into a more explicit declarative summary.
+
 \section{Discussion}
+
+\subsection{How We Demonstrate H1}
+We prove H1, headlines follow stable, reusable syntactic templates---by assembling four converging evidence strands. Through empirical performance, we determine the structure classifier beats trivial baselines on held-out test data (Section~\ref{sec:struct-perf}; test accuracy 0.806, test macro F1 0.675, with baselines 0.643/0.459 lying outside the accuracy CI). Through template consistency, we prove that corpus-level distributions show dominant recurring patterns (Section~\ref{sec:corpus}; e.g., 81.6\% actor/entity-first openings, 92.1\% contain verbs). Through robustness, we show a 5-seed split sweep (Section~\ref{sec:stability}) yields mean macro F1 0.568 $\pm$ 0.076, which demonstrates stability across splits. Lastly, interpretability/falsifiability, we show that every prediction is traceable to explicit parse-grounded rules and a fixed priority order (Section~\ref{sec:classify}), allowing us to inspect and reject the hypothesis if predictions were unexplainable. Together these points satisfy the falsification criteria described in Section~\ref{sec:hypothesis} and substantiate H1.
 
 \subsection{Strengths of Solution}
 We have proved that headlines are predictable syntactic products, not free-form prose. The classifier captured the dominant newsroom structures well, especially \texttt{simple\_clause} and \texttt{question\_form}, which was expected if headline syntax really does follow reusable patterns. Adding the four style dimensions on top moved us from a single label to a richer signature that simultaneously tracks framing, agency, density, and rhetorical intent.
+
+One important caveat is that we do not yet report inter-annotator agreement for the gold labels. That means this draft does not yet quantify a human ceiling such as Cohen's $\kappa$ or Krippendorff's $\alpha$, so we cannot fully separate label ambiguity from model error. The current results still show that the system is far above majority and random baselines, but the annotation protocol should be treated as a manually curated gold standard rather than a formally reliability-validated one.
 
 The second strength is interpretability. Every prediction grounds in explicit parse features (POS tags, dependencies, entity positions), so any classification can be traced back to the linguistic evidence that produced it. The multi-seed evaluation reinforces that rigor by showing split variance instead of hiding it in a single point estimate.
 
@@ -459,6 +467,7 @@ The results come with five honest limitations that constrain the strength of any
     \item \textbf{Annotation subjectivity}: edge-case labels (especially within \texttt{rhetorical\_mode} and \texttt{coordination}) are inherently debatable. Two competent annotators can produce defensible but different gold labels.
     \item \textbf{English- and source-bias}: the corpus is built from a small set of English-language Google News RSS feeds, which limits external generalization to other languages, registers, and outlet styles.
     \item \textbf{No external lexicon expansion}: we deliberately excluded curated event-noun and named-entity lexicons in this phase to keep the rules transparent. This makes some rare entity- or event-driven disambiguation harder than it could be, but it preserves interpretability.
+    \item \textbf{No inter-annotator agreement report yet}: the current draft does not include a formal agreement score for the manual labels, so we cannot claim a measured human ceiling or quantify how much better than chance independent annotators are. The system-vs-baseline numbers do address chance-level performance for the model, but not annotation reliability.
 \end{enumerate}
 
 None of these limitations invalidate H1; they bound it. The claim we defend is that headlines follow stable, recoverable templates, and that a transparent rule-based system captures them well above baseline --- not that our particular rule set is the final word on headline structure.

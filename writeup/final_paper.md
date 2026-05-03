@@ -10,7 +10,7 @@ News headlines are among the most widely read forms of text. Millions of people 
 
 From a linguistic-engineering point of view, a headline is information compression at the limit. From an applied point of view, the same compressed form drives summarization quality, search-result snippets, and misinformation and bias. If we can describe headline form mechanically, we can also flag it mechanically.
 
-The idea that grammatical regularities can be recovered from raw text corpora is itself old. Atwell and Drakos (1987) showed that a first-order Markov model over part-of-speech tags, the engine of their CLAWS tagger on the LOB corpus, can acquire a grammatical classification system from unrestricted English without hand-written grammar rules. Our project sits in that lineage but uses explicit, parse-grounded rules over modern dependency parses, applied specifically to the compressed register of news headlines.
+The idea that grammatical regularities can be recovered from raw text corpora was a foundational aspect to our project. Atwell and Drakos (1987) showed that a first-order Markov model over part-of-speech tags, the engine of their CLAWS tagger on the LOB corpus, can acquire a grammatical classification system from unrestricted English without hand-written grammar rules. Our project sits in that lineage but uses explicit, parse-grounded rules over modern dependency parses, applied specifically to the compressed register of news headlines.
 
 These motivations led us to three concrete research questions:
 
@@ -19,11 +19,11 @@ These motivations led us to three concrete research questions:
 * Can a transparent, rule-based system recover those structures with reliable out-of-sample performance?
 
 ### 2.1 Hypothesis and Falsification Criteria
-We adopt an explicit, falsifiable hypothesis up front so that the rest of the paper can be read as a direct test of it:
+Our hypothesis, which we aim to prove throughout this experiment, is:
 
 > **H1:** News headlines follow stable, reusable syntactic templates that can be predicted from POS and dependency signals at rates significantly above trivial baselines.
 
-To make H1 falsifiable rather than rhetorical, we define the conditions under which it should be rejected:
+To make H1 explicit and proveable, the conditions under which the hypothesis should be rejected:
 
 | Criterion | Failure Condition |
 | :--- | :--- |
@@ -45,12 +45,12 @@ We use spaCy to extract tokens, POS tags, dependency trees, and named entities. 
 
 Concretely, we prefer models in this order: `en_core_web_trf`, then `en_core_web_lg`, `en_core_web_md`, and `en_core_web_sm`. Before parsing, we normalize punctuation and spacing to remove easy noise (smart quotes, escaped sequences, irregular whitespace).
 
-We then run a two-pass parse strategy. The first pass parses the headline as written and scores parse quality. If the score is poor — for example, no clear verb in a long headline or ambiguous casing on what should be a proper noun — we run a fallback parse with light re-casing and lexicon overrides for common headline ambiguities, then keep the better-scoring of the two parses. This costs us a small constant factor in compute and buys us much better behavior on the headlines that off-the-shelf parsers most often mishandle.
+We then run a two-pass parse strategy. The first pass parses the headline as written and scores parse quality. If the score is poor, such as no clear verb in a long headline or ambiguous casing on what should be a proper noun, we run a fallback parse with light re-casing and lexicon overrides for common headline ambiguities, then keep the better-scoring of the two parses. This costs us a small constant factor in compute and buys us much better behavior on the headlines that off-the-shelf parsers most often mishandle.
 
 ### 3.3 Analyze
 The Analyze stage derives higher-level features from each parse: collapsed POS patterns, macro phrase structures (NP, VP, MOD), opening and ending patterns, voice, and a coarse headline type. On top of those features, a suite of analysis functions reports descriptive statistics across the corpus, entity-type counts, content-word density, voice distribution, common dependency templates, length patterns, and the most frequent root verbs and openings, among others. A `generate_insights()` step rolls these into short corpus-level summaries.
 
-This stage describes; it does not assign labels. To turn these descriptive patterns into predictions, we transition to Classify.
+This stage does not assign labels. To turn these descriptive patterns into predictions, we transition to Classify.
 
 ### 3.4 Classify
 The Classify stage takes the parsed features (POS tags, dependency relations, entities, derived signals) and assigns each headline one primary structural label. The label set is:
@@ -62,7 +62,7 @@ The Classify stage takes the parsed features (POS tags, dependency relations, en
 5.  **simple_clause**: canonical finite subject-verb clause
 6.  **other**: residual category for out-of-pattern forms
 
-Rules fire in a fixed priority order — question, passive, coordination, NP fragment, simple clause, other — to keep output deterministic. Each rule is a small set of explicit linguistic conditions over POS, dependencies, punctuation, and token order; ambiguous or short headlines fall through to `other`.
+Rules fire in a fixed priority order, question, passive, coordination, NP fragment, simple clause, other, to keep output deterministic. Each rule is a small set of explicit linguistic conditions over POS, dependencies, punctuation, and token order; ambiguous or short headlines fall through to `other`.
 
 Structure alone is too coarse to capture headline variation, so we layer on four style dimensions:
 
@@ -73,7 +73,7 @@ Structure alone is too coarse to capture headline variation, so we layer on four
 
 Each dimension is driven by a distinct signal: entity position for `lead_frame`, passive cues for `agency_style`, content-word ratio for `density_band`, and a mix of structural and lexical cues for `rhetorical_mode`.
 
-The `rhetorical_mode` dimension is not invented from scratch. Bonyadi and Samuel (2013), surveying the headline-function tradition in their contrastive study of editorial headlines, frame headlines as serving three simultaneous roles: summaries of the main event, attention-getting devices, and "relevance optimizers" between story and reader. Our four modes are a parse-grounded operationalization of those competing communicative functions.
+The `rhetorical_mode` dimension is based off a prevoius study. Bonyadi and Samuel (2013), surveying the headline-function tradition in their contrastive study of editorial headlines, frame headlines as serving three simultaneous roles: summaries of the main event, attention-getting devices, and "relevance optimizers" between story and reader. Our four modes are a parse-grounded operationalization of those competing communicative functions.
 
 The output of Classify is a multi-dimensional label per headline, written as a compact "headline signature" of the form `structure | lead_frame | rhetorical_mode`. This labeled dataset is what we evaluate next.
 
@@ -92,16 +92,16 @@ Two representative manual decisions, to make the annotation protocol concrete an
 These two examples bracket the easy and hard ends of the annotation space. They also motivate why we evaluate against human gold labels rather than self-agreement: the human decision encodes *why* a headline takes the form it does, and that's what we need to test the model against.
 
 ### 3.5 Evaluate
-The Evaluate stage compares our predicted labels against a manually annotated gold-standard set. The gold dataset contains **464** hand-labeled headlines covering both structure and style, split **60 / 20 / 20** into Train, Dev, and Test. Train develops the rules. Dev tunes them. Test is touched only at the very end. Keeping Test isolated during rule iteration is what lets us claim the final number isn't a tuning artifact.
+The Evaluate stage compares our predicted labels against a manually annotated gold-standard set. The gold dataset contains **464** hand-labeled headlines covering both structure and style, split **60 / 20 / 20** into Train, Dev, and Test. Train develops the rules, Dev tunes them, and Test is touched at the very end. Keeping Test isolated during rule iteration validates the final result as unbiased.
 
-We score the system with accuracy, per-class precision/recall/F1, and macro F1. Accuracy is fine when classes are balanced; macro F1 is the metric that exposes whether minority classes are also being handled, which matters here because `simple_clause` dominates.
+We score the system with accuracy, per-class precision/recall/F1, and macro F1. Macro F1 is the metric that exposes whether minority classes are also being handled, as `simple_clause` dominates.
 
 To put the numbers in context, we also report two trivial baselines:
 
 - **Majority baseline** — always predicts the most common class. If our system isn't beating this on macro F1, it's just exploiting class imbalance.
 - **Random baseline** — assigns labels randomly. If we're not beating this, there's no learned structure at all.
 
-Finally, single-split numbers can be misleading: a lucky test split can flatter a system, an unlucky one can sink it. We re-run the entire evaluation across **5 random seeds (13, 42, 87, 123, 202)** and report the mean and standard deviation, so "split luck" becomes a measurable quantity rather than a hand-wave.
+Finally, single-split numbers can be misleading. A lucky or unlucky test split can create biased results against or for our model. We re-run the entire evaluation across **5 random seeds (13, 42, 87, 123, 202)** and report the mean and standard deviation, so "split luck" becomes a measurable quantity.
 
 Beyond this offline evaluation, we also built an interactive terminal sandbox on top of the same model that shows predictions, confidences, and parse evidence in real time. We defer its full description and screenshot to Section 5.3.
 
@@ -110,16 +110,16 @@ Before turning to the numbers, the metrics we use:
 
 $$\text{accuracy} = \frac{\#\text{correct}}{\#\text{total}} \qquad \text{precision} = \frac{TP}{TP+FP} \qquad \text{recall} = \frac{TP}{TP+FN} \qquad F1 = \frac{2 \cdot \text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}$$
 
-For a class $c$, **precision** measures how often we're right when we predict $c$ (low false-positive cost), and **recall** measures how often we catch real $c$'s (low false-negative cost). F1 punishes optimizing one at the expense of the other. **Macro F1** is the unweighted average of per-class F1; it is what surfaces minority-class problems that accuracy hides.
+For a class $c$, **precision** measures how often we're right when we predict $c$ (low false-positive cost), and **recall** measures how often we catch real $c$'s (low false-negative cost). F1 punishes optimizing one at the expense of the other. **Macro F1** is the unweighted average of per-class F1. It is what surfaces minority-class problems that accuracy hides.
 
-To avoid reading too much into one random train/dev/test split, we also run a 5-seed sweep (13, 42, 87, 123, 202) and report the mean and sample standard deviation across those runs:
+When we run the 5-seed sweep (13, 42, 87, 123, 202), we report the mean and sample standard deviation across those runs:
 
 $$\overline{m} = \frac{1}{K} \sum_{i=1}^{K} m_{i} \qquad s = \sqrt{\frac{1}{K-1} \sum_{i=1}^{K} (m_{i} - \overline{m})^{2}}$$
 
 The mean estimates expected performance under random split variation; $s$ quantifies how sensitive that estimate is to which split we happened to draw.
 
 ### 4.1 Corpus-Level Structural Findings
-We organize results into four parts: corpus-level structural findings (this section), structure-classifier performance (4.2), style-dimension performance (4.3), and stability analysis (4.4). The first question is the descriptive one: what do news headlines actually look like structurally?
+We organize results into four parts: corpus-level structural findings (this section), structure-classifier performance (4.2), style-dimension performance (4.3), and stability analysis (4.4). This section answers the question "what do news headlines actually look like structurally?"
 
 | Metric | Value |
 | :--- | :--- |
@@ -131,16 +131,16 @@ We organize results into four parts: corpus-level structural findings (this sect
 | Avg entities per headline | 2.4 |
 | Actor/entity-first openings | 81.6% |
 
-The picture in Table 1 is consistent and tight. The average headline is ~14 tokens, 73% of them content words. 92% contain a verb, so even though they're compressed, they remain *sentences about an action*, not captions. 95% contain at least one named entity (2.4 on average), 95% are active voice, and 82% lead with the main actor or entity. The default newsroom template emerges almost mechanically: **a compressed, active, entity-led clause built around a single event verb.** That alone is evidence for H1's *template consistency* criterion.
+The average headline is ~14 tokens, 73% of them content words. 92% contain a verb, so even though they're compressed, they remain *sentences about an action*, not captions. 95% contain at least one named entity (2.4 on average), 95% are active voice, and 82% lead with the main actor or entity. 
 
-This isn't a corpus-specific accident. Robert (2020) applied Halliday's Systemic Functional Grammar to fourteen anti-corruption headlines from two Nigerian dailies and reports that *material processes*, clauses that grammaticalize doing rather than being or thinking, are the dominant process type. The convergence is real even though the lenses differ: she measures transitivity, we measure voice and clause shape, but both characterizations describe action-oriented, agent-led headline syntax as the genre default. The template lives in the genre, not in any single outlet.
+Results like these have been seen previously. Robert (2020) applied Halliday's Systemic Functional Grammar to fourteen anti-corruption headlines from two Nigerian dailies and reports that *material processes*, clauses that grammaticalize doing rather than being or thinking, are the dominant process type. The convergence is real even though the lenses differ: she measures transitivity, we measure voice and clause shape, but both characterizations describe action-oriented, agent-led headline syntax as the genre default. The template lives in the genre, not in any single outlet.
 
 ![Structure label distribution](../images/structure_label_distribution.png)
 
-**Figure 1** — distribution of predicted structure labels across the corpus. The dominant class is the simple finite clause, with noun-phrase fragments as a clear secondary mode and the rest (questions, passives, coordinations, `other`) as a long tail. The shape itself is a finding: headline writing concentrates on two or three reusable templates, and the rare classes are rare because they fail the brevity constraint that defines the genre.
+**Figure 1** — distribution of predicted structure labels across the corpus. The dominant class is the simple finite clause, with noun-phrase fragments as a clear secondary mode and the rest (questions, passives, coordinations, `other`) as a long tail. The shape indicates that headline writing concentrates on two or three reusable templates. Rare cases are due to failing the brevity constraint that defines the genre.
 
 ### 4.2 Structure Classifier Performance
-The next question is whether the model can actually predict that template, not just describe it.
+The sectoin answers whether the model can actually predict that template.
 
 | Evaluation Slice | Accuracy | Macro F1 |
 | :--- | :--- | :--- |
@@ -148,7 +148,7 @@ The next question is whether the model can actually predict that template, not j
 | Dev (n=90) | — | 0.561 |
 | Test (n=98) | 0.806 | 0.675 |
 
-**Table 2** — aggregate structure metrics. The pattern across slices is consistent: macro F1 sits below accuracy because the dataset is imbalanced (`simple_clause` dominates). On the held-out test split (the only number we tune *nothing* against) the classifier reaches **0.806 accuracy** and **0.675 macro F1**. The dev row deliberately omits accuracy because, on that imbalanced slice, accuracy isn't an informative tuning signal.
+**Table 2** — aggregate structure metrics. The pattern across slices is consistent: macro F1 sits below accuracy because the dataset is imbalanced (`simple_clause` dominates). On the held-out test split the classifier reaches **0.806 accuracy** and **0.675 macro F1**. The dev row deliberately omits accuracy because, on that imbalanced slice, accuracy isn't an informative tuning signal.
 
 A test number on its own is hard to read. We compare against two trivial baselines:
 
@@ -169,13 +169,13 @@ A test number on its own is hard to read. We compare against two trivial baselin
 | simple_clause | 0.882 | 0.865 | 0.874 |
 | other | 0.138 | 0.500 | 0.216 |
 
-**Table 4** — per-class performance. Strong on the dominant classes (`simple_clause`, `question_form`), weaker on ambiguous ones (`other`, `passive_clause` minority variants). The system captures the newsroom syntactic backbone but stays conservative on edge constructions where label boundaries are inherently fuzzy.
+**Table 4** — per-class performance. Strong on the dominant classes (`simple_clause`, `question_form`), weaker on ambiguous ones (`other`, `passive_clause` minority variants). 
 
 A normal-approximation 95% confidence interval on the test accuracy 0.806 (n = 98) is:
 
 $$\text{CI}_{0.95}(\text{Accuracy}) \approx [0.728,\ 0.884]$$
 
-Both baselines (0.643, 0.459) fall outside this interval. The interval is enough to reject H1's *structural predictability* failure condition.
+Both baselines (0.643, 0.459) fall outside this interval. 
 
 ### 4.3 Style-Dimension Performance
 Beyond the structural label, can the model also recover stylistic characteristics? We evaluate the four style dimensions twice: across the entire labeled slice, and on the held-out test split alone, so "consistent on training data" and "generalizes" don't get conflated.
@@ -204,10 +204,10 @@ Beyond the structural label, can the model also recover stylistic characteristic
 
 ![Performance heatmap](../images/performance_heatmap.png)
 
-**Figure 3** — performance heatmap. The same picture in colour: form-grounded properties (where the headline starts, how dense it is) are dark green; semantically loaded ones (agency, rhetoric) are lighter; structural classification sits in between. This is the graphical answer to "how recoverable is each dimension of headline form?"
+**Figure 3** — performance heatmap. The same picture in colour: form-grounded properties (where the headline starts, how dense it is) are dark green; semantically loaded ones (agency, rhetoric) are lighter; structural classification sits in between. 
 
 ### 4.4 Stability Analysis
-Single-split numbers are fragile. A lucky split flatters the model; an unlucky one undersells it. To put a number on that fragility, we re-ran the full structure and style evaluation across 5 random splits (seeds 13, 42, 87, 123, 202) and report the mean and standard deviation.
+Single-split numbers are fragile, and to put a number on that fragility, we re-ran the full structure and style evaluation across 5 random splits (seeds 13, 42, 87, 123, 202) and report the mean and standard deviation.
 
 | Metric | Mean | Std. Dev. |
 | :--- | :--- | :--- |
@@ -227,7 +227,7 @@ Approximate 95% intervals on the seed means are:
 
 $$\bar{m}_{\text{Accuracy}} \in [0.695,\ 0.785] \qquad \bar{m}_{\text{Macro F1}} \in [0.502,\ 0.634]$$
 
-The system follows a methodology of "test accuracy in the high 0.7s and macro F1 in the high 0.5s to low 0.6s, with the upper end of either requiring a favorable split." This is exactly the kind of self-skeptical reporting H1's *robustness* criterion was designed to enforce, and the model passes it: the variance is real, but every seed sits well above both baselines.
+The system follows a methodology of "test accuracy in the high 0.7s and macro F1 in the high 0.5s to low 0.6s, with the upper end of either requiring a favorable split." 
 
 ### 4.5 Worked Decision-Path Examples
 This experiment aims to prove that our predictions are **traceable**: every label can be explained by saying which rule fired and why. Three worked examples, each hitting a different point in the priority order.
@@ -275,27 +275,33 @@ Predicted profile:
 - density_band: `high_density`
 - rhetorical_mode: `analysis_explainer`
 
-These three examples are how we check H1's *interpretability* criterion. Every label traces back to a specific rule, a specific priority position, and a specific surface feature. That is the property that makes the system auditable in comparison to a black-box neural model.
+Every label traces back to a specific rule, a specific priority position, and a specific surface feature. 
 
+These same examples also explain why the features matter for summarization. A question-form headline can be attention-grabbing, but it is often a weak neutral summary because the reader must resolve the question before recovering the event. A passive compressed headline can fit the space budget while hiding the agent, which is useful for brevity but risky if a summarizer needs to preserve who did what. A nominal report-title headline, by contrast, often behaves more like a section label or index entry than a sentence summary. Detecting those forms lets a summarization system decide whether to keep the wording, expand it, or rewrite it into a more explicit declarative summary.
 ## 5. Discussion:
-### 5.1 Strengths of Solution
+
+### 5.1 How We Demonstrate H1
+We prove H1, headlines follow stable, reusable syntactic templates—by assembling four converging evidence strands. Through empirical performance, we determine the structure classifier beats trivial baselines on held-out test data (Section 4.2; test accuracy 0.806, test macro F1 0.675, with baselines 0.643/0.459 lying outside the accuracy CI). Through template consistency, we prove that  corpus-level distributions show dominant recurring patterns (Section 4.1; e.g., 81.6% actor/entity-first openings, 92.1% contain verbs). Through robustness, we show a 5-seed split sweep (Section 4.4) yields mean macro F1 0.568 ± 0.076, which demonstrates stability across splits. Lastly interpretability/falsifiability, we show that every prediction is traceable to explicit parse-grounded rules and a fixed priority order (Section 4.5), allowing us to inspect and reject the hypothesis if predictions were unexplainable. Together these points satisfy the falsification criteria in Section 2.1 and substantiate H1.
+
+### 5.2 Strengths of Solution
 We have proved that headlines are predictable syntactic products, not free-form prose. The classifier captured the dominant newsroom structures well, especially `simple_clause` and `question_form`, which was expected if headline syntax really does follow reusable patterns. Adding the four style dimensions on top moved us from a single label to a richer signature that simultaneously tracks framing, agency, density, and rhetorical intent.
 
+One caveat is that we do not yet report inter-annotator agreement for the gold labels. That means this draft does not yet quantify a human ceiling, so we cannot fully separate label ambiguity from model error. The current results still show that the system is far above majority and random baselines, but the annotation protocol should be treated as a manually curated gold standard rather than a formally reliability-validated one.
 The second strength is interpretability. Every prediction grounds in explicit parse features (POS tags, dependencies, entity positions), so any classification can be traced back to the linguistic evidence that produced it. The multi-seed evaluation reinforces that rigor by showing split variance instead of hiding it in a single point estimate.
 
 Some style dimensions proved easier than expected. `lead_frame` and `density_band` saturate test macro F1 at 1.000, which says these aspects of headline construction are governed by stable surface conventions rather than subjective judgment. The harder dimensions (`rhetorical_mode`, rare passive variants of `agency_style`) are exactly where syntax-only signals run out and discourse-level cues take over, which is also expected. In conclusion, headline construction is structurally constrained, stylistically patterned, and recoverable through interpretable, linguistically grounded rules.
 
-### 5.2 Why Some Classes Remain Difficult
+### 5.3 Why Some Classes Remain Difficult
 The weak categories, the residual `other` bucket, parts of `coordination`, and some compressed passive variants, share a few underlying causes:
 
-- **Sparse support**: classes like `other` and rare passive forms have so few gold examples in the held-out test set that a single misclassification swings their F1 dramatically. The macro F1 metric is what surfaces this; the accuracy metric can hide it entirely.
+- **Sparse support**: classes like `other` and rare passive forms have so few gold examples in the held-out test set that a single misclassification swings their F1 dramatically. The macro F1 metric is what surfaces this and the accuracy metric can hide it entirely.
 - **Boundary overlap between labels**: `coordination` and `simple_clause` are not always cleanly separable when a headline contains a comma list and a finite verb. The priority order resolves the conflict, but the resolution is not always the human's preferred reading.
 - **Punctuation-heavy multi-clause headline variants**: headlines that combine semicolons, em-dashes, and embedded clauses (live-blog-style) sit between coordination and noun-phrase fragment, and the rule set has to make a hard call.
-- **Residual annotation ambiguity in edge forms**: even our human annotators sometimes had to choose between two defensible labels, and the model inherits that ambiguity directly.
+- **Residual annotation ambiguity in edge forms**: human annotators sometimes had to choose between two defensible labels, and the model inherits that ambiguity directly.
 
 The model is broken on these classes, but these classes are inherently noisier targets than the dominant ones, and the *macro* score punishes is affected by that noise.
 
-### 5.3 Practical Sandbox: The TUI Workbench
+### 5.4 Practical Sandbox: The TUI Workbench
 The interpretability claim is most concrete in the interactive terminal sandbox we built on top of the model.
 
 ![Interactive TUI workbench](../images/tui_image.svg)
@@ -306,7 +312,7 @@ The workbench compresses the feedback loop from *minutes* (run the script, compa
 
 This is supported by a study by Banerjee and Urminsky (2021), where they  analyze thousands of A/B-tested Upworthy headlines and show that informational, cognitive, linguistic, and affective textual cues (mapped via NLP tools to interpretable constructs) materially shift click-through. Their result is exactly the case for a feature-level editorial lever: instead of asking a model whether a candidate will perform, the editor sees which structural and stylistic dimensions it activates and edits with full visibility into why the system reads it that way. That is what makes interpretable NLP useful for newsroom workflows.
 
-### 5.4 Limitations
+### 5.5 Limitations
 The results come with five honest limitations that constrain the strength of any general claim:
 
 1. **Rule-bound model family**: rule-based architectures are highly interpretable but inherently less flexible than fully learned models. Patterns that fall outside the rule set are systematically missed rather than gracefully approximated.
@@ -314,6 +320,7 @@ The results come with five honest limitations that constrain the strength of any
 3. **Annotation subjectivity**: edge-case labels (especially within `rhetorical_mode` and `coordination`) are inherently debatable. Two competent annotators can produce defensible but different gold labels.
 4. **English- and source-bias**: the corpus is built from a small set of English-language Google News RSS feeds, which limits external generalization to other languages, registers, and outlet styles.
 5. **No external lexicon expansion**: we deliberately excluded curated event-noun and named-entity lexicons in this phase to keep the rules transparent. This makes some rare entity- or event-driven disambiguation harder than it could be, but it preserves interpretability.
+6. **No inter-annotator agreement report yet**: the current draft does not include a formal agreement score for the manual labels, so we cannot claim a measured human ceiling or quantify how much better than chance independent annotators are. The system-vs-baseline numbers do address chance-level performance for the model, but not annotation reliability.
 
 None of these limitations invalidate H1, but rather bound it. The claim we defend, that headlines follow stable, recoverable templates, and that a transparent rule-based system captures them well above baseline, still holds.
 
