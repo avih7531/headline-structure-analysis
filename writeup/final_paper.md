@@ -353,7 +353,7 @@ Headline B (noun_phrase_fragment):
 Both headlines refer to a similar situation, but Headline A explicitly assigns responsibility through an agency_style construction (“Government admits”), while Headline B removes the agent entirely. This shift in structure changes how accountability is perceived.
 Such differences are particularly important in the context of misinformation and media bias. By systematically identifying structural patterns, such as omission of agents, use of passive constructions, or rhetorical framing, this approach provides tools for analyzing how headlines may influence public understanding.
 
-### 5.5 Limitations
+### 5.6 Limitations
 The results come with five honest limitations that constrain the strength of any general claim:
 
 1. **Rule-bound model family**: rule-based architectures are highly interpretable but inherently less flexible than fully learned models. Patterns that fall outside the rule set are systematically missed rather than gracefully approximated.
